@@ -1,0 +1,81 @@
+.sidenav {
+    overflow-y: hidden;
+}
+
+.sidenav .scrolling {
+    overflow-y: auto;
+}
+
+.sidenav .buttons {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dadada;
+}
+
+.sidenav .buttons > .row {
+    margin-bottom: 0;
+}
+
+.scrolling .collection {
+    margin-top: 0;
+}
+
+.collection-item .collapsible-body > .row {
+    margin-bottom: 5px;
+}
+form > .collection > .collection-item {
+    padding: 5px 0;
+}
+.collection-item .range-label {
+    padding-top: 8px;
+    font-weight: 500;
+}
+.collection-item .collapsible-header.checkbox-label {
+    padding: 5px 0 5px .75rem;
+}
+.collection-item > ul > li {
+    line-height: 40px;
+}
+form > .collection > .collection-item.collaps {
+    padding: 0;
+}
+.collection-item input:not(.browser-default) {
+    height: 2rem;
+}
+.collection-item .checkbox-list {
+    margin: 5px;
+    border: 1px solid #dadada;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.collection-item .checkbox-list label {
+    width: 100%;
+}
+.checkbox-list li {
+    line-height: 35px;
+}
+.checkbox-list span {
+    line-height: 20px !important;
+}
+
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    background-color: #e53935 !important;
+    border-color: #e53935;
+}
+/* label underline focus color */
+input.valid[type=number]:not(.browser-default) {
+     border-bottom: 1px solid #e53935;
+     box-shadow: 0 1px 0 0 #e53935;
+    -webkit-box-shadow: 0 1px 0 0 #e53935;
+    -moz-box-shadow: 0 1px 0 0 #e53935;
+}
+input[type=number]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #e53935;
+    box-shadow: 0 1px 0 0 #e53935;
+}
+.show-med-down {
+    display: none;
+}

@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load products_extra %}
+
+{% block title %}Product{% endblock %}
+
+{% block content %}
+    <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+        {% include 'sidenavCategory.html' %}
+    </ul>
+
+    <div id="deviceId" style="display: none">{{ device.id }}</div>
+    <div id="category" style="display: none">{{ device.category.slug }}</div>
+    <div id="deliveryDays" style="display: none">{{ device.deliveryDays }}</div>
+
+    <div class="sidenav-padding">
+        <div class="row row-padding padding-side">
+            <h4>{{ device }}</h4>
+            <div class="col s12 product-panel z-depth-2" style="position: relative">
+                <div class="col s12 m6">
+                    <div class="carousel carousel-slider center">
+                        <div class="carousel-fixed-item with-indicators">
+                          <a id="left" class="btn-floating btn-large waves-effect transparent z-depth-0  left"><i class="grey-text text-darken-3 material-icons large">chevron_left</i></a>
+                          <a id="right" class="btn-floating btn-large waves-effect transparent z-depth-0  right"><i class="grey-text text-darken-3 material-icons large">chevron_right</i></a>
+                        </div>
+                        {% for image in device|get_children_list:'images' %}
+                            <div class="carousel-item">
+                              <img src="{{ image.image.url }}">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% if user.is_superuser %}
+                            <a href="/admin/{{ category_prop|get_item:'app' }}/{{ device.category.slug }}/{{ device.id }}/change/" target="_blank" class="btn-floating btn-large waves-effect waves-light red darken-1"><i class="material-icons">create</i></a>
+                    {% endif %}
+                </div>
+                <div class="col s12 m6 product-info">
+                    <h4 class="center-align product-price" id="{{ device.price }}">{{ device.price }} Р.</h4>
+                    {% if device.colors is not None %}
+                    <div class="input-field col s10 offset-s1 m8 offset-m2">
+                        <select class="icons select-color">
+                            <option value="" disabled selected>Выберите цвет</option>
+                            {% for color in device|get_children_list:'colors' %}
+                            <option name="{{ color.price }}" value="{{ color.id }}" count ="{{ color.count }}" data-icon="{% if color.image %}{{ color.image.url }}{% endif %}">{{ color.name }} {% if color.price > 0 %}({{ color.price }}р.){% endif %}{% if color.count > 0 %}[{{ color.count }}шт.]{% endif %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% endif %}
+                    {% if device.options is not None %}
+                    <div class="input-field col s10 offset-s1 m8 offset-m2">
+                        <select multiple class="select-options">
+                          <option value="" disabled selected>Опции</option>
+                          {% for option in device|get_children_list:'options' %}
+                          <option name="{{ option.price }}" value="{{ option.id }}">{{ option.name }} ({{ option.price }}р.)</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="col s12 m6 product-panel-btn" style="position: absolute; bottom: 10px; right: 0">
+                    <div class="row">
+                        <div class="col s2 offset-s2" style="position: relative; height: 30px">
+                            <div class="count">
+                                <a href="#" class="remove"><i class="material-icons">remove</i></a>
+                                <a href="#" class="add"><i class="material-icons">add</i></a>
+                                <input class="browser-default" value="1">
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <p id="existence" class="right-align">
+                                {% if device.colors is None %}
+                                    {% if device.count == 0 %}
+                                        Под заказ {{ device.deliveryDays }} дней
+                                    {% else %}
+                                        В наличии: {{ device.count }}шт.
+                                    {% endif %}
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col xl8 offset-xl2 s10 offset-s1" style="padding-bottom: 10px">
+                        <a id="Buy" class="waves-effect waves-light btn red darken-1">
+                            <i class="material-icons left">shopping_cart</i>
+                            {% if device.colors is None %}
+                                {% if device.count == 0 %}Заказать{% else %}Купить{% endif %}
+                            {% else %}<div id="text">Купить</div>{% endif %}
+                        </a>
+                    </div>
+                    <div class="col xl8 offset-xl2 s10 offset-s1">
+                        <a id="toCart" class="waves-effect waves-light btn red darken-1"><i class="material-icons left">add_shopping_cart</i>В корзину</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if  device.description != '' %}
+            <div class="row padding-side">
+                <div class="s12 z-depth-2 product-characteristics">
+                    <h5>Описание</h5>
+                    <p>{{ device.description }}</p>
+                </div>
+            </div>
+        {% endif %}
+        <div class="row padding-side">
+            <div class="s12 z-depth-2 product-characteristics">
+                <h5>Характеристики</h5>
+                <table>
+                    <tbody>
+                      {% for key, prop in propForm.items %}{% if prop|get_item:'display' != 'filterOnly' %}<tr>
+                                  <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
+                                <td>{{ device|get_attr:key }}{{ prop|get_item:'units' }}</td>
+                              </tr>
+                          {% endif %}
+                      {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+    <script>
+
+    
+    </script>
+{% endblock %}

@@ -1,0 +1,207 @@
+.nav-logo {
+    height: 80px;
+    margin-top: -8px;
+    padding-left: 15px;
+}
+.nav-wrapper li.logo {
+    line-height: 64px;
+    height:  64px;
+    overflow-y: hidden;
+}
+.margin-top {
+    margin-top: 30px;
+}
+.nav-wrapper li.logo a {
+    line-height: 64px;
+    overflow-y: hidden;
+}
+.row.padding-top {
+    margin-top: 20px;
+}
+.nav-wrapper {
+    padding: 0 calc(calc(100vw - 1300px) / 2) 0 300px;
+}
+.sidenav-padding {
+      padding: 0 calc(calc(100vw - 1300px) / 2) 0 300px;
+    }
+
+.row-padding {
+    padding: 10px 0;
+}
+.padding-side{
+    padding: 0 20px;
+}
+
+.btn-full-width {
+    width: 100%;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*******************************/
+/*******************************/
+/******       Category      ****/
+/*******************************/
+
+.category .category-item {
+    height: 125px;
+    padding: 5px !important;
+}
+.category .collection-item > .responsive-img {
+    height: 100%;
+    width: auto;
+    float: left;
+}
+.category .collection-item > .header {
+    font-size: 28px;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    display: inline-block;
+}
+.category .collection-item > p {
+    font-size: 16px;
+    color: #323232;
+    padding: 0 10px 10px 125px;
+    position: relative;
+}
+.category .collection-item > .price {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    font-size: 24px;
+    display: inline-block;
+    float: right;
+}
+
+/*******************/
+/* sidenav category */
+/*******************/
+
+.sidenav .collapsible-header {
+    padding: 0 32px;
+}
+.sidenav .collapsible-body li a{
+    padding: 0 23.5px 0 47px;
+}
+.sidenav-top {
+    height: 64px;
+    line-height: 64px !important;
+}
+.sidenav-category {
+    font-size: 24px !important;
+    height: 64px !important;
+    font-weight: bold;
+    padding-left: 32px;
+    color: #f2f2f2;
+
+}
+.sidenav .buttons .btn {
+    width: 100%;
+}
+
+/***********/
+/* best regard card */
+/***********/
+
+.card-buy {
+    position: absolute;
+    right: 0;
+    margin-right: 10px !important;
+}
+.card-price {
+    font-size: 18px;
+}
+.card-buy > span {
+    font-size: 18px;
+    vertical-align: top;
+}
+.card-buy > i {
+    font-size: 20px;
+    margin-top: 4px;
+}
+.card .card-action {
+    padding: 10px 15px;
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    .nav-logo {
+        height: 70px;
+        margin-top: 0;
+        padding-left: 0;
+    }
+    .nav-wrapper {
+        padding: 0;
+    }
+    .sidenav {
+        top: 0;
+    }
+
+    .sidenav-padding {
+        padding: 0;
+      }
+    .show-med-down {
+        display: block;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .nav-logo {
+        height: 70px;
+        margin-top: -6px;
+        padding-left: 0;
+    }
+    .nav-wrapper ul.right li {
+        width: 50px;
+    }
+    /*****************************/
+    /*****Category ****************/
+
+    .category .category-item {
+        height: 100px;
+        padding: 5px !important;
+        text-overflow: clip;
+    }
+    .category .collection-item > .responsive-img {
+        height: 100%;
+        width: auto;
+        float: left;
+    }
+    .category .collection-item > .header {
+        font-size: 20px;
+        padding: 5px 10px 5px 10px;
+        position: relative;
+        display: inline-block;
+    }
+    .category .collection-item > p {
+        font-size: 14px;
+        color: #323232;
+        padding: 0 10px 0 0;
+        margin: 0;
+        position: relative;
+        float: top;
+    }
+    .category .collection-item > .price {
+        position: relative;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        font-size: 18px;
+        display: inline-block;
+        float: right;
+    }
+
+    .nav-wrapper {
+        padding: 0;
+    }
+    .product-panel-btn {
+        padding-top: 10px !important;
+    }
+    .product-price {
+        margin-top: 30px;
+    }
+}

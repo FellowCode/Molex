@@ -1,0 +1,108 @@
+.product-panel .count {
+    width: 70px;
+    height: 20px;
+    border: 1px solid #949494;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.product-panel .count a {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+}
+.product-panel .count i {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: #e53935;
+}
+.product-panel .count input {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 25px;
+    top: -2px;
+    margin: 0;
+    text-align: center;
+}
+.product-panel .count a.remove {
+    left: 0;
+}
+.product-panel .count a.add {
+    right: 0;
+}
+.product-panel {
+    min-height: 420px;
+    padding: 10px 0;
+}
+.carousel-product-padding {
+    padding-top: 420px;
+}
+.product-characteristics {
+    padding: 15px;
+}
+.product-panel-btn .btn {
+    width: 100%;
+}
+.product-panel-btn {
+    padding: 0;
+}
+.product-panel-btn p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.product-panel .count .row {
+    margin-bottom: 10px;
+}
+.product-panel .count .btn-floating {
+    height: 30px;
+    width: 30px;
+}
+.product-panel .count .btn-floating i {
+    line-height: 30px;
+}
+.product-panel .count .count-input {
+    padding: 0;
+    margin-left: 10px;
+}
+
+td#param-name {
+    width: 50%;
+}
+.product-info .input-field {
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+.product-info .input-field input {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.product-price {
+    font-weight: 600;
+}
+.select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid #e53935;
+}
+@media only screen and (max-width: 820px) and (min-width: 601px){
+    .product-panel-btn p {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+}
+@media only screen and (max-width: 680px) and (min-width: 601px){
+    .product-info h4 {
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+.product-panel .carousel ~ .btn-floating {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}

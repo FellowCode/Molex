@@ -1,0 +1,139 @@
+{% load products_extra %}
+<div id="filterProperties" style="display: none">{% for prop in propForm %}{% if propForm|get_item:prop|get_item:'display' is not 'paramOnly' %}{{ prop }}:{{ propForm|get_item:prop|get_item:'type' }}{% if forloop.counter < propForm|length %};{% endif %}{% endif %}{% endfor %}</div>
+<div id="fullCategory" style="display: none">{{ category.getFullSlug }}</div>
+
+<li id="0" class="sidenav-top red darken-1  z-depth-1"><span class="sidenav-category">Фильтр</span></li>
+<li class="buttons">
+    <div class="row">
+        <div class="col s12">
+            <a id="closeFilters" class="btn-full-width waves-effect waves-light btn red darken-1">
+                Категории
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s6">
+            <a id="resetFilter" class="center-align waves-effect waves-light btn red darken-1">
+                Сбросить
+            </a>
+        </div>
+        <div class="col s6">
+            <a id="Filter" class="center-align waves-effect waves-light btn red darken-1">
+                Применить
+            </a>
+        </div>
+    </div>
+</li>
+<div class="scrolling">
+    <form id="filterForm">
+        <ul class="collection">
+            {% for prop in propForm %}
+                {% if propForm|get_item:prop|get_item:'display' != 'paramOnly' %}
+                    {% if propForm|get_item:prop|get_item:'type' == 'intRange' %}
+                        <li class="collection-item collaps">
+                            <ul class="collapsible">
+                                <li>
+                                    <a class="collapsible-header checkbox-label">{{ propForm|get_item:prop|get_item:'name' }}{{ propForm|get_item:prop|get_item:'units'|filter_units }}</a>
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <div class="col s5 offset-s1">
+                                                <input placeholder="От" id="first_name" type="number" name="{{ prop }}_min" class="validate">
+                                            </div>
+                                            <div class="col s5">
+                                                <input placeholder="До" id="first_name" type="number" name="{{ prop }}_max" class="validate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% elif propForm|get_item:prop|get_item:'type' == 'floatRange' %}
+                        <li class="collection-item collaps">
+                            <ul class="collapsible">
+                                <li>
+                                    <a class="collapsible-header checkbox-label">{{ propForm|get_item:prop|get_item:'name' }}{{ propForm|get_item:prop|get_item:'units'|filter_units }}</a>
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <div class="col s5 offset-s1">
+                                                <input placeholder="От" id="first_name" type="number" name="{{ prop }}_min" class="validate input_red" step="any">
+                                            </div>
+                                            <div class="col s5">
+                                                <input placeholder="До" id="first_name" type="number" name="{{ prop }}_max" class="validate input_red" step="any">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% elif propForm|get_item:prop|get_item:'type' == 'strArray' %}
+                        <li class="collection-item collaps">
+                            <ul class="collapsible">
+                                <li>
+                                    <a class="collapsible-header checkbox-label">{{ propForm|get_item:prop|get_item:'name' }}{{ propForm|get_item:prop|get_item:'units'|filter_units }}</a>
+                                    <div class="collapsible-body">
+                                        <div class="col s12 checkbox-list">
+                                            <ul>
+                                                {% for value in propForm|get_item:prop|get_item:'set' %}
+                                                <li>
+                                                    <label>
+                                                        <input type="checkbox" class="filled-in" name="{{ prop }}" value="{{ value }}"/>
+                                                        <span>{{ value }}</span>
+                                                    </label>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% elif propForm|get_item:prop|get_item:'type' == 'inStock' %}
+                        <li class="collection-item collaps">
+                            <ul class="collapsible">
+                                <li>
+                                    <a class="collapsible-header checkbox-label">{{ propForm|get_item:prop|get_item:'name' }}{{ propForm|get_item:prop|get_item:'units'|filter_units }}</a>
+                                    <div class="collapsible-body">
+                                        <div class="col s12 checkbox-list">
+                                            <ul>
+                                                {% for value in propForm|get_item:prop|get_item:'set' %}
+                                                <li>
+                                                    <label>
+                                                        <input type="checkbox" class="filled-in" name="{{ prop }}" value="{{ forloop.counter0 }}"/>
+                                                        <span>{{ value }}</span>
+                                                    </label>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% elif propForm|get_item:prop|get_item:'type' == 'idArray' %}
+                        <li class="collection-item collaps">
+                            <ul class="collapsible">
+                                <li>
+                                    <a class="collapsible-header checkbox-label">{{ propForm|get_item:prop|get_item:'name' }}</a>
+                                    <div class="collapsible-body">
+                                        <div class="col s12 checkbox-list">
+                                            <ul>
+                                                {% for value in propForm|get_item:prop|get_item:'set' %}
+                                                <li>
+                                                    <label>
+                                                        <input type="checkbox" class="filled-in" name="{{ prop }}" value="{{ value.id }}"/>
+                                                        <span>{{ value }}</span>
+                                                    </label>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </form>
+</div>

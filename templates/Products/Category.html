@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load products_extra %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+    <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+        <div id="sidenav-category"  style="display: none">
+        {% include 'sidenavCategory.html' %}
+        </div>
+        <div id="sidenav-filter">
+            {% include 'filter.html' %}
+        </div>
+    </ul>
+    <div class="sidenav-padding">
+        <div class="row padding-side">
+            <div class="row padding-side">
+                  <div class="section">
+                    <h4>{{ category.name }}</h4>
+                  </div>
+             <div class="divider"></div>
+            <div id="list-container" class="category">
+                <div id="list" class="collection">
+                    {% for device in device_list %}
+                    <a href="id/{{ device.id }}/" class="collection-item category-item">
+                        <img src="{{ device.imagePreview.url }}" class="responsive-img">
+                        <div class="header red-text text-darken-1">{{ device }}</div>
+                        <div class="price red-text text-darken-1">{{ device.price }} Р.</div>
+                        <p>[ {% for prop in propForm %}{% if not propForm|get_item:prop|get_item:'filterOnly' %}{{ device|get_attr:prop }}{{ propForm|get_item:prop|get_item:'units' }}{% if forloop.counter < propForm|length %}, {% endif %}{% endif %}{% endfor %} ]</p>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script type="text/javascript">
+                $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            indicators: true
+          });
+
+    //sidenav collapsible
+    $(document).ready(function() {
+        $('.sidenav').sidenav();
+        $('.collapsible').collapsible();
+        $('.sidenav .scrolling').height($(window).height()-105);
+
+    });
+    $(window).resize(function () {
+        $('.sidenav .scrolling').height($(window).height()-105);
+    });
+
+    </script>
+{% endblock %}

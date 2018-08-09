@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Molex{% endblock %}
+
+
+{% block content %}
+        <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+            {% include 'sidenavCategory.html' %}
+        </ul>
+        <div class="sidenav-padding">
+            <div class="row padding-side padding-top">
+                <div class="col s12 z-depth-2">
+                    <h4>О нас</h4>
+                    <p>Какой-то текст</p>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
+
+{% block script %}
+{% endblock %}
