@@ -35,7 +35,7 @@ class Category(models.Model):
 
 def preview_directory_path(instance, filename):
     name, ext = filename.split('.')
-    path = 'images/product/{0}/{1}/preview.{2}'.format(instance.category.slug, _id, ext)
+    path = 'images/product/{0}/preview/preview.{1}'.format(instance.category.slug, ext)
     return path
 
 class Product(models.Model):
@@ -59,21 +59,19 @@ class Product(models.Model):
 
 def img_directory_path(instance, filename):
     name, ext = filename.split('.')
-    path = 'images/product/{0}/{1}/carousel/{2}.{3}'.format(instance.product.category.slug, product_id, image_id, ext)
+    path = 'images/product/{0}/carousel/carousel.{1}'.format(instance.product.category.slug, ext)
     return path
 
 class Image(models.Model):
     image = ProcessedImageField(upload_to=img_directory_path,
                                 processors=[ResizeToFill(800, 800)],
                                 format='JPEG',
-                                options={'quality': 75})
+                                options={'quality': 85})
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
 
 def color_img_directory_path(instance, filename):
     name, ext = filename.split('.')
-    product_id = getNextIdFromModel(Product)
-    color_id = getNextIdFromModel(Color)
-    path = 'images/product/{0}/{1}/color/{2}.{3}'.format(instance.product.category.slug, product_id, color_id, ext)
+    path = 'images/product/{0}/color/color.{1}'.format(instance.product.category.slug, ext)
     return path
 
 class Color(models.Model):

@@ -157,8 +157,14 @@ var cartUpdatePrices = function () {
             cartTotalPriceValue += price + options_price
         });
         cartTotalPriceObj.text(cartTotalPriceValue + ' Р.')
-        if (cartTotalPriceValue>0)
+        if (cartTotalPriceValue>0) {
             $('#cart-total a.btn-large').removeClass('disabled');
+            var cartForm = Cookies.getJSON('cart');
+            delete cartForm['count'];
+            let urlParameters = Object.entries(cartForm).map(e => e.join('=')).join('&');
+            let url = '/products/order/?' + urlParameters;
+            $('#cart-total a.btn-large').attr('href', url);
+        }
         else
             $('#cart-total a.btn-large').addClass('disabled');
     }

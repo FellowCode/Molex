@@ -48,7 +48,7 @@
                                 <b>Цвет: </b>{{ device|get_item:'color'|get_attr:'name' }}{% if device|get_item:'color'|get_attr:'price' != 0 %} ({{ device|get_item:'color'|get_attr:'price' }}р.){% endif %}
                             </div>
                             <div class="options">
-                                {% if device|get_item:'options' is not None %}
+                                {% if device|get_item:'options'|get_attr:'count' > 0 %}
                                 <b>Опции: </b>{% for option in device|get_item:'options' %}{{ option.name }} ({{ option.price }}р.),{% endfor %}
                                 {% endif %}
                             </div>

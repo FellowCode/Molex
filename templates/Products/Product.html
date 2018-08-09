@@ -35,7 +35,7 @@
                 </div>
                 <div class="col s12 m6 product-info">
                     <h4 class="center-align product-price" id="{{ device.price }}">{{ device.price }} Р.</h4>
-                    {% if device.colors is not None %}
+                    {% if device.colors.count > 0 %}
                     <div class="input-field col s10 offset-s1 m8 offset-m2">
                         <select class="icons select-color">
                             <option value="" disabled selected>Выберите цвет</option>
@@ -45,7 +45,7 @@
                         </select>
                     </div>
                     {% endif %}
-                    {% if device.options is not None %}
+                    {% if device.options.count > 0 %}
                     <div class="input-field col s10 offset-s1 m8 offset-m2">
                         <select multiple class="select-options">
                           <option value="" disabled selected>Опции</option>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="col s12 m6 product-panel-btn" style="position: absolute; bottom: 10px; right: 0">
-                    <div class="row">
+                    <div class="row no-margin">
                         <div class="col s2 offset-s2" style="position: relative; height: 30px">
                             <div class="count">
                                 <a href="#" class="remove"><i class="material-icons">remove</i></a>

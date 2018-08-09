@@ -46,7 +46,11 @@ def ProductView(request, hierarchy=None, id=None):
 
 def CartView(request):
     device_list = getCartDevices(request)
-    return render(request, 'Products/Cart.html', {'device_list':device_list})
+    return render(request, 'Products/Cart.html', {'device_list': device_list})
+
+def OrderView(request):
+    device_list = getCartDevices(request)
+    return render(request, 'Products/Order.html', {'device_list': device_list})
 
 def getCartDevices(request):
     device_list = []
@@ -61,11 +65,7 @@ def getCartDevices(request):
             device['device'] = model.objects.get(id=device_id)
             device['color'] = device['device'].colors.get(id=params[1])
             options = device['device'].options.filter(id__in=params[3:])
-            print(options)
-            if options.count() > 0:
-                device['options'] = options
-            else:
-                device['options'] = None
+            device['options'] = options
             device['fullSlug'] = device['device'].category.getFullSlug()
             device['options_price'] = device['color'].price
             for option in options:

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load products_extra %}
+
+{% block title %}Заказ{% endblock %}
+
+{% block content %}
+    <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+        <div id="sidenav-category">
+        {% include 'sidenavCategory.html' %}
+        </div>
+    </ul>
+    <div class="sidenav-padding">
+        <div class="row padding-side order">
+            <div class="col xl8 offset-xl2 m10 offset-m1 s12">
+                <h4>Заказ</h4>
+            </div>
+            <div class="col s12">
+                <div class="divider"></div>
+            </div>
+            <div class="col xl8 offset-xl2 m10 offset-m1 s12">
+                <h5>Контактные данные</h5>
+                <div class="row">
+                    <div class="input-field col s8 offset-s2 m6">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input id="icon_prefix" type="text" class="validate">
+                      <label for="icon_prefix">Ваше имя</label>
+                    </div>
+                    <div class="input-field col s8 offset-s2 m6">
+                      <i class="material-icons prefix">phone</i>
+                      <input id="icon_telephone" type="tel" class="validate">
+                      <label for="icon_telephone">Телефон</label>
+                    </div>
+                </div>
+                <p>
+                Как только заказанная вами продукция придет, мы свяжемся с вами. Обычно срок доставки не превышает 30 дней.
+                </p>
+                <div class="col s8 offset-s2 m6 offset-m3">
+                    <a class="btn-large waves-effect waves-light red darken-1 btn-full-width">Заказать</a>
+                </div>
+            </div>
+            <div id="list" class="divider col s12"></div>
+            <div class="col xl8 offset-xl2 m10 offset-m1 s12">
+                 <div class="col s6"><h5>Список</h5></div>
+                <div class="col s6 total-price right-align">20000 р.</div>
+                {% for device in device_list %}
+                <div class="order-item col s12">
+
+                    <div id="count" class="hide">{{ device|get_item:'count' }}</div>
+                    <div id="price" class="hide">{{ device|get_item:'device'|get_attr:'price' }}</div>
+                    <div id="options-price" class="hide">{{ device|get_item:'options_price' }}</div>
+
+                    <div class="col s2">
+                        <img class="responsive-img" src="{{ device|get_item:'device'|get_attr:'imagePreview'|get_attr:'url' }}">
+                    </div>
+                    <div class="col s6 m7">
+                        <a href="products/{{ device|get_item:'fullSlug' }}/id/{{ device|get_item:'device'|get_attr:'id' }}" class="header">{{ device|get_item:'device' }}</a>
+                    </div>
+                    <div class="col s4 m3  right-align price">{{ device|get_item:'device'|get_attr:'price' }} Р.</div>
+                    <div class="col s7 m8 color">
+                        <b>Цвет: </b>{{ device|get_item:'color'|get_attr:'name' }}{% if device|get_item:'color'|get_attr:'price' > 0 %}({{ device|get_item:'color'|get_attr:'price' }}р.){% endif %}
+                    </div>
+                    <div class="col s3 m2 right-align">
+                        {{ device|get_item:'count' }} шт.
+                    </div>
+                    <div class="col s10 options">
+                        {% if device|get_item:'options'|get_attr:'count' > 0 %}
+                        <b>Опции: </b>{% for option in device|get_item:'options' %}{{ option.name }}{% if option.price > 0 %} ({{ option.price }}р.){% endif %}, {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

@@ -14,6 +14,7 @@
 }
 .cart-container .cart-item .header {
     font-size: 26px;
+    padding-bottom: 18px;
 }
 .cart-container .cart-item .header > a {
     color: #e53935;
