@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load products_extra %}
+
+{% block title %}Заказ{% endblock %}
+
+{% block content %}
+    <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+        <div id="sidenav-category">
+        {% include 'sidenavCategory.html' %}
+        </div>
+    </ul>
+    <div class="sidenav-padding order-confirm">
+        <div class="col s12 order-accept">
+            <h4 class="center-align"><i class="material-icons text-red text-darken-1">check_circle</i> Заказ принят</h4>
+        </div>
+        <div class="col s12 center-align btn-main">
+            <a href="/" class="btn-large waves-effect waves-light red darken-1">На главную</a>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load products_extra %}
+
+{% block title %}Заказ{% endblock %}
+
+{% block content %}
+    <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+        <div id="sidenav-category">
+        {% include 'sidenavCategory.html' %}
+        </div>
+    </ul>
+    <div class="sidenav-padding order-list">
+        <div class="row padding-side">
+            <div class="row">
+                <div class="col s12 m10 offset-m1 l8 offset-l2">
+                    <h5>Список заказов</h5>
+                </div>
+                <div class="col s12">
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m10 offset-m1 l8 offset-l2">
+                    {% for order in order_list %}
+                        <div class="col s12 order-item">
+                            <div class="row">
+                                <div class="col s6 header">
+                                    <a href="/admin/Products/order/{{ order|get_item:'order'|get_attr:'id' }}/change/" {% if order|get_item:'order'|get_attr:'isCompleted' %}class="completed"{% endif %}>Заказ {{ order|get_item:'order'|get_attr:'id' }}</a>
+                                </div>
+                                <div class="col s6 order-payment-amount right-align">{{ order|get_item:'order'|get_attr:'payment_amount'|normalize }} Р.</div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 person-data">
+                                    <b>Контактные данные: </b>{{ order|get_item:'order'|get_attr:'person_name' }}, {{ order|get_item:'order'|get_attr:'person_phone' }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s8">
+                                    <a id="device-show" role="button">Показать список устройств</a>
+                                </div>
+                                {% if order|get_item:'order'|get_attr:'isProcessed' %}
+                                    <div class="col s4 red-text text-darken-1 processed right-align">В обработке</div>
+                                {% else %}
+                                     <div class="col s4 green-text text-darken-2 processed right-align">Обработан</div>
+                                {% endif %}
+                            </div>
+                            <div class="col s12 device-list hide">
+                                {% for device in order|get_item:'devices' %}
+                                    <div class="row no-margin">
+                                        <div class="col s1 counter">{{ forloop.counter }}</div>
+                                        <div class="col s11 device-item">
+                                            <div class="col s8 header">
+                                                <a href="/products/{{ device|get_item:'fullSlug' }}/id/{{ device|get_item:'device'|get_attr:'id' }}/">{{ device|get_item:'device' }}</a>
+                                            </div>
+                                            <div class="col s4 price right-align">{{ device|get_item:'fullPrice' }}</div>
+                                            {% if device|get_item:'color' is not None %}
+                                            <div class="col s12 color"><b>Цвет: </b>{{ device|get_item:'color' }}</div>
+                                            {% endif %}
+                                            {% if device|get_item:'options'|count > 0 %}
+                                                <div class="col s12 options"><b>Опции: </b>{% for option in device|get_item:'options' %}{{ option.name }},{% endfor %}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

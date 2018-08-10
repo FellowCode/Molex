@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Category, Image, Color, Option
+from .models import Category, Image, Color, Option, Order
 
 
 admin.site.register(Category)
+admin.site.register(Order)
 
 class ImageInline(admin.TabularInline):
     model = Image

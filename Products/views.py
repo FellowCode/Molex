@@ -6,6 +6,9 @@ from Parts.helper import graphiccardPropForm, CPUPropForm, RAMPropForm
 from Parts.models import GraphicCard, CPU, RAM
 from Computers.models import Computer
 from Computers.helper import computerPropForm
+from .models import Order
+from django.http import Http404
+from decimal import *
 
 category_prop_list = {
     'smartphone': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
@@ -45,16 +48,42 @@ def ProductView(request, hierarchy=None, id=None):
                                                      'category_prop': category_prop_list[category.slug]})
 
 def CartView(request):
-    device_list = getCartDevices(request)
+    device_list = getCartDevices(request.GET)
     return render(request, 'Products/Cart.html', {'device_list': device_list})
 
 def OrderView(request):
-    device_list = getCartDevices(request)
+    device_list = getCartDevices(request.GET)
     return render(request, 'Products/Order.html', {'device_list': device_list})
 
-def getCartDevices(request):
+def OrderConfirm(request):
+    if request.method == 'POST':
+        print(request.POST)
+        order = Order.objects.create(goods=request.POST['goods'], person_name=request.POST['person_name'],
+                                     person_phone=request.POST['person_phone'],
+                                     payment_amount=float(request.POST['payment_amount']))
+        order.save()
+        return render(request, 'Products/OrderConfirm.html')
+
+
+def OrderListView(request):
+    if request.user.is_superuser:
+        order_list = []
+        orders = Order.objects.all()
+        for order in orders:
+            json_devices = GETStringToJSON(order.goods)
+            device_list = getCartDevices(json_devices)
+            orderJSON = {}
+            orderJSON['order'] = order
+            orderJSON['devices'] = device_list
+            order_list.append(orderJSON)
+        return render(request, 'Products/OrderList.html', {'order_list': order_list})
+    else:
+        raise Http404
+
+
+def getCartDevices(json):
     device_list = []
-    for prop_name, prop in request.GET.items():
+    for prop_name, prop in json.items():
         values = ToStrArray(prop)
         for value in values:
             device = {}
@@ -63,16 +92,29 @@ def getCartDevices(request):
             device['count'] = params[2]
             model = category_prop_list[prop_name]['model']
             device['device'] = model.objects.get(id=device_id)
-            device['color'] = device['device'].colors.get(id=params[1])
+            if params[1] != 'null':
+                device['color'] = device['device'].colors.get(id=params[1])
+            else:
+                device['color'] = None
             options = device['device'].options.filter(id__in=params[3:])
             device['options'] = options
             device['fullSlug'] = device['device'].category.getFullSlug()
-            device['options_price'] = device['color'].price
+            if device['color'] is not None:
+                device['options_price'] = device['color'].price
+            else:
+                device['options_price'] = 0
             for option in options:
                 device['options_price'] += option.price
+            device['fullPrice'] = Decimal(device['device'].price + device['options_price']).normalize()
             device_list.append(device)
     return device_list
 
-
+def GETStringToJSON(getString):
+    json = {}
+    values = getString.split('&')
+    for value in values:
+        key, param = value.split('=')
+        json[key] = param
+    return json
 
 

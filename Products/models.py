@@ -87,14 +87,30 @@ class Color(models.Model):
                                 options={'quality': 60})
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='colors')
 
+    def __str__(self):
+        return self.name
+
 
 class Option(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='options')
 
-def getNextIdFromModel(model):
-    _id = -1
-    if model.objects.all().count() > 0:
-        _id = int(model.objects.latest('id').id)
-    return _id
+    def __str__(self):
+        return self.name
+
+
+class Order(models.Model):
+    person = models.ForeignKey(User, null=True, blank=True, default=None, on_delete=models.SET_NULL)
+    person_name = models.CharField(max_length=50)
+    person_phone = models.CharField(max_length=12)
+    person_pay = models.DecimalField(max_digits=8, decimal_places=2, default=0)
+    payment_amount = models.DecimalField(max_digits=8, decimal_places=2)
+    isPaid = models.BooleanField(default=False)
+    isCompleted = models.BooleanField(default=False)
+    isProcessed = models.BooleanField(default=True)
+    goods = models.TextField()
+
+    class Meta:
+        ordering = ['isCompleted']
+

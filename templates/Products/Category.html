@@ -27,7 +27,7 @@
                         <img src="{{ device.imagePreview.url }}" class="responsive-img">
                         <div class="header red-text text-darken-1">{{ device }}</div>
                         <div class="price red-text text-darken-1">{{ device.price }} Р.</div>
-                        <p>[ {% for prop in propForm %}{% if not propForm|get_item:prop|get_item:'filterOnly' %}{{ device|get_attr:prop }}{{ propForm|get_item:prop|get_item:'units' }}{% if forloop.counter < propForm|length %}, {% endif %}{% endif %}{% endfor %} ]</p>
+                        <p>[ {% for prop in propForm %}{% if propForm|get_item:prop|get_item:'display' == 'always' %}{{ device|get_attr:prop }}{{ propForm|get_item:prop|get_item:'units' }}{% if forloop.counter < propForm|length %}, {% endif %}{% endif %}{% endfor %} ]</p>
                     </a>
                     {% endfor %}
                 </div>

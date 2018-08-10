@@ -82,9 +82,9 @@ var resize = function () {
 var addToCart = function () {
     var deviceId = $('#deviceId').text();
     var category = $('#category').text();
-    var deviceCount = $('input[name=count]').val();
+    var deviceCount = $('.count input').val();
     var deviceStr = deviceId  + '.' + colorId + '.' + deviceCount;
-    if(colorId === null)
+    if($('.product-panel .select-color').length > 0 && colorId === null)
         alert('Выберите цвет');
     else {
         $.each(options_id, function (i, elem) {

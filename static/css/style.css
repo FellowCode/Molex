@@ -7,6 +7,10 @@
 .margin-top {
     margin-top: 30px;
 }
+.col.full-height {
+    height: 100%;
+    min-height: 100%;
+}
 .row.no-margin {
     margin: 0;
 }
@@ -117,13 +121,22 @@ input[type=number]::-webkit-outer-spin-button {
 /* best regard card */
 /***********/
 
+.card {
+    position: relative;
+    color: #e53935 !important;
+}
 .card-buy {
     position: absolute;
-    right: 0;
-    margin-right: 10px !important;
+    right: 10px;
+    bottom: 5px;
+    color: #e53935;
 }
 .card-price {
+    position: absolute;
+    bottom:5px;
+    left:10px;
     font-size: 18px;
+    color: #e53935
 }
 .card-buy > span {
     font-size: 18px;
@@ -134,7 +147,12 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 4px;
 }
 .card .card-action {
-    padding: 10px 15px;
+    padding: 20px 15px;
+}
+.card .card-content {
+    padding: 10px 10px;
+    font-size: 18px;
+    color: #292929;
 }
 
 /*******************************/
@@ -164,6 +182,67 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 24px;
     font-weight: 500;
     margin-top: 3px;
+}
+/**********************************/
+/******** confirm order ***********/
+.order-confirm .order-accept {
+    margin-top: 50px;
+}
+.order-confirm .btn-main {
+    margin-top: 30px;
+}
+/***********************************/
+/*********** order list ************/
+.order-list .order-item {
+    border: 1px solid #bdbdbd;
+    margin-top: -1px;
+    padding: 10px;
+}
+.order-list .order-item .header {
+    font-size: 24px;
+    font-weight: 500;
+}
+.order-list .order-item .header > a{
+    color: #e53935;
+}
+.order-list .order-item .processed {
+    font-size: 18px;
+    font-weight: 500;
+}
+.order-list .order-item .header > a.completed{
+    color: #388e3c;
+}
+.order-list .order-item .order-payment-amount {
+    font-size: 24px;
+    font-weight: 500;
+
+}
+.order-list .order-item .device-item {
+    border: 1px solid #e53935;
+    padding: 5px;
+    margin-top: -1px;
+}
+.order-list .order-item .device-list .counter {
+    font-size: 24px;
+    padding-top: 10px;
+}
+.order-list .order-item .device-item .header {
+    font-size: 20px;
+    font-weight: 500;
+    color: #e53935;
+}
+.order-list .order-item .device-item .price {
+    font-size: 20px;
+    font-weight: 500;
+}
+.order-list .order-item #device-show {
+    cursor: pointer;
+}
+.order-list .order-item .row {
+    margin-bottom: 5px;
+}
+.order-list .order-item .person-data {
+    font-size: 18px;
 }
 
 @media only screen and (max-width: 992px) {

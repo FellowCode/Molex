@@ -35,16 +35,18 @@
                     {% for device in devices %}
                         <div class="col s6 m4 xl3">
                             <div class="card">
-                                <div class="card-image">
-                                    <img src="{{ device|get_first_image }}">
-                                </div>
-                                <div class="card-content">
-                                    <p>{{ device|get_children:device.category.slug }}</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="#" class="card-price">{{ device.price }} р.</a>
-                                    <a href="/products/{{ device.category.getFullSlug }}/id/{{ device.id }}/" class="card-buy"><i class="material-icons">shopping_cart</i><span>Купить</span></a>
-                                </div>
+                                <a href="/products/{{ device.category.getFullSlug }}/id/{{ device.id }}/">
+                                    <div class="card-image">
+                                        <img src="{{ device|get_first_image }}">
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ device|get_children:device.category.slug }}</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <div class="card-price">{{ device.price }} р.</div>
+                                        <div class="card-buy"><i class="material-icons">shopping_cart</i><span>Купить</span></div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     {% endfor %}

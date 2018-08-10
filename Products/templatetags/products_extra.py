@@ -50,3 +50,11 @@ def string(value):
 @register.filter
 def integer(value):
     return int(value)
+
+@register.filter
+def normalize(value):
+    return value.normalize()
+
+@register.filter
+def count(list):
+    return list.count()

@@ -23,7 +23,7 @@
 
                         <div id="category" style="display: none">{{ device|get_item:'device'|get_attr:'category'|get_attr:'slug' }}</div>
                         <div id="device_id" style="display: none">{{ device|get_item:'device'|get_attr:'id' }}</div>
-                        <div id="color_id" style="display: none">{{ device|get_item:'color'|get_attr:'id' }}</div>
+                        <div id="color_id" style="display: none">{% if device|get_item:'color' is not None %}{{ device|get_item:'color'|get_attr:'id' }}{% endif %}</div>
                         <div id="price" style="display: none">{{ device|get_item:'device'|get_attr:'price' }}</div>
                         <div id="options-price" style="display: none">{{ device|get_item:'options_price' }}</div>
 
@@ -44,14 +44,16 @@
                             </div>
                         </div>
                         <div class="col s9 m10">
+                            {% if device|get_item:'color' is not None %}
                             <div class="color">
                                 <b>Цвет: </b>{{ device|get_item:'color'|get_attr:'name' }}{% if device|get_item:'color'|get_attr:'price' != 0 %} ({{ device|get_item:'color'|get_attr:'price' }}р.){% endif %}
                             </div>
+                            {% endif %}
+                            {% if device|get_item:'options'|count > 0 %}
                             <div class="options">
-                                {% if device|get_item:'options'|get_attr:'count' > 0 %}
                                 <b>Опции: </b>{% for option in device|get_item:'options' %}{{ option.name }} ({{ option.price }}р.),{% endfor %}
-                                {% endif %}
                             </div>
+                            {% endif %}
                         </div>
                         <a id="delete" class="btn red darken-1 waves-effect waves-light"><i class="material-icons">delete</i></a>
                         <div class="count">
