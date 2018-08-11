@@ -3,31 +3,69 @@ from .models import GraphicCardProduct, GPU, GraphicCardBrand, CPUProduct, CPUSo
     MotherboardBrand, SSDBrand, MotherboardInterface, MotherboardChipset, InterfaceName, CPU, GraphicCard
 from Products.admin import productInlines, ImageInline
 
-admin.site.register(GraphicCardBrand)
-admin.site.register(GPU)
-admin.site.register(GraphicCard)
+@admin.register(GraphicCardBrand)
+class GraphicCardBrandAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+@admin.register(GPU)
+class GPUAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+@admin.register(GraphicCard)
+class GraphicCardAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
 @admin.register(GraphicCardProduct)
 class GraphicCardAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
 
 
-admin.site.register(CPUSocket)
-admin.site.register(CPU)
+@admin.register(CPUSocket)
+class CPUSocketAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+@admin.register(CPU)
+class CPUAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
 @admin.register(CPUProduct)
 class CPUAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
 
 
-admin.site.register(RAM)
+@admin.register(RAM)
+class RAMAdmin(admin.ModelAdmin):
+    pass
 
-admin.site.register(SSDBrand)
-admin.site.register(SSD)
 
-admin.site.register(InterfaceName)
-admin.site.register(MotherboardChipset)
-admin.site.register(MotherboardBrand)
+@admin.register(SSDBrand)
+class SSDBrandAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+@admin.register(SSD)
+class SSDAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(InterfaceName)
+class InterfaceNameAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+@admin.register(MotherboardChipset)
+class MotherboardChipsetAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+@admin.register(MotherboardBrand)
+class MotherboardBrandAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
 class InterfaceInline(admin.TabularInline):
     model = MotherboardInterface
+
+
 @admin.register(Motherboard)
 class MotherboardAdmin(admin.ModelAdmin):
     inlines = [

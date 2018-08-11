@@ -14,7 +14,6 @@
                 <li><a href="/admin/"><i class="material-icons left">star</i></a></li>
             {% endif %}
             <li><a id="nav-cart-text" name="cart"><i class="material-icons left">shopping_cart</i>Корзина</a></li>
-            <li><a href="sass.html"><i class="material-icons left">person</i>{{ user.get_username }}</a></li>
         </ul>
         <ul id="nav-mobile" class="right show-med-down">
             {% if user.is_superuser %}
@@ -22,18 +21,13 @@
                 <li><a href="/admin/"><i class="material-icons left">star</i></a></li>
             {% endif %}
             <li><a id="nav-cart" name="cart"><i class="material-icons left">shopping_cart</i></a></li>
-            <li><a href="sass.html"><i class="material-icons left">person</i></a></li>
         </ul>
         {% else %}
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a id="nav-cart-text" name="cart"><i class="material-icons left">shopping_cart</i>Корзина</a></li>
-            <li><a href="sass.html"><i class="material-icons left">person</i>Вход</a></li>
-            <li><a href="badges.html"><i class="material-icons left">person_add</i></a></li>
         </ul>
         <ul id="nav-mobile" class="right show-med-down">
-            <li><a id="nav-cart" name="cart"><i class="material-icons left">shopping_cart</i></a></li>
-            <li><a href="sass.html"><i class="material-icons left">person</i></a></li>
-            <li><a href="badges.html"><i class="material-icons left">person_add</i></a></li>
+            <li><a id="nav-cart" name="cart"><i class="material-icons left">shopping_cart</i>Корзина</a></li>
         </ul>
         {% endif %}
     </div>

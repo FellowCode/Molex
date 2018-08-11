@@ -139,38 +139,40 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /***********/
-/* best regard card */
+/* best offer card */
 /***********/
-
-.card {
+.best-offer h4 {
+    padding-left: 30px;
+}
+.best-offer .card {
     position: relative;
     color: #e53935 !important;
 }
-.card-buy {
+.best-offer .card-buy {
     position: absolute;
     right: 10px;
     bottom: 5px;
     color: #e53935;
 }
-.card-price {
+.best-offer .card-price {
     position: absolute;
     bottom:5px;
     left:10px;
     font-size: 18px;
     color: #e53935
 }
-.card-buy > span {
+.best-offer .card-buy > span {
     font-size: 18px;
     vertical-align: top;
 }
-.card-buy > i {
+.best-offer .card-buy > i {
     font-size: 20px;
     margin-top: 4px;
 }
-.card .card-action {
+.best-offer .card .card-action {
     padding: 20px 15px;
 }
-.card .card-content {
+.best-offer .card .card-content {
     padding: 10px 10px;
     font-size: 18px;
     color: #292929;
@@ -383,5 +385,8 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .nav-wrapper .top-nav.sidenav-trigger {
         margin: 0;
+    }
+    .about .description {
+        padding-left: 15px;
     }
 }

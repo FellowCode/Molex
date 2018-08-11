@@ -24,6 +24,8 @@ class Computer(Product):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = '> Computer'
 
 
 class ComputerInterface(models.Model):
@@ -50,7 +52,7 @@ class LaptopCPU(models.Model):
 
     name = models.CharField(max_length=50)
     core_count = models.CharField(max_length=2, choices=CORE_COUNT_CHOICES)
-    thread_count = models.CharField(max_length=2, choices=THREADS_COUNT_CHOICES, default=None)
+    thread_count = models.CharField(max_length=2, choices=THREAD_COUNT_CHOICES, default=None)
 
     def __str__(self):
         return self.name
@@ -75,11 +77,17 @@ class Laptop(Product):
     gpu = models.CharField(max_length=20, default=None)
     graphic_ram_amount = models.IntegerField(default=None)
 
-    hdd = models.IntegerField(default=0)
-    ssd = models.IntegerField(default=0)
-    emmc = models.IntegerField(default=0)
+    hdd_amount = models.IntegerField(default=0)
+    ssd_amount = models.IntegerField(default=0)
+    emmc_amount = models.IntegerField(default=0)
 
     weight = models.DecimalField(max_digits=4, decimal_places=2)
+
+    def __str__(self):
+        return str(self.brand) + ' ' + str(self.name)
+
+    class Meta:
+        verbose_name = '> Laptop'
 
 class LaptopInterface(models.Model):
     name = models.ForeignKey(InterfaceName, on_delete=models.CASCADE)

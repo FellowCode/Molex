@@ -43,6 +43,8 @@ class Smartphone(Product):
     SIM_count = models.CharField(max_length=8, choices=SIM_CHOICES, default="2")
     net = models.CharField(max_length=3, choices=NET_CHOICES)
 
-
     def __str__(self):
         return self.brand.name + ' ' + self.name
+
+    class Meta:
+        verbose_name = '> Smartphone'
