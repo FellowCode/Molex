@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .helper import Filter, getCategory, getDeviceById, getDeviceListByCategory, ToStrArray
 from Smart.helper import smartphonePropForm
 from Smart.models import Smartphone
-from Parts.helper import graphiccardPropForm, CPUPropForm, RAMPropForm
-from Parts.models import GraphicCard, CPU, RAM
+from Parts.helper import graphiccardPropForm, CPUPropForm, RAMPropForm, motherboardPropForm, ssdPropForm
+from Parts.models import GraphicCardProduct, CPUProduct, RAM, Motherboard, SSD
 from Computers.models import Computer
 from Computers.helper import computerPropForm
 from .models import Order
@@ -13,9 +13,11 @@ from decimal import *
 category_prop_list = {
     'smartphone': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
     'tablet': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
-    'graphic-card': {'prop_form': graphiccardPropForm, 'model': GraphicCard, 'app': 'Parts'},
-    'cpu': {'prop_form': CPUPropForm, 'model': CPU, 'app': 'Parts'},
+    'graphic-card': {'prop_form': graphiccardPropForm, 'model': GraphicCardProduct, 'app': 'Parts'},
+    'cpu': {'prop_form': CPUPropForm, 'model': CPUProduct, 'app': 'Parts'},
     'ram': {'prop_form': RAMPropForm, 'model': RAM, 'app': 'Parts'},
+    'motherboard': {'prop_form': motherboardPropForm, 'model': Motherboard, 'app': 'Parts'},
+    'ssd': {'prop_form': ssdPropForm, 'model': SSD, 'app': 'Parts'},
     'fixed-pc': {'prop_form': computerPropForm, 'model': Computer, 'app': 'Computers'},
     'laptop': {'prop_form': computerPropForm, 'model': Computer, 'app': 'Computers'},
 }

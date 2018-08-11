@@ -44,6 +44,11 @@ def get_children(device, category_slug):
     return children
 
 @register.filter
+def get_param_list(device, dictionary):
+    key = dictionary.get('param')
+    return (get_attr(device, key)).all()
+
+@register.filter
 def string(value):
     return str(value)
 

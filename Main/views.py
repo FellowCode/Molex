@@ -3,7 +3,7 @@ from Products.models import Product
 from .models import CarouselImage
 
 def Index(request):
-    devices = Product.objects.filter(bestOffer=True)
+    devices = Product.objects.filter(bestOffer=True).order_by('?')
     carouselImg = CarouselImage.objects.all()
     return render(request, 'Main/Index.html', {'carouselImg': carouselImg, 'devices': devices})
 

@@ -94,12 +94,25 @@ input[type=number]::-webkit-outer-spin-button {
 /*******************/
 /* sidenav category */
 /*******************/
-
-.sidenav .collapsible-header {
-    padding: 0 32px;
+.sidenav .category-item {
+    padding: 0 15px;
 }
-.sidenav .collapsible-body li a{
-    padding: 0 23.5px 0 47px;
+.sidenav .category-item .header {
+    font-size: 18px;
+    font-weight: 500;
+    height: 40px;
+}
+.sidenav .category-item .sub-category {
+    padding: 0 30px;
+}
+.sidenav .category-item .sub-category a.btn {
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    text-transform: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
 }
 .sidenav-top {
     height: 64px;

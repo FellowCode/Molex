@@ -52,6 +52,14 @@ def FilterInStock(device_list, prop_name, value):
     device_list = device_list.filter(**kwargs)
     return device_list
 
+def FilterBoolean(device_list, prop_name, value):
+    values = ToStrArray(value)
+    bool_values = []
+    for val in values:
+        bool_values.append(bool(val))
+    kwargs = {'{}__in'.format(prop_name): bool_values}
+    device_list = device_list.filter(**kwargs)
+    return device_list
 
 def FilterRange(device_list, prop_name, min, max):
     kwargs = {'{0}__gte'.format(prop_name): min,
@@ -98,7 +106,10 @@ def Filter(device_list, request, propForm):
             device_list = FilterIdArray(device_list, prop_name, value)
         elif propForm[prop_name]['type'] == 'strArray':
             device_list = FilterStrArray(device_list, prop_name, value)
+        elif propForm[prop_name]['type'] == 'Boolean':
+            device_list = FilterBoolean(device_list, prop_name, value)
     return device_list
+
 
 
 def getCategory(hierarchy):
@@ -138,4 +149,4 @@ def getNamesFromChoices(choices):
 def rgetattr(obj, attr, *args):
     def _getattr(obj, attr):
         return getattr(obj, attr, *args)
-    return functools.reduce(_getattr, [obj] + attr.split('.'))
+    return functools.reduce(_getattr, [obj] + attr.split('__'))

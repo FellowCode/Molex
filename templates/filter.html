@@ -131,6 +131,32 @@
                                 </li>
                             </ul>
                         </li>
+                    {% elif propForm|get_item:prop|get_item:'type' == 'Boolean' %}
+                        <li class="collection-item collaps">
+                            <ul class="collapsible">
+                                <li>
+                                    <a class="collapsible-header checkbox-label">{{ propForm|get_item:prop|get_item:'name' }}{{ propForm|get_item:prop|get_item:'units'|filter_units }}</a>
+                                    <div class="collapsible-body">
+                                        <div class="col s12 checkbox-list">
+                                            <ul>
+                                                <li>
+                                                    <label>
+                                                        <input type="checkbox" class="filled-in" name="{{ prop }}" value="False"/>
+                                                        <span>нет</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="checkbox" class="filled-in" name="{{ prop }}" value="True"/>
+                                                        <span>есть</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
                     {% endif %}
                 {% endif %}
             {% endfor %}
