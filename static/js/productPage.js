@@ -6,7 +6,9 @@ $(document).ready(function () {
     $('ul.multiple-select-dropdown li').click(function () {
         optionSelect()
     });
-
+    $('.product-panel #Buy').click(function () {
+        Buy();
+    });
     $('.product-panel #toCart').click(function () {
         if (checkIntoCart())
             deleteFromCart();
@@ -115,12 +117,14 @@ var checkIntoCart = function () {
 var cartBtnChange = function () {
     var cartBtn = $('.product-panel #toCart');
     if (checkIntoCart()){
-        cartBtn.get(0).lastChild.nodeValue = "В корзине";
+        cartBtn.find('i').text('check');
+        cartBtn.find('div').text('В корзине');
         cartBtn.removeClass('red', 'darken-1');
         cartBtn.addClass('orange', 'darken-4')
     }
     else {
-        cartBtn.get(0).lastChild.nodeValue = "В корзину";
+        cartBtn.find('i').text('add_shopping_cart');
+        cartBtn.find('div').text("В корзину");
         cartBtn.removeClass('orange', 'darken-4');
         cartBtn.addClass('red', 'darken-1')
     }
@@ -143,4 +147,21 @@ var deleteFromCart = function () {
     if (cartForm[category] === '')
         delete cartForm[category];
     Cookies.set('cart', cartForm);
+};
+
+var Buy = function () {
+    if($('.product-panel .select-color').length > 0 && colorId === null)
+        alert('Выберите цвет');
+    else {
+        var deviceId = $('#deviceId').text();
+        var category = $('#category').text();
+        var deviceCount = $('.product-panel .count input').val();
+        var deviceStr = deviceId  + '.' + colorId + '.' + deviceCount;
+        $.each(options_id, function (i, elem) {
+            deviceStr += '.' + elem;
+        });
+        Cookies.set('fromCart', 'false');
+        var url = '/products/order/?' + category + '=' + deviceStr;
+        window.location.href = url;
+    }
 };

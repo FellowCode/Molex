@@ -9,8 +9,11 @@ $(document).ready(function () {
             deviceList.addClass('hide');
             $(this).text('Показать список устройств')
         }
-
-    })
+    });
+    $('button[type=submit]').click(function () {
+        if(Cookies.get('fromCart') === 'true')
+            Cookies.remove('cart');
+    });
 });
 
 var updatePrice = function () {

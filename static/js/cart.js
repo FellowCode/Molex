@@ -16,6 +16,9 @@ var cartInit = function () {
         Cookies.set('cart', cartForm);
     }
    setCartNavbar(cartForm);
+   $('#cart-total a.btn-large').click(function () {
+      Cookies.set('fromCart', 'true');
+   });
    $('a[name=cart]').click(function () {
        cartOpen();
    });
@@ -82,7 +85,7 @@ var resize = function () {
 var addToCart = function () {
     var deviceId = $('#deviceId').text();
     var category = $('#category').text();
-    var deviceCount = $('.count input').val();
+    var deviceCount = $('.product-panel .count input').val();
     var deviceStr = deviceId  + '.' + colorId + '.' + deviceCount;
     if($('.product-panel .select-color').length > 0 && colorId === null)
         alert('Выберите цвет');

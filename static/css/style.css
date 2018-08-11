@@ -116,6 +116,14 @@ input[type=number]::-webkit-outer-spin-button {
 .sidenav .buttons .btn {
     width: 100%;
 }
+.sidenav.sidenav-fixed .footer {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    height: 50px;
+    text-align: center;
+    color: #bdbdbd;
+}
 
 /***********/
 /* best regard card */
@@ -243,6 +251,34 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .order-list .order-item .person-data {
     font-size: 18px;
+}
+/**********************************/
+/******** about ********************/
+.about.col {
+    padding: 50px;
+}
+.about .description {
+    padding-top: 20px;
+    padding-left: 40px;
+}
+.about .description ul {
+    padding-left: 20px;
+    font-size: 20px;
+}
+.about .description ul>li {
+    list-style: disc inside;
+}
+.about p {
+    font-size: 20px;
+}
+.about h5 {
+    padding-left: 15px;
+    font-size: 26px;
+}
+.about h6 {
+    padding-left: 40px;
+    font-size: 20px;
+
 }
 
 @media only screen and (max-width: 992px) {
