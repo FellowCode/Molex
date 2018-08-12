@@ -17,8 +17,6 @@ computerPropForm = {
 
     'CPU__frequency': {'type': 'floatRange', 'name': 'Частота процессора', 'display': 'always', 'units': ' Ghz'},
 
-    'graphic_card': {'type': '', 'name': 'Видеокарта', 'display': 'paramOnly', 'units': ''},
-
     'graphic_card__GPU_ruler': {'type': 'strArray', 'name': 'Линейка граф. процессора', 'display': 'always',
                                 'units': '', 'set': getNamesFromChoices(GraphicCard.GPU_RULER_CHOICES)},
 

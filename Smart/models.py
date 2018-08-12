@@ -5,7 +5,7 @@ class CPUSmartphone(models.Model):
     BRAND_CHOICES = [("MediaTek", "MediaTek"), ("Snapdragon", "Snapdragon"), ("Other", "Other")]
 
     brand = models.CharField(max_length=15, choices=BRAND_CHOICES)
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60, unique=True)
 
     def __str__(self):
         if self.brand == 'Other':
@@ -15,7 +15,7 @@ class CPUSmartphone(models.Model):
 
 
 class BrandSmartphone(models.Model):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=60, unique=True)
 
     def __str__(self):
         return self.name
@@ -47,4 +47,5 @@ class Smartphone(Product):
         return self.brand.name + ' ' + self.name
 
     class Meta:
-        verbose_name = '> Smartphone'
+        verbose_name = '> Smartphone and Tablet'
+        verbose_name_plural = '> Smartphones and Tablets'

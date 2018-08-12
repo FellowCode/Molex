@@ -2,7 +2,7 @@ from django.db import models
 from Products.models import Product
 
 class CPUSocket(models.Model):
-    name = models.CharField(max_length=15)
+    name = models.CharField(max_length=15, unique=True)
 
     def __str__(self):
         return self.name
@@ -15,7 +15,7 @@ class CPU(models.Model):
     RAM_TYPE_CHOICES = [("DDR2", "DDR2"), ("DDR3", "DDR3"), ("DDR4", "DDR4")]
 
     brand = models.CharField(max_length=8, choices=BRAND_CHOICES)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     socket = models.ForeignKey(CPUSocket, on_delete=models.PROTECT)
     coreCount = models.IntegerField()
     threadsCount = models.IntegerField()
@@ -30,7 +30,7 @@ class CPU(models.Model):
         verbose_name_plural = 'CPU'
 
 class CPUProduct(Product):
-    cpu = models.ForeignKey(CPU, on_delete=models.CASCADE)
+    cpu = models.OneToOneField(CPU, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.cpu.name
@@ -44,7 +44,7 @@ class CPUProduct(Product):
 ################################################
 
 class GPU(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
@@ -54,7 +54,7 @@ class GPU(models.Model):
         verbose_name_plural = 'GPU'
 
 class GraphicCardBrand(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
@@ -70,7 +70,7 @@ class GraphicCard(models.Model):
     watts = models.IntegerField()
 
     def __str__(self):
-        return str(self.GPU)
+        return str(self.GPU) + ' (' + str(RAM) + 'G)'
 
 class GraphicCardProduct(Product):
 
@@ -97,6 +97,9 @@ class RAM(Product):
     RAM_amount = models.IntegerField()
     frequency = models.IntegerField()
 
+    def __str__(self):
+        return str(self.name)
+
     class Meta:
         verbose_name = '> RAM'
         verbose_name_plural = '> RAM'
@@ -105,19 +108,19 @@ class RAM(Product):
 ##########################################
 
 class MotherboardBrand(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
 
 class MotherboardChipset(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
 
 class InterfaceName(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
         return self.name
@@ -145,7 +148,7 @@ class Motherboard(Product):
         return str(self.brand) + ' ' + str(self.name)
 
 class MotherboardInterface(models.Model):
-    name = models.ForeignKey(InterfaceName, models.PROTECT)
+    name = models.OneToOneField(InterfaceName, models.PROTECT, unique=True)
     count = models.IntegerField()
     Motherboard = models.ForeignKey(Motherboard, on_delete=models.CASCADE, related_name='interfaces')
 
@@ -156,7 +159,7 @@ class MotherboardInterface(models.Model):
 ##############################################
 
 class SSDBrand(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
@@ -176,6 +179,9 @@ class SSD(Product):
 
     read_speed = models.IntegerField()
     write_speed = models.IntegerField()
+
+    def __str__(self):
+        return str(self.brand) + ' ' + str(self.name) + ' ' + str(self.memory_amount)
 
     class Meta:
         verbose_name = '> SSD'

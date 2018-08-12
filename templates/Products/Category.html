@@ -15,45 +15,52 @@
     </ul>
     <div class="sidenav-padding">
         <div class="row padding-side">
-            <div class="row padding-side">
-                  <div class="section">
-                    <h4>{{ category.name }}</h4>
-                  </div>
-             <div class="divider"></div>
-            <div id="list-container" class="category">
-                <div id="list" class="collection">
-                    {% for device in device_list %}
-                    <a href="id/{{ device.id }}/" class="collection-item category-item">
-                        <img src="{{ device.imagePreview.url }}" class="responsive-img">
-                        <div class="header red-text text-darken-1">{{ device }}</div>
-                        <div class="price red-text text-darken-1">{{ device.price }} Р.</div>
-                        <p>[ {% for prop in propForm %}{% if propForm|get_item:prop|get_item:'display' == 'always' %}{{ device|get_attr:prop }}{{ propForm|get_item:prop|get_item:'units' }}{% if forloop.counter < propForm|length %}, {% endif %}{% endif %}{% endfor %} ]</p>
-                    </a>
-                    {% endfor %}
+            <div class="col s12 l8">
+                <h4>{{ category.name }}</h4>
+            </div>
+            <div class="col s12 l4 filter-apply right-align">
+
+            </div>
+            <div class="col s12">
+                <div class="divider"></div>
+            </div>
+        </div>
+        <div class="row padding-side">
+            <div class="col s12 xl10 offset-xl1">
+                <div id="list-container" class="category row">
+                    <div id="list" class="collection">
+                        {% for device in device_list %}
+                        <a href="id/{{ device.id }}/" class="collection-item category-item">
+                            <img src="{{ device.imagePreview.url }}" class="responsive-img">
+                            <div class="header red-text text-darken-1">{{ device }}</div>
+                            <div class="price red-text text-darken-1">{{ device.price }} Р.</div>
+                            <div class="in-stock">{% if device.count > 0 %}В наличии{% else %}Под заказ{% endif %}</div>
+                            <p>[ {% for prop in propForm %}{% if propForm|get_item:prop|get_item:'display' == 'always' %}{{ device|get_attr:prop }}{{ propForm|get_item:prop|get_item:'units' }}{% if forloop.counter < propForm|length %}, {% endif %}{% endif %}{% endfor %} ]</p>
+                        </a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 {% endblock content %}
 
 {% block script %}
     <script type="text/javascript">
-                $('.carousel.carousel-slider').carousel({
-            fullWidth: true,
-            indicators: true
-          });
+        if (window.location.href.split('?').length > 1) {
+            console.log('filter');
+            $('.filter-apply').text('Применены фильтры');
+        } else
+            $('.filter-apply').text('');
+        //sidenav collapsible
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.collapsible').collapsible();
+            $('.sidenav .scrolling').height($(window).height()-105);
 
-    //sidenav collapsible
-    $(document).ready(function() {
-        $('.sidenav').sidenav();
-        $('.collapsible').collapsible();
-        $('.sidenav .scrolling').height($(window).height()-105);
-
-    });
-    $(window).resize(function () {
-        $('.sidenav .scrolling').height($(window).height()-105);
-    });
-
+        });
+        $(window).resize(function () {
+            $('.sidenav .scrolling').height($(window).height()-105);
+        });
     </script>
 {% endblock %}

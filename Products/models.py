@@ -10,7 +10,7 @@ class Category(models.Model):
     parent = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.PROTECT)
 
     class Meta:
-        unique_together = ('slug', 'parent')
+        unique_together = ('name', 'slug', 'parent')
         verbose_name_plural = "categories"
 
     def __str__(self):

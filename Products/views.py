@@ -4,8 +4,10 @@ from Smart.helper import smartphonePropForm
 from Smart.models import Smartphone
 from Parts.helper import graphiccardPropForm, CPUPropForm, RAMPropForm, motherboardPropForm, ssdPropForm
 from Parts.models import GraphicCardProduct, CPUProduct, RAM, Motherboard, SSD
-from Computers.models import Computer
-from Computers.helper import computerPropForm
+from Computers.models import Computer, Laptop
+from Computers.helper import computerPropForm, laptopPropForm
+from CompPeripherals.models import Mouse, Keyboard, Headphone
+from CompPeripherals.helper import mousePropForm, keyboardPropForm, headphonePropForm
 from .models import Order
 from django.http import Http404
 from decimal import *
@@ -13,13 +15,19 @@ from decimal import *
 category_prop_list = {
     'smartphone': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
     'tablet': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
+
     'graphic-card': {'prop_form': graphiccardPropForm, 'model': GraphicCardProduct, 'app': 'Parts'},
     'cpu': {'prop_form': CPUPropForm, 'model': CPUProduct, 'app': 'Parts'},
     'ram': {'prop_form': RAMPropForm, 'model': RAM, 'app': 'Parts'},
     'motherboard': {'prop_form': motherboardPropForm, 'model': Motherboard, 'app': 'Parts'},
     'ssd': {'prop_form': ssdPropForm, 'model': SSD, 'app': 'Parts'},
+
     'fixed-pc': {'prop_form': computerPropForm, 'model': Computer, 'app': 'Computers'},
-    'laptop': {'prop_form': computerPropForm, 'model': Computer, 'app': 'Computers'},
+    'laptop': {'prop_form': laptopPropForm, 'model': Laptop, 'app': 'Computers'},
+
+    'mouse': {'prop_form': mousePropForm, 'model': Mouse, 'app': 'CompPeripherals'},
+    'keyboard': {'prop_form': keyboardPropForm, 'model': Keyboard, 'app': 'CompPeripherals'},
+    'headphone': {'prop_form': headphonePropForm, 'model': Headphone, 'app': 'CompPeripherals'},
 }
 
 def CategoryView(request, hierarchy= None):

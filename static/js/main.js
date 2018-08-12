@@ -3,8 +3,11 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     $('.sidenav').sidenav();
     carouselInit();
+    mainResize();
 });
-
+$(window).resize(function () {
+   mainResize();
+});
 
 
 var carouselInit = function () {
@@ -21,5 +24,13 @@ var carouselInit = function () {
     });
 };
 
+var mainResize = function () {
+    var windowWidth = $(window).width();
+    var paddingRight = 0;
+    if (windowWidth > 992)
+        paddingRight = windowWidth < 1540 ? 0 : windowWidth - 1540;
+    $('.sidenav-padding').css('padding-right', paddingRight);
+    $('.nav-wrapper').css('padding-right', paddingRight);
+};
 
 

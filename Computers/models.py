@@ -3,7 +3,7 @@ from Products.models import Product
 from Parts.models import CPU, GraphicCard
 
 class InterfaceName(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
         return self.name
@@ -29,7 +29,7 @@ class Computer(Product):
 
 
 class ComputerInterface(models.Model):
-    name = models.ForeignKey(InterfaceName, on_delete=models.CASCADE)
+    name = models.OneToOneField(InterfaceName, on_delete=models.CASCADE, unique=True)
     count = models.IntegerField()
     computer = models.ForeignKey(Computer, on_delete=models.CASCADE, related_name='interfaces')
 
@@ -41,7 +41,7 @@ class ComputerInterface(models.Model):
 ############################################
 
 class LaptopBrand(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
@@ -50,7 +50,7 @@ class LaptopCPU(models.Model):
     CORE_COUNT_CHOICES = [("2", "2"), ("4", "4")]
     THREAD_COUNT_CHOICES = [("4", "4"), ("8", "8")]
 
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
     core_count = models.CharField(max_length=2, choices=CORE_COUNT_CHOICES)
     thread_count = models.CharField(max_length=2, choices=THREAD_COUNT_CHOICES, default=None)
 
@@ -90,7 +90,7 @@ class Laptop(Product):
         verbose_name = '> Laptop'
 
 class LaptopInterface(models.Model):
-    name = models.ForeignKey(InterfaceName, on_delete=models.CASCADE)
+    name = models.OneToOneField(InterfaceName, on_delete=models.CASCADE, unique=True)
     count = models.IntegerField()
     laptop = models.ForeignKey(Laptop, on_delete=models.CASCADE, related_name='interfaces')
 

@@ -57,9 +57,9 @@ RAMPropForm = {
     'RAM_type': {'type': 'strArray', 'name': 'Тип оперативной памяти', 'display': 'always',
                  'units': '', 'set': getNamesFromChoices(RAM.RAM_TYPE_CHOICES)},
 
-    'RAM_amount': {'type': 'intRange', 'name': 'Объем', 'display': 'filterOnly', 'units': ' GB'},
+    'RAM_amount': {'type': 'intRange', 'name': 'Объем', 'display': 'always', 'units': ' GB'},
 
-    'frequency': {'type': 'intRange', 'name': 'Частота', 'display': 'filterOnly', 'units': ' Mhz'},
+    'frequency': {'type': 'intRange', 'name': 'Частота', 'display': 'always', 'units': ' Mhz'},
 }
 
 motherboardPropForm = {
