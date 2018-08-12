@@ -39,9 +39,6 @@ keyboardPropForm = {
     'type': {'type': 'strArray', 'name': 'Тип клавиатуры', 'display': 'always',
              'units': '', 'set': getNamesFromChoices(Keyboard.TYPE_CHOICES)},
 
-    'connection_type': {'type': 'strArray', 'name': 'Тип подключения', 'display': 'always',
-                        'units': '', 'set': getNamesFromChoices(Keyboard.CONNECTION_TYPE_CHOICES)},
-
     'wire_length': {'type': 'floatRange', 'name': 'Длина провода', 'display': 'always', 'units': ' м'},
 
     'key_count': {'type': 'intRange', 'name': 'Количество кнопок', 'display': 'always', 'units': ''},
@@ -68,4 +65,16 @@ headphonePropForm = {
     'resistance': {'type': 'intRange', 'name': 'Сопротивление', 'display': 'always', 'units': ' Ом'},
 
     'weight': {'type': 'intRange', 'name': 'Вес', 'display': 'always', 'units': ' г'},
+}
+
+mousepadPropForm = {
+    'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
+
+    'count': {'type': 'inStock', 'name': 'Наличие', 'display': 'filterOnly', 'units': '', 'set': ['нет', 'есть']},
+
+    'length': {'type': 'floatRange', 'name': 'Длина', 'display': 'always', 'units': ' см'},
+
+    'width': {'type': 'floatRange', 'name': 'Ширина', 'display': 'always', 'units': ' см'},
+
+    'height': {'type': 'floatRange', 'name': 'Ширина', 'display': 'always', 'units': ' мм'},
 }

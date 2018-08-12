@@ -35,15 +35,13 @@ class KeyboardBrand(models.Model):
         return self.name
 
 class Keyboard(Product):
-    INTERFACE_TYPE_CHOICES = [("USB", "USB"), ("PS/2", "PS/2")]
+    INTERFACE_TYPE_CHOICES = [("USB", "USB"), ("PS/2", "PS/2"), ("Провод", "Провод"), ("Bluetooth", "Bluetooth"), ("2.4 Ghz", "2.4 Ghz")]
     TYPE_CHOICES = [("Мембрана", "Мембрана"), ("Механическая", "Механическая")]
-    CONNECTION_TYPE_CHOICES = [("Провод", "Провод"), ("Bluetooth", "Bluetooth"), ("2.4 Ghz", "2.4 Ghz")]
 
     brand = models.ForeignKey(KeyboardBrand, on_delete=models.PROTECT)
     name = models.CharField(max_length=50)
-    interface = models.CharField(max_length=5, choices=INTERFACE_TYPE_CHOICES, default="USB")
-    type = models.CharField(max_length=15, choices=TYPE_CHOICES, default="Мембрана")
-    connection_type = models.CharField(max_length=15, choices=CONNECTION_TYPE_CHOICES, default="Провод")
+    interface = models.CharField(max_length=20, choices=INTERFACE_TYPE_CHOICES, default="USB")
+    type = models.CharField(max_length=50, choices=TYPE_CHOICES, default="Мембрана")
     wire_length = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True, default=None)
     key_count = models.IntegerField()
     weight = models.IntegerField(null=True, blank=True, default=None)
@@ -67,8 +65,8 @@ class Headphone(Product):
 
     brand = models.ForeignKey(KeyboardBrand, on_delete=models.PROTECT)
     name = models.CharField(max_length=50)
-    earbubs_type = models.CharField(max_length=20, choices=EARBUBS_TYPE_CHOICES)
-    connection_type = models.CharField(max_length=15, choices=CONNECTION_TYPE_CHOICES, default="Провод")
+    earbubs_type = models.CharField(max_length=50, choices=EARBUBS_TYPE_CHOICES)
+    connection_type = models.CharField(max_length=30, choices=CONNECTION_TYPE_CHOICES, default="Провод")
     wire_length = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True, default=None)
     resistance = models.IntegerField(null=True, blank=True, default=None)
     weight = models.IntegerField(null=True, blank=True, default=None)
@@ -78,3 +76,17 @@ class Headphone(Product):
 
     class Meta:
         verbose_name = '> Headphone'
+
+class Mousepad(Product):
+    name = models.CharField(max_length=100)
+
+    length = models.DecimalField(max_digits=6, decimal_places=1, verbose_name='Длина (см)')
+    width = models.DecimalField(max_digits=6, decimal_places=1, verbose_name='Ширина (см)')
+    height = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Толщина (мм)')
+
+    def __str__(self):
+        return str(self.name)
+
+    class Meta:
+        verbose_name = '> Mousepad'
+

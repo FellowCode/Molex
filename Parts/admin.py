@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import GraphicCardProduct, GPU, GraphicCardBrand, CPUProduct, CPUSocket, RAM, Motherboard, SSD, \
     MotherboardBrand, SSDBrand, MotherboardInterface, MotherboardChipset, InterfaceName, CPU, GraphicCard
-from Products.admin import productInlines, ImageInline
+from Products.admin import productInlines, ImageInline, ColorInline
 
 @admin.register(GraphicCardBrand)
 class GraphicCardBrandAdmin(admin.ModelAdmin):
@@ -37,7 +37,10 @@ class CPUAdmin(admin.ModelAdmin):
 
 @admin.register(RAM)
 class RAMAdmin(admin.ModelAdmin):
-    pass
+    inlines = [
+        ImageInline,
+        ColorInline,
+    ]
 
 
 @admin.register(SSDBrand)

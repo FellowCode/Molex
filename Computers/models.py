@@ -66,8 +66,8 @@ class Laptop(Product):
     name = models.CharField(max_length=50)
 
     diagonal = models.DecimalField(max_digits=4, decimal_places=2)
-    resolution = models.CharField(max_length=8, choices=RESOLUTION_CHOICES)
-    matrix = models.CharField(max_length=8, choices=MATRIX_CHOICES)
+    resolution = models.CharField(max_length=12, choices=RESOLUTION_CHOICES)
+    matrix = models.CharField(max_length=12, choices=MATRIX_CHOICES)
 
     cpu = models.ForeignKey(LaptopCPU, on_delete=models.PROTECT)
 

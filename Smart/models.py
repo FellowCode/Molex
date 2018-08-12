@@ -6,6 +6,7 @@ class CPUSmartphone(models.Model):
 
     brand = models.CharField(max_length=15, choices=BRAND_CHOICES)
     name = models.CharField(max_length=60, unique=True)
+    core_count = models.IntegerField(default=8)
 
     def __str__(self):
         if self.brand == 'Other':
@@ -26,13 +27,15 @@ class Smartphone(Product):
     MATRIX_CHOICES = [("IPS", "IPS"), ("OLED", "OLED"), ("TFT", "TFT")]
     RESOLUTION_CHOICES = [("1920x1080", "1920x1080"), ("2160х1080", "2160х1080"),
                           ("1280x720", "1280x720"), ("1440x720", "1440x720")]
+    FINGERPRINT_CHOICES = [('есть', 'есть'), ('нет', 'нет')]
     SIM_CHOICES = [("1 SIM", "1 SIM"), ("2 SIM", "2 SIM")]
     NET_CHOICES = [("3G", "3G"), ("4G", "4G")]
 
     brand = models.ForeignKey(BrandSmartphone, on_delete=models.PROTECT)
     name = models.CharField(max_length=60)
     android = models.CharField(max_length=4, choices=ANDROID_CHOICES)
-    camera = models.IntegerField()
+    camera = models.DecimalField(max_digits=4, decimal_places=2, default=10)
+    front_camera = models.DecimalField(max_digits=4, decimal_places=2, default=10)
     matrix = models.CharField(max_length=6, choices=MATRIX_CHOICES)
     diagonal = models.DecimalField(max_digits=4, decimal_places=2)
     resolution = models.CharField(max_length=12, choices=RESOLUTION_CHOICES)
@@ -40,6 +43,7 @@ class Smartphone(Product):
     CPU = models.ForeignKey(CPUSmartphone, on_delete=models.PROTECT)
     RAM = models.IntegerField()
     ROM = models.IntegerField()
+    fingerprint = models.CharField(max_length=10, default='нет', choices=FINGERPRINT_CHOICES)
     SIM_count = models.CharField(max_length=8, choices=SIM_CHOICES, default="2")
     net = models.CharField(max_length=3, choices=NET_CHOICES)
 

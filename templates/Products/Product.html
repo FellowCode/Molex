@@ -68,7 +68,7 @@
                         </div>
                         <div class="col s6">
                             <p id="existence" class="right-align">
-                                {% if device.colors is None %}
+                                {% if device.colors.count == 0 %}
                                     {% if device.count == 0 %}
                                         Под заказ {{ device.deliveryDays }} дней
                                     {% else %}

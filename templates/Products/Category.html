@@ -30,7 +30,7 @@
                 <div id="list-container" class="category row">
                     <div id="list" class="collection">
                         {% for device in device_list %}
-                        <a href="id/{{ device.id }}/" class="collection-item category-item">
+                        <a href="/products/{{ device.category.getFullSlug }}/id/{{ device.id }}/" class="collection-item category-item">
                             <img src="{{ device.imagePreview.url }}" class="responsive-img">
                             <div class="header red-text text-darken-1">{{ device }}</div>
                             <div class="price red-text text-darken-1">{{ device.price }} Р.</div>

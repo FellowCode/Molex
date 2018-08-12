@@ -2,8 +2,13 @@ from django.contrib import admin
 from .models import Category, Image, Color, Option, Order
 
 
-admin.site.register(Category)
-admin.site.register(Order)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    pass
 
 class ImageInline(admin.TabularInline):
     model = Image

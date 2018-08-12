@@ -37,7 +37,7 @@ computerPropForm = {
 
     'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB'},
 
-    'interfaces.name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
+    'interfaces__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
                         'units': '', 'set': InterfaceName.objects.all(), 'param': 'interfaces'},
 
 }
@@ -74,11 +74,11 @@ laptopPropForm = {
 
     'graphic_ram_amount': {'name': 'Модель дискретной видеокарты', 'display': 'paramOnly', 'units': ''},
 
-    'hdd': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB'},
+    'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB'},
 
-    'ssd': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB'},
+    'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB'},
 
-    'emmc': {'type': 'intRange', 'name': 'Объём EMMC памяти', 'display': 'always', 'units': ' GB'},
+    'emmc_amount': {'type': 'intRange', 'name': 'Объём EMMC памяти', 'display': 'always', 'units': ' GB'},
 
     'weight': {'type': 'floatRange', 'name': 'Вес', 'display': 'always', 'units': ' кг.'},
 

@@ -29,17 +29,17 @@ CPUPropForm = {
 
     'count': {'type': 'inStock', 'name': 'Наличие', 'display': 'filterOnly', 'units': '', 'set': ['нет', 'есть']},
 
-    'cpu__brand': {'type': 'strArray', 'name': 'Производитель', 'display': 'filterOnly',
+    'cpu__brand': {'type': 'strArray', 'name': 'Производитель', 'display': 'always',
               'units': '', 'set': getNamesFromChoices(CPU.BRAND_CHOICES)},
 
     'cpu__socket': {'type': 'idArray', 'name': 'Сокет', 'display': 'always',
                     'units': '', 'set': CPUSocket.objects.all()},
 
-    'cpu__coreCount': {'type': 'intRange', 'name': 'Количество ядер', 'display': 'filterOnly', 'units': ''},
+    'cpu__coreCount': {'type': 'intRange', 'name': 'Количество ядер', 'display': 'always', 'units': ''},
 
-    'cpu__threadsCount': {'type': 'intRange', 'name': 'Количество потоков', 'display': 'filterOnly', 'units': ''},
+    'cpu__threadsCount': {'type': 'intRange', 'name': 'Количество потоков', 'display': 'always', 'units': ''},
 
-    'cpu__frequency': {'type': 'intRange', 'name': 'Частота оперативной памяти', 'display': 'filterOnly', 'units': ' Mhz'},
+    'cpu__frequency': {'type': 'intRange', 'name': 'Частота оперативной памяти', 'display': 'always', 'units': ' Mhz'},
 
     'cpu__RAM_type': {'type': 'strArray', 'name': 'Тип оперативной памяти', 'display': 'always',
                       'units': '', 'set': getNamesFromChoices(CPU.RAM_TYPE_CHOICES)},
@@ -85,7 +85,7 @@ motherboardPropForm = {
     'chipset': {'type': 'idArray', 'name': 'Чипсет', 'display': 'always',
                'units': '', 'set': MotherboardChipset.objects.all()},
 
-    'interfaces.name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
+    'interfaces__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
                         'units': '', 'set': InterfaceName.objects.all(), 'param': 'interfaces'},
 }
 

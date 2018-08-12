@@ -10,8 +10,9 @@ class Category(models.Model):
     parent = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.PROTECT)
 
     class Meta:
-        unique_together = ('name', 'slug', 'parent')
+        unique_together = ('slug', 'parent')
         verbose_name_plural = "categories"
+        ordering = ('name',)
 
     def __str__(self):
         full_path = [self.name]
@@ -32,6 +33,8 @@ class Category(models.Model):
             k = k.parent
 
         return '/'.join(full_slug[::-1])
+
+
 
 def preview_directory_path(instance, filename):
     name, ext = filename.split('.')

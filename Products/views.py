@@ -6,8 +6,8 @@ from Parts.helper import graphiccardPropForm, CPUPropForm, RAMPropForm, motherbo
 from Parts.models import GraphicCardProduct, CPUProduct, RAM, Motherboard, SSD
 from Computers.models import Computer, Laptop
 from Computers.helper import computerPropForm, laptopPropForm
-from CompPeripherals.models import Mouse, Keyboard, Headphone
-from CompPeripherals.helper import mousePropForm, keyboardPropForm, headphonePropForm
+from CompPeripherals.models import Mouse, Keyboard, Headphone, Mousepad
+from CompPeripherals.helper import mousePropForm, keyboardPropForm, headphonePropForm, mousepadPropForm
 from .models import Order
 from django.http import Http404
 from decimal import *
@@ -28,6 +28,7 @@ category_prop_list = {
     'mouse': {'prop_form': mousePropForm, 'model': Mouse, 'app': 'CompPeripherals'},
     'keyboard': {'prop_form': keyboardPropForm, 'model': Keyboard, 'app': 'CompPeripherals'},
     'headphone': {'prop_form': headphonePropForm, 'model': Headphone, 'app': 'CompPeripherals'},
+    'mousepad': {'prop_form': mousepadPropForm, 'model': Mousepad, 'app': 'CompPeripherals'},
 }
 
 def CategoryView(request, hierarchy= None):
@@ -48,6 +49,7 @@ def CategoryView(request, hierarchy= None):
 
 def ProductView(request, hierarchy=None, id=None):
     device = None
+    id = int(id)
     prop_form = {}
     category = getCategory(hierarchy)
     for category_prop in category_prop_list:
