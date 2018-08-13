@@ -14,6 +14,9 @@
 .row.no-margin {
     margin: 0;
 }
+.col.no-padding {
+    padding: 0;
+}
 .nav-logo {
     height: 80px;
     margin-top: -8px;
@@ -30,7 +33,12 @@
     overflow-y: hidden;
 }
 .nav-wrapper ul.right {
-    margin-right: 15px;
+    margin-right: 13px;
+}
+.nav-wrapper li a {
+    line-height: 64px;
+    height: 64px;
+    padding: 0 0 0 15px;
 }
 .row.padding-top {
     margin-top: 20px;
@@ -50,6 +58,9 @@
 .padding-side{
     padding: 0 20px;
 }
+.index-carousel-padding {
+    padding: 0 20px;
+}
 
 .btn-full-width {
     width: 100%;
@@ -65,49 +76,7 @@ input[type=number]::-webkit-outer-spin-button {
 /******       Category      ****/
 /*******************************/
 
-.category .category-item {
-    height: 125px;
-    padding: 5px !important;
-}
-.category .collection-item > .responsive-img {
-    height: 100%;
-    width: auto;
-    float: left;
-}
-.category .collection-item > .header {
-    font-size: 28px;
-    padding: 10px 10px 10px 10px;
-    position: relative;
-    display: inline-block;
-}
-.category .collection-item > p {
-    font-size: 16px;
-    color: #323232;
-    padding: 0 10px 10px 125px;
-    position: relative;
-}
-.category .collection-item > .price {
-    position: relative;
-    top: 0;
-    right: 0;
-    padding: 15px;
-    font-size: 24px;
-    display: inline-block;
-    float: right;
-}
-.category .collection-item .in-stock {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: #292929;
-}
-.filter-apply {
-    color: #e53935;
-    font-weight: 500;
-    font-size: 18px;
-    margin-top: 35px;
 
-}
 
 /*******************/
 /* sidenav category */
@@ -150,11 +119,16 @@ input[type=number]::-webkit-outer-spin-button {
 .sidenav.sidenav-fixed .footer {
     width: 100%;
     text-align: center;
+    height: 25px;
+    border-top: 1px solid #e0e0e0;
+}
+.sidenav.sidenav-fixed .footer p {
+    font-size: 14px;
     color: #bdbdbd;
-    border-top: 1px solid #bdbdbd;
+    margin-top: -11px;
 }
 .sidenav .category-list {
-    height: calc(100% - 120px);
+    height: calc(100% - 90px);
     overflow-y: auto;
 }
 
@@ -167,6 +141,9 @@ input[type=number]::-webkit-outer-spin-button {
 .best-offer .card {
     position: relative;
     color: #e53935 !important;
+}
+.best-offer .card-image {
+    padding: 10px;
 }
 .best-offer .card-buy {
     position: absolute;
@@ -343,49 +320,10 @@ input[type=number]::-webkit-outer-spin-button {
     /*****************************/
     /*****Category ****************/
 
-    .category .category-item {
-        height: 100px;
-        padding: 5px !important;
-        text-overflow: clip;
-    }
-    .category .collection-item > .responsive-img {
-        height: 100%;
-        width: auto;
-        float: left;
-    }
-    .category .collection-item > .header {
-        font-size: 20px;
-        padding: 5px 10px 5px 10px;
-        position: relative;
-        display: inline-block;
-    }
-    .category .collection-item > p {
-        font-size: 14px;
-        color: #323232;
-        padding: 0 10px 0 0;
-        margin: 0;
-        position: relative;
-        float: top;
-    }
-    .category .collection-item > .price {
-        position: relative;
-        top: 0;
-        right: 0;
-        padding: 5px;
-        font-size: 18px;
-        display: inline-block;
-        float: right;
-    }
-
     .nav-wrapper {
         padding: 0;
     }
-    .product-panel-btn {
-        padding-top: 10px !important;
-    }
-    .product-price {
-        margin-top: 30px;
-    }
+
     .nav-logo {
         height: 70px;
         margin-top: -8px;
@@ -399,14 +337,31 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .nav-wrapper li.logo a {
-        line-height: 55px;
         width: 80px;
         overflow-y: hidden;
+    }
+    .nav-wrapper li a {
+        line-height: 55px;
+        height: 55px;
+        padding: 0 0 0 15px;
+    }
+    .nav-wrapper ul li i {
+        margin: 0;
+    }
+    .nav-wrapper ul.right {
+        margin-right: 5px;
     }
     .nav-wrapper .top-nav.sidenav-trigger {
         margin: 0;
     }
     .about .description {
-        padding-left: 15px;
+        padding-left: 0;
+    }
+    .index-carousel-padding {
+        padding: 0;
+    }
+    .best-offer h4 {
+        padding-left: 5px;
+        font-size: 22px;
     }
 }

@@ -3,6 +3,8 @@ from Parts.models import GraphicCard, CPU, GPU, InterfaceName
 from .models import Laptop, LaptopCPU, LaptopBrand
 from Products.helper import getNamesFromChoices
 
+
+
 computerPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
 
@@ -41,6 +43,8 @@ computerPropForm = {
                         'units': '', 'set': InterfaceName.objects.all(), 'param': 'interfaces'},
 
 }
+
+
 
 laptopPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},

@@ -59,14 +59,14 @@
 
                 <div class="col s12 m6 product-panel-btn" style="position: absolute; bottom: 10px; right: 0">
                     <div class="row no-margin">
-                        <div class="col s2 offset-s2" style="position: relative; height: 30px">
+                        <div class="col s2 offset-s1 offset-m2" style="position: relative; height: 30px">
                             <div class="count">
                                 <a href="#" class="remove"><i class="material-icons">remove</i></a>
                                 <a href="#" class="add"><i class="material-icons">add</i></a>
                                 <input class="browser-default" value="1">
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s6 offset-s1 m6">
                             <p id="existence" class="right-align">
                                 {% if device.colors.count == 0 %}
                                     {% if device.count == 0 %}

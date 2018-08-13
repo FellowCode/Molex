@@ -37,14 +37,17 @@ class Category(models.Model):
 
 
 def preview_directory_path(instance, filename):
-    name, ext = filename.split('.')
-    path = 'images/product/{0}/preview/preview.{1}'.format(instance.category.slug, ext)
+    str_parts = filename.split('.')
+    path = 'images/product/{0}/preview/preview.{1}'.format(instance.category.slug, str_parts[-1])
     return path
 
 class Product(models.Model):
 
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     description = models.TextField(null=True, blank=True, default='')
+
+    link = models.URLField(null=True, blank=True, default=None)
+
     price = models.IntegerField()
     sale = models.IntegerField(null=True, blank=True, default=None)
     count = models.IntegerField(null=True, blank=True, default=0)
@@ -61,8 +64,8 @@ class Product(models.Model):
         self.category.getFullSlug()
 
 def img_directory_path(instance, filename):
-    name, ext = filename.split('.')
-    path = 'images/product/{0}/carousel/carousel.{1}'.format(instance.product.category.slug, ext)
+    str_parts = filename.split('.')
+    path = 'images/product/{0}/carousel/carousel.{1}'.format(instance.product.category.slug, str_parts[-1])
     return path
 
 class Image(models.Model):
@@ -73,8 +76,8 @@ class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
 
 def color_img_directory_path(instance, filename):
-    name, ext = filename.split('.')
-    path = 'images/product/{0}/color/color.{1}'.format(instance.product.category.slug, ext)
+    str_parts = filename.split('.')
+    path = 'images/product/{0}/color/color.{1}'.format(instance.product.category.slug, str_parts[-1])
     return path
 
 class Color(models.Model):

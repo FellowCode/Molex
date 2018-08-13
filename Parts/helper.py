@@ -2,6 +2,8 @@ from Products.helper import getNamesFromChoices
 from .models import GraphicCardProduct, CPU, RAM, GraphicCardBrand, CPUSocket, GPU, \
     Motherboard, MotherboardBrand, InterfaceName, SSD, SSDBrand, MotherboardChipset, GraphicCard
 
+
+
 graphiccardPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
 
@@ -16,13 +18,15 @@ graphiccardPropForm = {
     'graphic_card__GPU': {'type': 'idArray', 'name': 'Графический процессор', 'display': 'always',
                           'units': '', 'set': GPU.objects.all()},
 
-    'graphic_card__RAM': {'type': 'intRange', 'name': 'Объем видеопамяти', 'display': 'always', 'units': ' GB'},
-
     'graphic_card__RAM_type': {'type': 'strArray', 'name': 'Тип видеопамяти', 'display': 'always',
                                'units': '', 'set': getNamesFromChoices(GraphicCard.RAM_TYPE_CHOICES)},
 
+    'graphic_card__RAM': {'type': 'intRange', 'name': 'Объем видеопамяти', 'display': 'always', 'units': ' GB'},
+
     'graphic_card__watts': {'type': 'intRange', 'name': 'Макс. энергопотребление', 'display': 'always', 'units': ' Вт'},
 }
+
+
 
 CPUPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
@@ -46,6 +50,8 @@ CPUPropForm = {
 
 }
 
+
+
 RAMPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
 
@@ -61,6 +67,8 @@ RAMPropForm = {
 
     'frequency': {'type': 'intRange', 'name': 'Частота', 'display': 'always', 'units': ' Mhz'},
 }
+
+
 
 motherboardPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
@@ -88,6 +96,8 @@ motherboardPropForm = {
     'interfaces__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
                         'units': '', 'set': InterfaceName.objects.all(), 'param': 'interfaces'},
 }
+
+
 
 ssdPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},

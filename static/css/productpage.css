@@ -100,7 +100,17 @@ td#param-name {
         margin-bottom: 5px;
     }
 }
-
+@media only screen and (max-width: 600px) {
+    .product-panel-btn {
+        padding-top: 10px !important;
+    }
+    .product-price {
+        margin-top: 30px;
+    }
+    .product-panel p#existence {
+        font-size: 14px;
+    }
+}
 .product-panel .carousel ~ .btn-floating {
     position: absolute;
     left: 10px;

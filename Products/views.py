@@ -12,6 +12,7 @@ from .models import Order
 from django.http import Http404
 from decimal import *
 
+
 category_prop_list = {
     'smartphone': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
     'tablet': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},

@@ -49,7 +49,9 @@ class SSDBrandAdmin(admin.ModelAdmin):
         return {}
 @admin.register(SSD)
 class SSDAdmin(admin.ModelAdmin):
-    pass
+    inlines = [
+        ImageInline,
+    ]
 
 
 @admin.register(InterfaceName)

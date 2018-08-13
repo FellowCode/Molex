@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404
 from .models import Category, Product
 import functools
 
-
 def ToIntegerRange(val):
     val = val.split('-')
     min = val[0]
@@ -122,8 +121,6 @@ def getCategory(hierarchy):
             parent = get_object_or_404(Category, slug=slug, parent=parent)
 
     return parent
-
-
 
 
 

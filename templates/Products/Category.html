@@ -13,10 +13,10 @@
             {% include 'filter.html' %}
         </div>
     </ul>
-    <div class="sidenav-padding">
+    <div class="sidenav-padding category">
         <div class="row padding-side">
             <div class="col s12 l8">
-                <h4>{{ category.name }}</h4>
+                <h4 class="title">{{ category.name }}</h4>
             </div>
             <div class="col s12 l4 filter-apply right-align">
 
@@ -27,16 +27,34 @@
         </div>
         <div class="row padding-side">
             <div class="col s12 xl10 offset-xl1">
-                <div id="list-container" class="category row">
-                    <div id="list" class="collection">
+                <div id="list-container" class="row">
+                    <div id="list">
                         {% for device in device_list %}
-                        <a href="/products/{{ device.category.getFullSlug }}/id/{{ device.id }}/" class="collection-item category-item">
-                            <img src="{{ device.imagePreview.url }}" class="responsive-img">
-                            <div class="header red-text text-darken-1">{{ device }}</div>
-                            <div class="price red-text text-darken-1">{{ device.price }} Р.</div>
-                            <div class="in-stock">{% if device.count > 0 %}В наличии{% else %}Под заказ{% endif %}</div>
-                            <p>[ {% for prop in propForm %}{% if propForm|get_item:prop|get_item:'display' == 'always' %}{{ device|get_attr:prop }}{{ propForm|get_item:prop|get_item:'units' }}{% if forloop.counter < propForm|length %}, {% endif %}{% endif %}{% endfor %} ]</p>
-                        </a>
+                            <a href="{{ device.category.getFullSlug }}" class="col s12 no-padding category-item">
+                                <div class="row no-margin top-line">
+                                    <div class="col s3  m2 no-padding img">
+                                        <img src="{{ device.imagePreview.url }}" class="responsive-img">
+                                    </div>
+                                    <div class="col s9 m8 header">
+                                        {{ device }}
+                                    </div>
+                                    <div class="col s9 m2 price">
+                                        {{ device.price }} Р.
+                                    </div>
+                                </div>
+                                <div id="mask"></div>
+                                <div class="col s12 m10 params">
+                                    {{ device|getShortenParams }}
+                                </div>
+                                <div class="col s12 right-align in-stock">
+                                    {% if device.count > 0 %}
+                                    В наличии
+                                    {% else %}
+                                    Под заказ 30д.
+                                    {% endif %}
+                                </div>
+
+                            </a>
                         {% endfor %}
                     </div>
                 </div>
@@ -46,21 +64,19 @@
 {% endblock content %}
 
 {% block script %}
-    <script type="text/javascript">
-        if (window.location.href.split('?').length > 1) {
-            console.log('filter');
-            $('.filter-apply').text('Применены фильтры');
-        } else
-            $('.filter-apply').text('');
-        //sidenav collapsible
-        $(document).ready(function() {
-            $('.sidenav').sidenav();
-            $('.collapsible').collapsible();
-            $('.sidenav .scrolling').height($(window).height()-105);
-
-        });
-        $(window).resize(function () {
-            $('.sidenav .scrolling').height($(window).height()-105);
-        });
+    <script type="text/javascript" src="{% static 'js/filters.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.category .category-item').hover(function () {
+                $(this).find('#mask').stop().animate({opacity: 0.05}, 100);
+            }, function () {
+                $(this).find('#mask').stop().animate({opacity: 0}, 100);
+            });
+            console.log($(window).width());
+            if ($(window).width() > 600)
+                $('.category .category-item .top-line').removeClass('row');
+            else
+                $('.category .category-item .top-line').addClass('row');
+        })
     </script>
 {% endblock %}

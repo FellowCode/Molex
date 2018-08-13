@@ -21,6 +21,15 @@ class Computer(Product):
     hdd_amount = models.IntegerField()
     ssd_amount = models.IntegerField()
 
+    def getShortenParams(device):
+        shorten_params = '[{0}, {1}x{2}Ghz, видеокарта {3} ({4}G), RAM {5} GB]'.format(device.CPU,
+                                                                                       device.CPU.core_count,
+                                                                                       device.CPU.frequency,
+                                                                                       device.graphic_card.GPU,
+                                                                                       device.graphic_card.RAM_amount,
+                                                                                       device.ram_amount)
+        return shorten_params
+
     def __str__(self):
         return self.name
 
@@ -51,8 +60,8 @@ class LaptopCPU(models.Model):
     THREAD_COUNT_CHOICES = [("4", "4"), ("8", "8")]
 
     name = models.CharField(max_length=50, unique=True)
-    core_count = models.CharField(max_length=2, choices=CORE_COUNT_CHOICES)
-    thread_count = models.CharField(max_length=2, choices=THREAD_COUNT_CHOICES, default=None)
+    core_count = models.CharField(max_length=2, choices=CORE_COUNT_CHOICES, default="4")
+    thread_count = models.CharField(max_length=2, choices=THREAD_COUNT_CHOICES, default="4")
 
     def __str__(self):
         return self.name
@@ -66,8 +75,8 @@ class Laptop(Product):
     name = models.CharField(max_length=50)
 
     diagonal = models.DecimalField(max_digits=4, decimal_places=2)
-    resolution = models.CharField(max_length=12, choices=RESOLUTION_CHOICES)
-    matrix = models.CharField(max_length=12, choices=MATRIX_CHOICES)
+    resolution = models.CharField(max_length=12, choices=RESOLUTION_CHOICES, default="1920x1080")
+    matrix = models.CharField(max_length=12, choices=MATRIX_CHOICES, default="IPS")
 
     cpu = models.ForeignKey(LaptopCPU, on_delete=models.PROTECT)
 
@@ -83,8 +92,16 @@ class Laptop(Product):
 
     weight = models.DecimalField(max_digits=4, decimal_places=2)
 
+    def getShortenParams(device):
+        shorten_params = '[{0}, {1}, {2}, {3} ядра, потоков - {4}]'.format(device.resolution,
+                                                                         device.matrix,
+                                                                         device.cpu,
+                                                                         device.cpu.core_count,
+                                                                         device.cpu.thread_count)
+        return shorten_params
+
     def __str__(self):
-        return str(self.brand) + ' ' + str(self.name)
+        return str(self.diagonal.normalize()) + '\" ' + str(self.brand) + ' ' + str(self.name)
 
     class Meta:
         verbose_name = '> Laptop'

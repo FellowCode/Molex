@@ -2,6 +2,8 @@ from .models import Mouse, MouseBrand, Keyboard, KeyboardBrand, Headphone, Headp
 from Products.helper import getNamesFromChoices
 
 
+
+
 mousePropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
 
@@ -13,9 +15,6 @@ mousePropForm = {
     'interface': {'type': 'strArray', 'name': 'Интерфейс', 'display': 'always',
                   'units': '', 'set': getNamesFromChoices(Mouse.INTERFACE_TYPE_CHOICES)},
 
-    'connection_type': {'type': 'strArray', 'name': 'Тип подключения', 'display': 'always',
-                        'units': '', 'set': getNamesFromChoices(Mouse.CONNECTION_TYPE_CHOICES)},
-
     'wire_length': {'type': 'floatRange', 'name': 'Длина провода', 'display': 'always', 'units': ' м'},
 
     'max_dpi': {'type': 'intRange', 'name': 'Точек на дюйм', 'display': 'always', 'units': ''},
@@ -24,6 +23,8 @@ mousePropForm = {
 
     'weight': {'type': 'intRange', 'name': 'Вес', 'display': 'always', 'units': ' г'},
 }
+
+
 
 keyboardPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
@@ -46,6 +47,8 @@ keyboardPropForm = {
     'weight': {'type': 'intRange', 'name': 'Вес', 'display': 'always', 'units': ' г'},
 }
 
+
+
 headphonePropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
 
@@ -60,12 +63,17 @@ headphonePropForm = {
     'connection_type': {'type': 'strArray', 'name': 'Тип подключения', 'display': 'always',
                         'units': '', 'set': getNamesFromChoices(Headphone.CONNECTION_TYPE_CHOICES)},
 
+    'microphone': {'type': 'strArray', 'name': 'Микрофон', 'display': 'always',
+                        'units': '', 'set': getNamesFromChoices(Headphone.MICROPHONE_CHOICES)},
+
     'wire_length': {'type': 'floatRange', 'name': 'Длина провода', 'display': 'always', 'units': ' м'},
 
     'resistance': {'type': 'intRange', 'name': 'Сопротивление', 'display': 'always', 'units': ' Ом'},
 
     'weight': {'type': 'intRange', 'name': 'Вес', 'display': 'always', 'units': ' г'},
 }
+
+
 
 mousepadPropForm = {
     'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},

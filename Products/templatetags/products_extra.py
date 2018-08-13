@@ -63,3 +63,9 @@ def normalize(value):
 @register.filter
 def count(list):
     return list.count()
+
+@register.filter
+def getShortenParams(device):
+    model = device.__class__
+    return model.getShortenParams(device)
+
