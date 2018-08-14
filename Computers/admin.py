@@ -1,5 +1,5 @@
 from Products.admin import ImageInline, OptionInline, ColorInline
-from .models import Computer, ComputerInterface, InterfaceName, Laptop, LaptopCPU, LaptopBrand, LaptopInterface
+from .models import Computer, ComputerInterface, InterfaceName, Laptop, LaptopCPU, LaptopBrand, LaptopInterface, LaptopGPU
 from django.contrib import admin
 
 @admin.register(InterfaceName)
@@ -25,6 +25,11 @@ class LaptopCPUAdmin(admin.ModelAdmin):
 
 @admin.register(LaptopBrand)
 class LaptopBrandAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
+@admin.register(LaptopGPU)
+class LaptopGPUAdmin(admin.ModelAdmin):
     def get_model_perms(self, request):
         return {}
 

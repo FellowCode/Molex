@@ -7,7 +7,7 @@ $(document).ready(function () {
         $('#sidenav-filter').css('display', 'none');
         $('#sidenav-category').css('display','block');
     });
-
+    checkFilterApply();
 
 
     FilterInitialize();
@@ -33,20 +33,14 @@ var FilterInitialize = function () {
         var url = window.location.href.split('?')[0];
         $('#list-container').load(url + ' #list');
         history.pushState(null, $(document).title, url);
-        if (window.location.href.split('?').length > 1) {
-            $('.filter-apply').text('Применены фильтры');
-        } else
-            $('.filter-apply').text('');
+        checkFilterApply();
     });
     var filterProducts = function(form) {
         let urlParameters = Object.entries(form).map(e => e.join('=')).join('&');
         let url = '/products/' + fullSlug + '/?' + urlParameters;
         $('#list-container').load(url + ' #list');
         history.pushState(null, $(document).title, url);
-        if (window.location.href.split('?').length > 1) {
-            $('.filter-apply').text('Применены фильтры');
-        } else
-            $('.filter-apply').text('');
+        checkFilterApply();
     };
 };
 
@@ -78,3 +72,10 @@ var assemblyFormData = function(formData){
         });
     return form;
 };
+
+function checkFilterApply() {
+    if (window.location.href.split('?').length > 1 && window.location.href.split('?')[1] !== '') {
+        $('.filter-apply').text('Применены фильтры');
+    } else
+        $('.filter-apply').text('');
+}

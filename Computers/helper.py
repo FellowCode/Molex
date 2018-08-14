@@ -13,9 +13,9 @@ computerPropForm = {
     'CPU': {'type': 'idArray', 'name': 'Процессор', 'display': 'always',
             'units': '', 'set': CPU.objects.all()},
 
-    'CPU__core_count': {'type': 'intRange', 'name': 'Количество ядер', 'display': 'always', 'units': ''},
+    'CPU__coreCount': {'type': 'intRange', 'name': 'Количество ядер', 'display': 'always', 'units': ''},
 
-    'CPU__threads_count': {'type': 'intRange', 'name': 'Количество потоков', 'display': 'always', 'units': ''},
+    'CPU__threadsCount': {'type': 'intRange', 'name': 'Количество потоков', 'display': 'always', 'units': ''},
 
     'CPU__frequency': {'type': 'floatRange', 'name': 'Частота процессора', 'display': 'always', 'units': ' Ghz'},
 
@@ -35,9 +35,9 @@ computerPropForm = {
 
     'ram_amount': {'type': 'intRange', 'name': 'Объём оперативной памяти', 'display': 'always', 'units': ''},
 
-    'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB'},
+    'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB', 'hideZero':True},
 
-    'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB'},
+    'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB', 'hideZero':True},
 
     'interfaces__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
                         'units': '', 'set': InterfaceName.objects.all(), 'param': 'interfaces'},
@@ -74,15 +74,15 @@ laptopPropForm = {
     'discreteGraphic': {'type': 'Boolean', 'name': 'Дискретная видеокарта', 'display': 'always',
                         'units': '', 'set': ['нет', 'есть']},
 
-    'gpu': {'name': 'Модель дискретной видеокарты', 'display': 'paramOnly', 'units': ''},
+    'gpu__name': {'name': 'Модель видеокарты', 'display': 'paramOnly', 'units': ''},
 
-    'graphic_ram_amount': {'name': 'Модель дискретной видеокарты', 'display': 'paramOnly', 'units': ''},
+    'gpu__ram_amount': {'name': 'Модель дискретной видеокарты', 'display': 'paramOnly', 'units': '', 'hideZero': True},
 
-    'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB'},
+    'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB', 'hideZero': True},
 
-    'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB'},
+    'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB', 'hideZero': True},
 
-    'emmc_amount': {'type': 'intRange', 'name': 'Объём EMMC памяти', 'display': 'always', 'units': ' GB'},
+    'emmc_amount': {'type': 'intRange', 'name': 'Объём EMMC памяти', 'display': 'always', 'units': ' GB', 'hideZero': True},
 
     'weight': {'type': 'floatRange', 'name': 'Вес', 'display': 'always', 'units': ' кг.'},
 

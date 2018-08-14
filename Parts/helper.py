@@ -110,6 +110,8 @@ ssdPropForm = {
     'memory_type' : {'type': 'strArray', 'name': 'Тип памяти', 'display': 'always',
                      'units': '', 'set': getNamesFromChoices(SSD.MEMORY_TYPE_CHOICES)},
 
+    'memory_amount': {'type': 'intRange', 'name': 'Объем памяти', 'display': 'always', 'units': ' GB'},
+
     'read_speed': {'type': 'intRange', 'name': 'Скорость чтения', 'display': 'always', 'units': ' Mb/s'},
     'write_speed': {'type': 'intRange', 'name': 'Скорость записи', 'display': 'always', 'units': ' Mb/s'},
 

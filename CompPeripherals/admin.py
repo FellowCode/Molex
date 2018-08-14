@@ -1,10 +1,8 @@
 from django.contrib import admin
-from .models import MouseBrand, Mouse, KeyboardBrand, Keyboard, HeadphoneBrand, Headphone, Mousepad
+from .models import MouseBrand, Mouse, KeyboardBrand, Keyboard, HeadphoneBrand, Headphone
 from Products.admin import productInlines
 
-@admin.register(Mousepad)
-class MousepadAdmin(admin.ModelAdmin):
-    inlines = productInlines
+
 
 @admin.register(MouseBrand)
 class MouseBrandAdmin(admin.ModelAdmin):

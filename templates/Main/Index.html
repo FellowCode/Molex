@@ -10,19 +10,21 @@
             {% include 'sidenavCategory.html' %}
         </ul>
         <div class="sidenav-padding">
-            <div class="row index-carousel-padding no-margin">
-                <div class="col s12 no-padding index-carousel">
-    `               <div id="index" class="carousel carousel-slider center">
-                        <div class="carousel-fixed-item with-indicators">
-                          <a id="left" class="btn-floating btn-large waves-effect transparent white-text left z-depth-0"><i class="large material-icons">chevron_left</i></a>
-                          <a id="right" class="btn-floating btn-large waves-effect transparent white-text right z-depth-0"><i class="large material-icons">chevron_right</i></a>
-                        </div>
-                        {% for image in carouselImg %}
-                        <div class="carousel-item">
-                            <img src="{{ image.image.url }}">
-                        </div>
-                        {% endfor %}
-                      </div>
+            <div class="row index-carousel-padding">
+                <div class="col s12 no-padding z-depth-2">
+                    <div class="index-carousel">
+        `               <div id="index" class="carousel carousel-slider center">
+                            <div class="carousel-fixed-item with-indicators">
+                              <a id="left" class="btn-floating btn-large waves-effect transparent white-text left z-depth-0"><i class="large material-icons">chevron_left</i></a>
+                              <a id="right" class="btn-floating btn-large waves-effect transparent white-text right z-depth-0"><i class="large material-icons">chevron_right</i></a>
+                            </div>
+                            {% for image in carouselImg %}
+                            <div class="carousel-item">
+                                <img src="{{ image.image.url }}">
+                            </div>
+                            {% endfor %}
+                          </div>
+                    </div>
                 </div>
             </div>
             <div class="row padding-side best-offer">
@@ -55,5 +57,5 @@
 {% endblock content %}
 
 {% block script %}
-    <script type="text/javascript" src="{% static 'js/index.js' %}?version=2"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}?version=3"></script>
 {% endblock %}

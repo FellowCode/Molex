@@ -2,10 +2,6 @@
     overflow-y: hidden;
 }
 
-.sidenav .scrolling {
-    overflow-y: auto;
-}
-
 .sidenav .buttons {
     padding-top: 5px;
     padding-bottom: 10px;
@@ -19,7 +15,14 @@
 .scrolling .collection {
     margin-top: 0;
 }
-
+.sidenav #sidenav-filter {
+    height: 100%;
+    width: 100%;
+}
+.sidenav #sidenav-filter .scrolling {
+    height: calc(100% - 162px);
+    overflow-y: auto;
+}
 .collection-item .collapsible-body > .row {
     margin-bottom: 5px;
 }

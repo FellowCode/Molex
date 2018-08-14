@@ -1,0 +1,53 @@
+.about.col {
+    padding: 50px;
+}
+.about .description {
+    padding-top: 20px;
+    padding-left: 40px;
+}
+.about .description ul {
+    padding-left: 20px;
+    font-size: 20px;
+}
+.about .description ul>li {
+    list-style: disc inside;
+}
+.about p {
+    font-size: 20px;
+}
+.about h5 {
+    padding-left: 15px;
+    font-size: 26px;
+}
+.about h6 {
+    padding-left: 40px;
+    font-size: 20px;
+
+}
+@media only screen and (max-width: 600px) {
+    .about.col {
+        padding: 20px 15px;
+    }
+    .about .description {
+        padding-top: 10px;
+        padding-left: 5px;
+    }
+    .about p {
+        font-size: 16px;
+    }
+    .about h6 {
+        margin-top: 0;
+        font-size: 18px;
+    }
+    .about h5 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .about h4 {
+        margin-top: 0;
+    }
+    .about .description ul {
+        font-size: 16px;
+        padding-left: 10px;
+    }
+}

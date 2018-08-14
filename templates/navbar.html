@@ -17,10 +17,10 @@
         </ul>
         <ul id="nav-mobile" class="right show-med-down">
             {% if user.is_superuser %}
-                <li><a href="/products/orders/"><i class="material-icons left">assignment</i></a></li>
-                <li><a href="/admin/"><i class="material-icons left">star</i></a></li>
+                <li class="icon"><a href="/products/orders/"><i class="material-icons left">assignment</i></a></li>
+                <li class="icon"><a href="/admin/"><i class="material-icons left">star</i></a></li>
             {% endif %}
-            <li><a id="nav-cart" name="cart"><i class="material-icons left">shopping_cart</i></a></li>
+            <li  class="icon"><a id="nav-cart" name="cart"><i class="material-icons left">shopping_cart</i></a></li>
         </ul>
         {% else %}
         <ul id="nav-mobile" class="right hide-on-med-and-down">

@@ -35,7 +35,7 @@
 .nav-wrapper ul.right {
     margin-right: 13px;
 }
-.nav-wrapper li a {
+.nav-wrapper li.icon a {
     line-height: 64px;
     height: 64px;
     padding: 0 0 0 15px;
@@ -60,6 +60,7 @@
 }
 .index-carousel-padding {
     padding: 0 20px;
+    margin-top: 20px;
 }
 
 .btn-full-width {
@@ -81,56 +82,7 @@ input[type=number]::-webkit-outer-spin-button {
 /*******************/
 /* sidenav category */
 /*******************/
-.sidenav .category-item {
-    padding: 0 15px;
-}
-.sidenav .category-item .header {
-    font-size: 18px;
-    font-weight: 500;
-    height: 40px;
-}
-.sidenav .category-item .sub-category {
-    padding: 0 30px;
-}
-.sidenav .category-item .sub-category a.btn {
-    height: 35px;
-    line-height: 35px;
-    font-size: 16px;
-    text-transform: none;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-}
-.sidenav-top {
-    height: 64px;
-    line-height: 64px !important;
-}
-.sidenav-category {
-    font-size: 24px !important;
-    height: 64px !important;
-    font-weight: bold;
-    padding-left: 32px;
-    color: #f2f2f2;
 
-}
-.sidenav .buttons .btn {
-    width: 100%;
-}
-.sidenav.sidenav-fixed .footer {
-    width: 100%;
-    text-align: center;
-    height: 25px;
-    border-top: 1px solid #e0e0e0;
-}
-.sidenav.sidenav-fixed .footer p {
-    font-size: 14px;
-    color: #bdbdbd;
-    margin-top: -11px;
-}
-.sidenav .category-list {
-    height: calc(100% - 90px);
-    overflow-y: auto;
-}
 
 /***********/
 /* best offer card */
@@ -213,85 +165,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 /***********************************/
 /*********** order list ************/
-.order-list .order-item {
-    border: 1px solid #bdbdbd;
-    margin-top: -1px;
-    padding: 10px;
-}
-.order-list .order-item .header {
-    font-size: 24px;
-    font-weight: 500;
-}
-.order-list .order-item .header > a{
-    color: #e53935;
-}
-.order-list .order-item .processed {
-    font-size: 18px;
-    font-weight: 500;
-}
-.order-list .order-item .header > a.completed{
-    color: #388e3c;
-}
-.order-list .order-item .order-payment-amount {
-    font-size: 24px;
-    font-weight: 500;
 
-}
-.order-list .order-item .device-item {
-    border: 1px solid #e53935;
-    padding: 5px;
-    margin-top: -1px;
-}
-.order-list .order-item .device-list .counter {
-    font-size: 24px;
-    padding-top: 10px;
-}
-.order-list .order-item .device-item .header {
-    font-size: 20px;
-    font-weight: 500;
-    color: #e53935;
-}
-.order-list .order-item .device-item .price {
-    font-size: 20px;
-    font-weight: 500;
-}
-.order-list .order-item #device-show {
-    cursor: pointer;
-}
-.order-list .order-item .row {
-    margin-bottom: 5px;
-}
-.order-list .order-item .person-data {
-    font-size: 18px;
-}
-/**********************************/
-/******** about ********************/
-.about.col {
-    padding: 50px;
-}
-.about .description {
-    padding-top: 20px;
-    padding-left: 40px;
-}
-.about .description ul {
-    padding-left: 20px;
-    font-size: 20px;
-}
-.about .description ul>li {
-    list-style: disc inside;
-}
-.about p {
-    font-size: 20px;
-}
-.about h5 {
-    padding-left: 15px;
-    font-size: 26px;
-}
-.about h6 {
-    padding-left: 40px;
-    font-size: 20px;
 
-}
 
 @media only screen and (max-width: 992px) {
     .nav-logo {
@@ -302,13 +177,6 @@ input[type=number]::-webkit-outer-spin-button {
     .nav-wrapper {
         padding: 0;
     }
-    .sidenav {
-        top: 0;
-    }
-
-    .sidenav-padding {
-        padding: 0;
-      }
     .show-med-down {
         display: block;
     }
@@ -317,8 +185,6 @@ input[type=number]::-webkit-outer-spin-button {
     .nav-wrapper ul.right li {
         width: 50px;
     }
-    /*****************************/
-    /*****Category ****************/
 
     .nav-wrapper {
         padding: 0;
@@ -328,7 +194,7 @@ input[type=number]::-webkit-outer-spin-button {
         height: 70px;
         margin-top: -8px;
         margin-left: -8px;
-        padding-left: 0px;
+        padding-left: 0;
     }
     .nav-wrapper li.logo {
         line-height: 55px;
@@ -340,9 +206,9 @@ input[type=number]::-webkit-outer-spin-button {
         width: 80px;
         overflow-y: hidden;
     }
-    .nav-wrapper li a {
-        line-height: 55px;
-        height: 55px;
+    .nav-wrapper li.icon a {
+        line-height: 56px;
+        height: 56px;
         padding: 0 0 0 15px;
     }
     .nav-wrapper ul li i {
@@ -354,14 +220,15 @@ input[type=number]::-webkit-outer-spin-button {
     .nav-wrapper .top-nav.sidenav-trigger {
         margin: 0;
     }
-    .about .description {
-        padding-left: 0;
-    }
+
     .index-carousel-padding {
         padding: 0;
     }
     .best-offer h4 {
         padding-left: 5px;
         font-size: 22px;
+    }
+    .index-carousel-padding {
+        margin-top: 0;
     }
 }

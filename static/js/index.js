@@ -1,11 +1,11 @@
 $(document).ready(function () {
     resizeCarousel();
-    valignCards();
-    removeText($('.col.index-carousel'));
+    removeText($('.index-carousel'));
     var carousel = $('#index.carousel.carousel-slider');
     setInterval(function () {
         carousel.carousel('next');
     }, 20000);
+    valignCards();
 });
 
 $(window).resize(function () {
@@ -19,6 +19,7 @@ var resizeCarousel = function () {
     var height = width/3;
     $('#index.carousel .carousel-item > img').height(height);
     $('#index.carousel .carousel-item').height(height);
+    $('#index.carousel').height(height);
     $("#index.carousel.carousel-slider .carousel-fixed-item.with-indicators").css('bottom', (height-68)/2);
 };
 

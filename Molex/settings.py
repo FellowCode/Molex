@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#SERVER_EMAIL = 'info@molex79.ru'
+
+ADMINS = [('Fellow', 'sergo79_f1@mail.ru'), ]
+MANAGERS = [('Fellow', 'sergo79_f1@mail.ru'), ]
+
 
 # Application definition
 
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
     'Parts',
     'Computers',
     'CompPeripherals',
+    'Accessories',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +146,15 @@ IMAGE_DEFAULT_SIZE = 800
 PREVIEW_DEFAULT_SIZE = 128
 IMAGE_DEFAULT_QUALITY = 60
 IMAGE_DEFAULT_FORMAT = 'JPEG'
+
+#####################
+# SMTP
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.yandex.ru'
+
+EMAIL_HOST_USER = 'info@molex79.ru'
+EMAIL_HOST_PASSWORD = 'FurySite7997'
+
+EMAIL_USE_SSL = True

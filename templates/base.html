@@ -17,11 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link href="{% static 'css/style.css' %}?version=16" rel="stylesheet">
-    <link href="{% static 'css/cart.css' %}?version=2" rel="stylesheet">
-    <link href="{% static 'css/filter.css' %}?version=2" rel="stylesheet">
-    <link href="{% static 'css/productpage.css' %}?version=4" rel="stylesheet">
-    <link href="{% static 'css/category.css' %}?version=2" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}?version=19" rel="stylesheet">
+    <link href="{% static 'css/sidenavcategory.css' %}?version=2" rel="stylesheet">
+    {% block stylesheet %}{% endblock %}
 
 </head>
 <body>
@@ -37,14 +35,14 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.animate-colors-min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.animate-colors-min.js' %}?version=2"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}?version=4"></script>
 
-    <script type="text/javascript" src="{% static 'js/productPage.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/cookie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/productPage.js' %}?version=2"></script>
+    <script type="text/javascript" src="{% static 'js/cookie.js' %}?version=2"></script>
 
-    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/order.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}?version=2"></script>
+    <script type="text/javascript" src="{% static 'js/order.js' %}?version=2"></script>
     <!--<script src="{% static 'js/materialize.min.js' %}" rel="stylesheet"></script>-->
     <!--<script type="text/javascript">
         M.AutoInit();

@@ -19,10 +19,10 @@ class Mouse(Product):
     button_count = models.IntegerField()
     weight = models.IntegerField(null=True, blank=True, default=None)
 
-    def getShortenParams(device):
-        shorten_params = '[Интерфейс {0}, {1} DPI, кнопок - {2}]'.format(device.interface,
-                                                                         device.max_dpi,
-                                                                         device.button_count)
+    def getShortenParams(self):
+        shorten_params = '[Интерфейс {0}, {1} DPI, кнопок - {2}]'.format(self.interface,
+                                                                         self.max_dpi,
+                                                                         self.button_count)
         return shorten_params
 
     def __str__(self):
@@ -52,8 +52,8 @@ class Keyboard(Product):
     key_count = models.IntegerField()
     weight = models.IntegerField(null=True, blank=True, default=None)
 
-    def getShortenParams(device):
-        shorten_params = '[Интерфейс {0}, {1}, кнопок - {2}]'.format(device.interface, device.type, device.key_count)
+    def getShortenParams(self):
+        shorten_params = '[Интерфейс {0}, {1}, кнопок - {2}]'.format(self.interface, self.type, self.key_count)
         return shorten_params
 
     def __str__(self):
@@ -83,8 +83,8 @@ class Headphone(Product):
     resistance = models.IntegerField(null=True, blank=True, default=None)
     weight = models.IntegerField(null=True, blank=True, default=None)
 
-    def getShortenParams(device):
-        shorten_params = '[{0}, микрофон - {1}]'.format(device.connection_type, device.microphone)
+    def getShortenParams(self):
+        shorten_params = '[{0}, микрофон - {1}]'.format(self.connection_type, self.microphone)
         return shorten_params
 
     def __str__(self):
@@ -92,23 +92,4 @@ class Headphone(Product):
 
     class Meta:
         verbose_name = '> Headphone'
-
-class Mousepad(Product):
-    name = models.CharField(max_length=100)
-
-    length = models.DecimalField(max_digits=6, decimal_places=1, verbose_name='Длина (см)')
-    width = models.DecimalField(max_digits=6, decimal_places=1, verbose_name='Ширина (см)')
-    height = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Толщина (мм)')
-
-    def getShortenParams(device):
-        shorten_params = '[{0}x{1} см, {2} мм]'.format(device.length,
-                                                       device.width,
-                                                       device.height)
-        return shorten_params
-
-    def __str__(self):
-        return str(self.name)
-
-    class Meta:
-        verbose_name = '> Mousepad'
 

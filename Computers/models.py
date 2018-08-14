@@ -21,13 +21,13 @@ class Computer(Product):
     hdd_amount = models.IntegerField()
     ssd_amount = models.IntegerField()
 
-    def getShortenParams(device):
-        shorten_params = '[{0}, {1}x{2}Ghz, видеокарта {3} ({4}G), RAM {5} GB]'.format(device.CPU,
-                                                                                       device.CPU.core_count,
-                                                                                       device.CPU.frequency,
-                                                                                       device.graphic_card.GPU,
-                                                                                       device.graphic_card.RAM_amount,
-                                                                                       device.ram_amount)
+    def getShortenParams(self):
+        shorten_params = '[{0}, {1}x{2}Ghz, видеокарта {3} ({4}G), RAM {5} GB]'.format(self.CPU,
+                                                                                       self.CPU.coreCount,
+                                                                                       self.CPU.frequency,
+                                                                                       self.graphic_card.GPU,
+                                                                                       self.graphic_card.RAM_amount,
+                                                                                       self.ram_amount)
         return shorten_params
 
     def __str__(self):
@@ -66,10 +66,20 @@ class LaptopCPU(models.Model):
     def __str__(self):
         return self.name
 
+class LaptopGPU(models.Model):
+    name = models.CharField(max_length=50)
+    ram_amount = models.IntegerField(default=None, null=True, blank=True)
+
+    def __str__(self):
+        name = str(self.name)
+        if self.ram_amount > 0:
+            name += ' (' + str(self.ram_amount) + 'G)'
+        return name
+
 class Laptop(Product):
     RESOLUTION_CHOICES = [("1920x1080", "1920x1080"), ("1366х768", "1366х768")]
     MATRIX_CHOICES = [("IPS", "IPS"), ("TN", "TN"), ("VA", "VA")]
-
+    GRAPHICCAD_CHOICES = [('есть', 'есть'), ('нет', 'нет')]
 
     brand = models.ForeignKey(LaptopBrand, on_delete=models.PROTECT)
     name = models.CharField(max_length=50)
@@ -82,23 +92,13 @@ class Laptop(Product):
 
     ram_amount = models.IntegerField()
 
-    discreteGraphic = models.BooleanField(default=False)
-    gpu = models.CharField(max_length=20, default=None)
-    graphic_ram_amount = models.IntegerField(default=None)
-
+    discreteGraphic = models.CharField(max_length=10, choices=GRAPHICCAD_CHOICES, default='нет')
+    gpu = models.ForeignKey(LaptopGPU, on_delete=models.PROTECT, null=True, blank=True)
     hdd_amount = models.IntegerField(default=0)
     ssd_amount = models.IntegerField(default=0)
     emmc_amount = models.IntegerField(default=0)
 
     weight = models.DecimalField(max_digits=4, decimal_places=2)
-
-    def getShortenParams(device):
-        shorten_params = '[{0}, {1}, {2}, {3} ядра, потоков - {4}]'.format(device.resolution,
-                                                                         device.matrix,
-                                                                         device.cpu,
-                                                                         device.cpu.core_count,
-                                                                         device.cpu.thread_count)
-        return shorten_params
 
     def __str__(self):
         return str(self.diagonal.normalize()) + '\" ' + str(self.brand) + ' ' + str(self.name)

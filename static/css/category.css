@@ -1,3 +1,23 @@
+.category .filter-apply {
+    font-size: 18px;
+    color: #e53935;
+    font-weight: 500;
+    margin-top: 30px;
+    text-align: right;
+}
+.category .sort span {
+    margin-right: 5px;
+}
+.category .sort a.sort-item {
+    cursor: pointer;
+}
+.category .sort .sort-item i {
+    line-height: 16px;
+    position: relative;
+    top: 8px;
+    margin-right: 5px;
+    display: inline;
+}
 .category .category-item .responsive-img {
     padding: 5px 15px 0;
 }
@@ -52,6 +72,13 @@
     }
 }
 @media only screen and (max-width: 600px) {
+    .category .filter-apply {
+        font-size: 16px;
+        margin-top: 0;
+    }
+    .category .sort .sort-item i {
+        margin-right: 0;
+    }
     .category .category-item .responsive-img {
         padding: 5px;
     }
@@ -82,5 +109,6 @@
     .category .title {
         font-size: 22px;
     }
+
 
 }

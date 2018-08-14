@@ -4,11 +4,13 @@
 
 {% block title %}Заказ{% endblock %}
 
+{% block stylesheet %}
+    <link href="{% static 'css/orderlist.css' %}?version=1" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
     <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
-        <div id="sidenav-category">
         {% include 'sidenavCategory.html' %}
-        </div>
     </ul>
     <div class="sidenav-padding order-list">
         <div class="row padding-side">

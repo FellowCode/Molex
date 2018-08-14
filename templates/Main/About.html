@@ -3,6 +3,9 @@
 
 {% block title %}Molex{% endblock %}
 
+{% block stylesheet %}
+    <link href="{% static 'css/about.css' %}?version=1" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
         <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
@@ -26,12 +29,14 @@
                         <ul>
                             <li>Дешевле чем в магазине</li>
                             <li>Индивидуальный подход</li>
-                            <li>Подбор техники под определение цели с наименьшими затратами</li>
+                            <li>Подбор техники под определенные цели с наименьшими затратами</li>
                             <li>Гарантия на технику</li>
                             <li>Быстрая доставка</li>
                         </ul>
                         <p>Если у вас есть вопросы или нужна консультация напишите нам </p>
-                        <a class="btn red darken-1">Написать</a>
+                        <div class="col s6 offset-s3 m6">
+                            <a class="btn red darken-1">Написать</a>
+                        </div>
                     </div>
                 </div>
             </div>

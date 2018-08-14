@@ -32,12 +32,12 @@ class CPU(models.Model):
 class CPUProduct(Product):
     cpu = models.OneToOneField(CPU, on_delete=models.CASCADE)
 
-    def getShortenParams(device):
-        shorten_params = '[{0}, {1}x{2}Ghz, {3} потоков, {4}]'.format(device.cpu.socket,
-                                                                      device.cpu.coreCount,
-                                                                      device.cpu.frequency,
-                                                                      device.cpu.threadsCount,
-                                                                      device.cpu.RAM_type)
+    def getShortenParams(self):
+        shorten_params = '[{0}, {1}x{2}Ghz, {3} потоков, {4}]'.format(self.cpu.socket,
+                                                                      self.cpu.coreCount,
+                                                                      self.cpu.frequency,
+                                                                      self.cpu.threadsCount,
+                                                                      self.cpu.RAM_type)
         return shorten_params
 
     def __str__(self):
@@ -86,10 +86,10 @@ class GraphicCardProduct(Product):
     name = models.CharField(max_length=100, null=True, blank=True, default='')
     graphic_card = models.ForeignKey(GraphicCard, on_delete=models.PROTECT)
 
-    def getShortenParams(device):
-        shorten_params = '[{0}, {1} GB, {2} Вт]'.format(device.graphic_card.RAM_type,
-                                                        device.graphic_card.RAM,
-                                                        device.graphic_card.watts)
+    def getShortenParams(self):
+        shorten_params = '[{0}, {1} GB, {2} Вт]'.format(self.graphic_card.RAM_type,
+                                                        self.graphic_card.RAM,
+                                                        self.graphic_card.watts)
         return shorten_params
 
     def __str__(self):
@@ -111,15 +111,14 @@ class RAM(Product):
     RAM_amount = models.IntegerField()
     frequency = models.IntegerField()
 
-    def getShortenParams(device):
-        shorten_params = '[{0}, {1}, {2} GB, {3} Mhz]'.format(device.type,
-                                                              device.RAM_type,
-                                                              device.RAM_amount,
-                                                              device.frequency)
+    def getShortenParams(self):
+        shorten_params = '[{0}, {1}, {2} Mhz]'.format(self.type,
+                                                      self.RAM_type,
+                                                      self.frequency)
         return shorten_params
 
     def __str__(self):
-        return str(self.name)
+        return str(self.name) + ' (' + str(self.RAM_amount) + ' GB)'
 
     class Meta:
         verbose_name = '> RAM'
@@ -162,11 +161,11 @@ class Motherboard(Product):
 
     chipset = models.ForeignKey(MotherboardChipset, models.PROTECT, default=None)
 
-    def getShortenParams(device):
-        shorten_params = '[{0}, {1}, слотов RAM: {2}, чипсет {3}]'.format(device.formFactor,
-                                                                          device.socket,
-                                                                          device.RAM_slot_count,
-                                                                          device.chipset)
+    def getShortenParams(self):
+        shorten_params = '[{0}, {1}, слотов RAM: {2}, чипсет {3}]'.format(self.formFactor,
+                                                                          self.socket,
+                                                                          self.RAM_slot_count,
+                                                                          self.chipset)
         return shorten_params
 
     class Meta:
@@ -208,14 +207,13 @@ class SSD(Product):
     read_speed = models.IntegerField()
     write_speed = models.IntegerField()
 
-    def getShortenParams(device):
-        shorten_params = '[{0}, чтение {1} Mb/s, запись {2} Mb/s]'.format(device.memory_type,
-                                                                          device.read_speed,
-                                                                          device.write_speed)
+    def getShortenParams(self):
+        shorten_params = '[чтение {0} Mb/s, запись {1} Mb/s]'.format(self.read_speed,
+                                                                     self.write_speed)
         return shorten_params
 
     def __str__(self):
-        return str(self.brand) + ' ' + str(self.name) + ' ' + str(self.memory_amount)
+        return str(self.brand) + ' ' + str(self.name) + ' ' + str(self.memory_amount) + 'GB'
 
     class Meta:
         verbose_name = '> SSD'

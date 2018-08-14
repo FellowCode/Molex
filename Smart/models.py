@@ -47,17 +47,17 @@ class Smartphone(Product):
     SIM_count = models.CharField(max_length=8, choices=SIM_CHOICES, default="2")
     net = models.CharField(max_length=3, choices=NET_CHOICES, default="4G")
 
-    def getShortenParams(device):
-        shorten_params = '[Android {0}, {1} Мп, {2}, {3}, {4} мАч, {5}, {6}/{7}, {8}, {9}]'.format(device.android,
-                                                                                                   device.camera,
-                                                                                                   device.resolution,
-                                                                                                   device.matrix,
-                                                                                                   device.battery,
-                                                                                                   device.CPU,
-                                                                                                   device.RAM,
-                                                                                                   device.ROM,
-                                                                                                   device.SIM_count,
-                                                                                                   device.net)
+    def getShortenParams(self):
+        shorten_params = '[Android {0}, {1} Мп, {2}, {3}, {4} мАч, {5}, {6}/{7}, {8}, {9}]'.format(self.android,
+                                                                                                   self.camera,
+                                                                                                   self.resolution,
+                                                                                                   self.matrix,
+                                                                                                   self.battery,
+                                                                                                   self.CPU,
+                                                                                                   self.RAM,
+                                                                                                   self.ROM,
+                                                                                                   self.SIM_count,
+                                                                                                   self.net)
         return shorten_params
 
     def __str__(self):

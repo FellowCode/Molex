@@ -8,6 +8,9 @@ register = template.Library()
 def get_item(dictionary, key):
     return dictionary.get(key)
 
+@register.filter
+def has_item(dictionary, key):
+    return key in dictionary
 #{{ dictionary|get_item:key }}
 
 """"@register.filter
@@ -65,7 +68,7 @@ def count(list):
     return list.count()
 
 @register.filter
-def getShortenParams(device):
-    model = device.__class__
-    return model.getShortenParams(device)
+def replace_spaces(value):
+    return str(value).replace(' ', '_')
+
 

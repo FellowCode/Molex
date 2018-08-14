@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
+from datetime import datetime
 
 
 class Category(models.Model):
@@ -116,6 +117,7 @@ class Order(models.Model):
     isCompleted = models.BooleanField(default=False)
     isProcessed = models.BooleanField(default=True)
     goods = models.TextField()
+    datetime = models.DateTimeField(default=datetime.now)
 
     class Meta:
         ordering = ['isCompleted']

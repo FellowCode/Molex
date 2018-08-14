@@ -4,6 +4,10 @@
 
 {% block title %}Product{% endblock %}
 
+{% block stylesheet %}
+    <link href="{% static 'css/productpage.css' %}?version=4" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
     <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
         {% include 'sidenavCategory.html' %}
@@ -105,11 +109,21 @@
                 <h5>Характеристики</h5>
                 <table>
                     <tbody>
-                      {% for key, prop in propForm.items %}{% if prop|get_item:'display' != 'filterOnly' %}<tr>
-                                  <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
-                                <td>{% if prop|get_item:'param' is None %}{{ device|get_attr:key }}{{ prop|get_item:'units' }}{% else %}
-                                    {% for param in device|get_param_list:prop %}{{ param }}, {% endfor %}{% endif %}</td>
-                              </tr>
+                      {% for key, prop in propForm.items %}
+                          {% if prop|get_item:'display' != 'filterOnly' and device|get_attr:key is not None %}
+                              {% if not prop|has_item:'hideZero' %}
+                                  <tr>
+                                      <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
+                                    <td>{% if prop|get_item:'param' is None %}{{ device|get_attr:key }}{{ prop|get_item:'units' }}{% else %}
+                                        {% for param in device|get_param_list:prop %}{{ param }}, {% endfor %}{% endif %}</td>
+                                  </tr>
+                              {% elif  device|get_attr:key > 0 %}
+                                  <tr>
+                                      <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
+                                    <td>{% if prop|get_item:'param' is None %}{{ device|get_attr:key }}{{ prop|get_item:'units' }}{% else %}
+                                        {% for param in device|get_param_list:prop %}{{ param }}, {% endfor %}{% endif %}</td>
+                                  </tr>
+                              {% endif %}
                           {% endif %}
                       {% endfor %}
                     </tbody>

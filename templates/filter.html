@@ -76,7 +76,7 @@
                                                 {% for value in propForm|get_item:prop|get_item:'set' %}
                                                 <li>
                                                     <label>
-                                                        <input type="checkbox" class="filled-in" name="{{ prop }}" value="{{ value }}"/>
+                                                        <input type="checkbox" class="filled-in" name="{{ prop }}" value="{{ value|replace_spaces }}"/>
                                                         <span>{{ value }}</span>
                                                     </label>
                                                 </li>
