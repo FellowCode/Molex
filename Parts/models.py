@@ -78,7 +78,7 @@ class GraphicCard(models.Model):
     watts = models.IntegerField()
 
     def __str__(self):
-        return str(self.GPU) + ' (' + str(RAM) + 'G)'
+        return str(self.GPU) + ' (' + str(self.RAM) + 'G)'
 
 class GraphicCardProduct(Product):
 
@@ -93,19 +93,29 @@ class GraphicCardProduct(Product):
         return shorten_params
 
     def __str__(self):
-        return str(self.brand) + ' ' + str(self.graphic_card.GPU) + ' ' + str(self.name)
+        name = str(self.brand) + ' ' + str(self.graphic_card.GPU)
+        if self.name is not None:
+            name += ' ' + str(self.name)
+        return name
+
 
     class Meta:
         verbose_name = '> Graphiccard'
 
 ##############################################
 ###############################################
+class RAMBrand(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class RAM(Product):
     TYPE_CHOICES = [("DIMM", "DIMM"), ("SO-DIMM", "SO-DIMM")]
     RAM_TYPE_CHOICES = [("DDR2", "DDR2"), ("DDR3", "DDR3"), ("DDR4", "DDR4")]
 
-    name = models.CharField(max_length=100)
+    brand = models.ForeignKey(RAMBrand, on_delete=models.PROTECT, default=1)
+    name = models.CharField(max_length=100, null=True, blank=True)
     type = models.CharField(max_length=8, choices=TYPE_CHOICES, default="DIMM")
     RAM_type = models.CharField(max_length=8, choices=RAM_TYPE_CHOICES, default="DDR3")
     RAM_amount = models.IntegerField()
@@ -118,7 +128,12 @@ class RAM(Product):
         return shorten_params
 
     def __str__(self):
-        return str(self.name) + ' (' + str(self.RAM_amount) + ' GB)'
+        name = ''
+        if self.brand is not None:
+            name = str(self.brand)
+        if self.name is not None:
+            name += ' ' + str(self.name)
+        return name + ' (' + str(self.RAM_amount) + ' GB)'
 
     class Meta:
         verbose_name = '> RAM'

@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import MouseBrand, Mouse, KeyboardBrand, Keyboard, HeadphoneBrand, Headphone
-from Products.admin import productInlines
-
+from .models import MouseBrand, Mouse, KeyboardBrand, Keyboard, HeadphoneBrand, Headphone, Speaker, SpeakerBrand, SpeakerInterface, SpeakerInterfaceName
+from Products.admin import productInlines, ImageInline
 
 
 @admin.register(MouseBrand)
@@ -32,3 +31,24 @@ class HeadphoneBrandAdmin(admin.ModelAdmin):
 @admin.register(Headphone)
 class HeadphoneAdmin(admin.ModelAdmin):
     inlines = productInlines
+
+@admin.register(SpeakerBrand)
+class SpeakerBrandAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
+@admin.register(SpeakerInterfaceName)
+class SpeakerInterfaceNameAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
+class SpeakerInterfaceInline(admin.TabularInline):
+    model = SpeakerInterface
+
+@admin.register(Speaker)
+class SpeakerAdmin(admin.ModelAdmin):
+    inlines = [
+        ImageInline,
+        SpeakerInterfaceInline,
+    ]
+

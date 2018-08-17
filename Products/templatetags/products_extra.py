@@ -61,7 +61,10 @@ def integer(value):
 
 @register.filter
 def normalize(value):
-    return value.normalize()
+    try:
+        return value.normalize()
+    except:
+        return value
 
 @register.filter
 def count(list):

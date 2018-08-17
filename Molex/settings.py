@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#SERVER_EMAIL = 'info@molex79.ru'
+SERVER_EMAIL = 'info@molex79.ru'
 
 ADMINS = [('Fellow', 'sergo79_f1@mail.ru'), ]
 MANAGERS = [('Fellow', 'sergo79_f1@mail.ru'), ]
@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dbbackup',
 
+    'Payment',
     'Main',
     'Products',
     'Smart',
@@ -154,7 +156,15 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 
+EMAIL_PORT = 465
+
 EMAIL_HOST_USER = 'info@molex79.ru'
 EMAIL_HOST_PASSWORD = 'FurySite7997'
 
 EMAIL_USE_SSL = True
+
+
+#DB backup
+
+DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DBBACKUP_STORAGE_OPTIONS = {'location': 'backups/'}

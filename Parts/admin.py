@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import GraphicCardProduct, GPU, GraphicCardBrand, CPUProduct, CPUSocket, RAM, Motherboard, SSD, \
-    MotherboardBrand, SSDBrand, MotherboardInterface, MotherboardChipset, InterfaceName, CPU, GraphicCard
+    MotherboardBrand, SSDBrand, MotherboardInterface, MotherboardChipset, InterfaceName, CPU, GraphicCard, RAMBrand
 from Products.admin import productInlines, ImageInline, ColorInline
 
 @admin.register(GraphicCardBrand)
@@ -34,6 +34,10 @@ class CPUAdmin(admin.ModelAdmin):
 class CPUAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
 
+@admin.register(RAMBrand)
+class RAMBrandAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
 
 @admin.register(RAM)
 class RAMAdmin(admin.ModelAdmin):

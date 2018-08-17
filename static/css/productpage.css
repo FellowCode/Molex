@@ -13,6 +13,16 @@
     position: absolute;
     top: 0;
 }
+.product-panel .carousel ~ .btn-floating#changeDB {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.product-panel .carousel ~ .btn-floating#original-link {
+    position: absolute;
+    left: 60px;
+    top: 10px;
+}
 .product-panel .count i {
     width: 20px;
     height: 20px;
@@ -111,8 +121,4 @@ td#param-name {
         font-size: 14px;
     }
 }
-.product-panel .carousel ~ .btn-floating {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-}
+

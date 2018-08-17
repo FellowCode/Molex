@@ -7,7 +7,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    ordering = ('parent', 'name')
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):

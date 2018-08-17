@@ -4,10 +4,10 @@ $(document).ready(function () {
         var deviceList = $(this).closest('.order-item').find('.device-list');
         if(deviceList.hasClass('hide')) {
             deviceList.removeClass('hide');
-            $(this).text('Скрыть список устройств')
+            $(this).text('Скрыть')
         } else {
             deviceList.addClass('hide');
-            $(this).text('Показать список устройств')
+            $(this).text('Показать')
         }
     });
     $('button[type=submit]').click(function () {

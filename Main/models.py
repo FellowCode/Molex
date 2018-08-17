@@ -8,8 +8,14 @@ def corousel_path(instance, filename):
     return path
 
 class CarouselImage(models.Model):
+    name = models.CharField(max_length=50, default='noName')
     image = ProcessedImageField(
         upload_to=corousel_path,
         processors=[ResizeToFill(1200, 400)],
         format='JPEG',
         options={'quality': 85})
+
+    link = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name

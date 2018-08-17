@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% if PaymentSrc is not None %}
+    <script language=JavaScript src="{{ PaymentSrc }}"></script>
+{% endif %}
+{% if id is not None %}OK{{ id }}{% endif %}

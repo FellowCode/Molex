@@ -1,4 +1,4 @@
-from .models import Mouse, MouseBrand, Keyboard, KeyboardBrand, Headphone, HeadphoneBrand
+from .models import Mouse, MouseBrand, Keyboard, KeyboardBrand, Headphone, HeadphoneBrand, SpeakerBrand, Speaker, SpeakerFrequencyDiapason, SpeakerInterfaceName
 from Products.helper import getNamesFromChoices
 
 
@@ -74,3 +74,36 @@ headphonePropForm = {
 }
 
 
+
+speakerPropForm = {
+    'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},
+
+    'count': {'type': 'inStock', 'name': 'Наличие', 'display': 'filterOnly', 'units': '', 'set': ['нет', 'есть']},
+
+    'brand': {'type': 'idArray', 'name': 'Производитель', 'display': 'always',
+              'units': '', 'set': SpeakerBrand.objects.all()},
+
+    'channels': {'type': 'strArray', 'name': 'Каналы', 'display': 'always',
+                 'units': '', 'set': getNamesFromChoices(Speaker.CHANNELS_CHOICES)},
+
+    'power': {'type': 'intRange', 'name': 'Макс. мощность', 'display': 'always', 'units': ' Вт'},
+
+    'power_output': {'type': 'intRange', 'name': 'Выходная мощность', 'display': 'always', 'units': ' Вт'},
+
+    'frequency_diapason': {'type': 'idArray', 'name': 'Диапазон частот', 'display': 'always',
+                           'units': '', 'set': SpeakerFrequencyDiapason.objects.all()},
+
+    'battery': {'type': 'intRange', 'name': 'Ёмкость аккумулятора', 'display': 'always', 'units': ' мАч', 'hideZero': True},
+
+    'waterproof': {'type': 'strArray', 'name': 'Влагозащита', 'display': 'always',
+                   'units': '', 'set': getNamesFromChoices(Speaker.YES_NO_CHOICES)},
+
+    'microsd': {'type': 'strArray', 'name': 'microSD', 'display': 'always',
+                   'units': '', 'set': getNamesFromChoices(Speaker.YES_NO_CHOICES)},
+
+    'microphone': {'type': 'strArray', 'name': 'Микрофон', 'display': 'always',
+                   'units': '', 'set': getNamesFromChoices(Speaker.YES_NO_CHOICES)},
+
+    'interfaces__name__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
+                               'units': '', 'set': SpeakerInterfaceName.objects.all(), 'param': 'interfaces'},
+}

@@ -1,3 +1,35 @@
+#index.carousel {
+    position: relative;
+}
+.carousel.carousel-slider a.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.carousel.carousel-slider .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.carousel.carousel-slider a.carousel-fixed-item {
+    color: #e53935;
+    position: absolute;
+    bottom: 150px;
+}
+.carousel.carousel-slider a.carousel-fixed-item > i {
+    color: #e53935;
+}
+.carousel.carousel-slider a.carousel-fixed-item#left {
+    left: 0;
+}
+.carousel.carousel-slider a.carousel-fixed-item#right {
+    right: 0;
+    left: auto;
+}
 .hide {
     display: none;
 }
@@ -46,10 +78,12 @@
 .nav-wrapper {
     /*padding: 0 calc(calc(100vw - 1300px) / 2) 0 300px;*/
     padding-left: 300px;
+    padding-right: calc(100vw - 1555px) !important;
 }
 .sidenav-padding {
       /*padding: 0 calc(calc(100vw - 1300px) / 2) 0 300px;*/
     padding-left: 300px;
+    padding-right: calc(100vw - 1555px) !important;
 }
 
 .row-padding {
@@ -99,16 +133,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .best-offer .card-buy {
     position: absolute;
+    line-height: 40px;
+    height: 40px;
     right: 10px;
-    bottom: 5px;
+    bottom: 0;
     color: #e53935;
 }
 .best-offer .card-price {
     position: absolute;
-    bottom:5px;
+    bottom:0;
     left:10px;
     font-size: 18px;
-    color: #e53935
+    color: #e53935;
+    height: 40px;
 }
 .best-offer .card-buy > span {
     font-size: 18px;
@@ -116,15 +153,19 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .best-offer .card-buy > i {
     font-size: 20px;
-    margin-top: 4px;
+    margin-top: 12px;
 }
 .best-offer .card .card-action {
-    padding: 20px 15px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
 }
 .best-offer .card .card-content {
     padding: 10px 10px;
     font-size: 18px;
+    height: 65px;
     color: #292929;
+    text-overflow: ellipsis;
 }
 
 /*******************************/
@@ -163,10 +204,14 @@ input[type=number]::-webkit-outer-spin-button {
 .order-confirm .btn-main {
     margin-top: 30px;
 }
-/***********************************/
-/*********** order list ************/
-
-
+@media only screen and (max-width: 1555px) {
+    .sidenav-padding {
+        padding-right: 0 !important;
+    }
+    .nav-wrapper {
+        padding-right: 0 !important;
+    }
+}
 
 @media only screen and (max-width: 992px) {
     .nav-logo {
@@ -230,5 +275,34 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .index-carousel-padding {
         margin-top: 0;
+    }
+    /**************************/
+    /****** best offer card ***/
+    .best-offer .card .card-content {
+        padding: 5px 10px;
+        font-size: 14px;
+        height: 50px;
+    }
+    .best-offer .card .card-action {
+        height: 30px;
+        line-height: 30px;
+    }
+    .best-offer .card-price {
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        left: 5px;
+    }
+    .best-offer .card-buy {
+        height: 30px;
+        line-height: 30px;
+        right: 5px;
+    }
+    .best-offer .card-buy > span {
+        font-size: 14px;
+    }
+    .best-offer .card-buy i {
+        margin-top: 8px;
+        font-size: 16px;
     }
 }

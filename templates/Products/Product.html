@@ -5,7 +5,7 @@
 {% block title %}Product{% endblock %}
 
 {% block stylesheet %}
-    <link href="{% static 'css/productpage.css' %}?version=4" rel="stylesheet">
+    <link href="{% static 'css/productpage.css' %}?version=5" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -23,9 +23,9 @@
             <div class="col s12 product-panel z-depth-2" style="position: relative">
                 <div class="col s12 m6">
                     <div class="carousel carousel-slider center">
+                        <a id="left" class="carousel-fixed-item btn-floating btn-large waves-effect transparent z-depth-0  left"><i class="material-icons large">chevron_left</i></a>
+                        <a id="right" class="carousel-fixed-item btn-floating btn-large waves-effect transparent z-depth-0  right"><i class="material-icons large">chevron_right</i></a>
                         <div class="carousel-fixed-item with-indicators">
-                          <a id="left" class="btn-floating btn-large waves-effect transparent z-depth-0  left"><i class="grey-text text-darken-3 material-icons large">chevron_left</i></a>
-                          <a id="right" class="btn-floating btn-large waves-effect transparent z-depth-0  right"><i class="grey-text text-darken-3 material-icons large">chevron_right</i></a>
                         </div>
                         {% for image in device|get_children_list:'images' %}
                             <div class="carousel-item">
@@ -34,7 +34,10 @@
                         {% endfor %}
                     </div>
                     {% if user.is_superuser %}
-                            <a href="/admin/{{ category_prop|get_item:'app' }}/{{ device.category.slug }}/{{ device.id }}/change/" target="_blank" class="btn-floating btn-large waves-effect waves-light red darken-1"><i class="material-icons">create</i></a>
+                            <a id="changeDB" href="/admin/{{ category_prop|get_item:'changeUrl' }}/{{ device.id }}/change/" target="_blank" class="btn-floating waves-effect waves-light red darken-1 z-depth-2"><i class="material-icons">create</i></a>
+                            {% if device.link is not None %}
+                                <a id="original-link" href="{{ device.link }}" class="btn-floating waves-effect waves-light red darken-1 z-depth-2"><i class="material-icons">insert_link</i></a>
+                            {% endif %}
                     {% endif %}
                 </div>
                 <div class="col s12 m6 product-info">
@@ -65,8 +68,8 @@
                     <div class="row no-margin">
                         <div class="col s2 offset-s1 offset-m2" style="position: relative; height: 30px">
                             <div class="count">
-                                <a href="#" class="remove"><i class="material-icons">remove</i></a>
-                                <a href="#" class="add"><i class="material-icons">add</i></a>
+                                <a class="remove"><i class="material-icons">remove</i></a>
+                                <a class="add"><i class="material-icons">add</i></a>
                                 <input class="browser-default" value="1">
                             </div>
                         </div>
@@ -110,19 +113,24 @@
                 <table>
                     <tbody>
                       {% for key, prop in propForm.items %}
-                          {% if prop|get_item:'display' != 'filterOnly' and device|get_attr:key is not None %}
-                              {% if not prop|has_item:'hideZero' %}
+                          {% if prop|get_item:'display' != 'filterOnly' %}
+                              {% if prop|has_item:'param' %}
                                   <tr>
                                       <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
-                                    <td>{% if prop|get_item:'param' is None %}{{ device|get_attr:key }}{{ prop|get_item:'units' }}{% else %}
-                                        {% for param in device|get_param_list:prop %}{{ param }}, {% endfor %}{% endif %}</td>
+                                      <td>{% for param in device|get_param_list:prop %}{{ param }}{% if forloop.counter < device|get_param_list:prop|length %}, {% endif %}{% endfor %}</td>
                                   </tr>
-                              {% elif  device|get_attr:key > 0 %}
-                                  <tr>
-                                      <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
-                                    <td>{% if prop|get_item:'param' is None %}{{ device|get_attr:key }}{{ prop|get_item:'units' }}{% else %}
-                                        {% for param in device|get_param_list:prop %}{{ param }}, {% endfor %}{% endif %}</td>
-                                  </tr>
+                              {% elif device|get_attr:key is not None %}
+                                  {% if not prop|has_item:'hideZero' %}
+                                      <tr>
+                                          <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
+                                        <td>{{ device|get_attr:key|normalize }}{{ prop|get_item:'units' }}</td>
+                                      </tr>
+                                  {% elif  device|get_attr:key > 0 %}
+                                      <tr>
+                                          <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
+                                        <td>{{ device|get_attr:key|normalize }}{{ prop|get_item:'units' }}</td>
+                                      </tr>
+                                  {% endif %}
                               {% endif %}
                           {% endif %}
                       {% endfor %}
@@ -136,8 +144,6 @@
 {% endblock %}
 
 {% block script %}
-    <script>
-
-    
-    </script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}?version=2"></script>
+    <script type="text/javascript" src="{% static 'js/productPage.js' %}?version=3"></script>
 {% endblock %}

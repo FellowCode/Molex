@@ -21,6 +21,7 @@
                 <form action="/products/order/confirm/" method="post">{% csrf_token %}
                     <input type="hidden" name="goods" value="">
                     <input type="hidden" name="payment_amount" value="">
+                    <input type="hidden" name="needPayment" value="True">
                     <div class="row">
                         <div class="input-field col s8 offset-s2 m6">
                           <i class="material-icons prefix">account_circle</i>
@@ -32,12 +33,17 @@
                           <input name="person_phone" id="icon_telephone" type="tel" class="validate">
                           <label for="icon_telephone">Телефон</label>
                         </div>
+                        <div class="input-field col s8 offset-s2 m6">
+                          <i class="material-icons prefix">email</i>
+                          <input name="person_email" id="icon_email" type="email" class="validate">
+                          <label for="icon_email">Email</label>
+                        </div>
                     </div>
                     <p class="center-align">
                     Мы свяжемся с вами для уточнения заказа, а также как только заказанная вами продукция придет. Обычно срок доставки не превышает 30 дней.
                     </p>
-                    <div class="col s8 offset-s2 m6 offset-m3">
-                        <button type="submit" class="btn-large waves-effect waves-light red darken-1 btn-full-width">Заказать</button>
+                    <div class="col s8 offset-s2 m6">
+                        <button type="submit" class="btn-large waves-effect waves-light red darken-1 btn-full-width">Оплатить</button>
                     </div>
                 </form>
             </div>
@@ -80,3 +86,6 @@
     </div>
     </div>
 {% endblock content %}
+{% block script %}
+    <script type="text/javascript" src="{% static 'js/order.js' %}?version=2"></script>
+{% endblock %}

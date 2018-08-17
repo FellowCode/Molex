@@ -107,6 +107,8 @@ var checkIntoCart = function () {
     if(cartForm.hasOwnProperty(category)) {
         $.each(String(cartForm[category]).split('~'), function (i, elem) {
             var values = String(elem).split('.');
+            if (colorId === null)
+                colorId = String(colorId);
             if (deviceId === values[0] && colorId === values[1])
                 exist = true;
         });

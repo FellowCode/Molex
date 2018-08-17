@@ -79,6 +79,9 @@
     .category .sort .sort-item i {
         margin-right: 0;
     }
+    .category .sort .sort-item {
+        margin-left: 5px;
+    }
     .category .category-item .responsive-img {
         padding: 5px;
     }

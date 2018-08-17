@@ -1,11 +1,10 @@
 from Products.admin import ImageInline, OptionInline, ColorInline
-from .models import Computer, ComputerInterface, InterfaceName, Laptop, LaptopCPU, LaptopBrand, LaptopInterface, LaptopGPU
+from .models import Computer, ComputerInterface, InterfaceName, Laptop, LaptopCPU, LaptopBrand, LaptopInterface, LaptopGPU, LaptopIntegralGPU
 from django.contrib import admin
 
 @admin.register(InterfaceName)
 class InterfaceNameAdmin(admin.ModelAdmin):
-    def get_model_perms(self, request):
-        return {}
+    pass
 
 class CompInterfaceInline(admin.TabularInline):
     model = ComputerInterface
@@ -28,13 +27,24 @@ class LaptopBrandAdmin(admin.ModelAdmin):
     def get_model_perms(self, request):
         return {}
 
+@admin.register(LaptopIntegralGPU)
+class LaptopIntegralGPUAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
 @admin.register(LaptopGPU)
 class LaptopGPUAdmin(admin.ModelAdmin):
     def get_model_perms(self, request):
         return {}
 
+@admin.register(LaptopInterface)
+class LaptopInterfaceAdmin(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
 class LaptopInterfaceInline(admin.TabularInline):
     model = LaptopInterface
+    extra = 0
 
 @admin.register(Laptop)
 class LaptopAdmin(admin.ModelAdmin):

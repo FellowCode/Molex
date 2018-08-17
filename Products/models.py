@@ -111,14 +111,19 @@ class Order(models.Model):
     person = models.ForeignKey(User, null=True, blank=True, default=None, on_delete=models.SET_NULL)
     person_name = models.CharField(max_length=50)
     person_phone = models.CharField(max_length=12)
+    person_email = models.EmailField(default=None, blank=True, null=True)
     person_pay = models.DecimalField(max_digits=8, decimal_places=2, default=0)
     payment_amount = models.DecimalField(max_digits=8, decimal_places=2)
     isPaid = models.BooleanField(default=False)
+    payment_method = models.CharField(max_length=50, default=None, blank=True, null=True)
+    person_payment_account = models.CharField(max_length=100, default=None, blank=True, null=True)
+    payment_datetime = models.CharField(max_length=50, default=None, blank=True, null=True)
+    payment_operation_id = models.CharField(max_length=100, default=None, blank=True, null=True)
     isCompleted = models.BooleanField(default=False)
     isProcessed = models.BooleanField(default=True)
     goods = models.TextField()
     datetime = models.DateTimeField(default=datetime.now)
 
     class Meta:
-        ordering = ['isCompleted']
+        ordering = ('isCompleted', '-id')
 

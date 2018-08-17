@@ -5,7 +5,7 @@
 {% block title %}Заказ{% endblock %}
 
 {% block stylesheet %}
-    <link href="{% static 'css/orderlist.css' %}?version=1" rel="stylesheet">
+    <link href="{% static 'css/orderlist.css' %}?version=2" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -23,44 +23,55 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m10 offset-m1 l8 offset-l2">
+                <div class="col s12 m10 offset-m1 xl8 offset-xl2">
                     {% for order in order_list %}
                         <div class="col s12 order-item">
-                            <div class="row">
+                            <div class="row order-line">
                                 <div class="col s6 header">
-                                    <a href="/admin/Products/order/{{ order|get_item:'order'|get_attr:'id' }}/change/" {% if order|get_item:'order'|get_attr:'isCompleted' %}class="completed"{% endif %}>Заказ {{ order|get_item:'order'|get_attr:'id' }}</a>
+                                    <a href="/admin/Products/order/{{ order|get_item:'order'|get_attr:'id' }}/change/" {% if order|get_item:'order'|get_attr:'isCompleted' %}class="completed"{% endif %}>Заказ #{{ order|get_item:'order'|get_attr:'id' }}</a>
                                 </div>
                                 <div class="col s6 order-payment-amount right-align">{{ order|get_item:'order'|get_attr:'payment_amount'|normalize }} Р.</div>
                             </div>
-                            <div class="row">
-                                <div class="col s12 person-data">
-                                    <b>Контактные данные: </b>{{ order|get_item:'order'|get_attr:'person_name' }}, {{ order|get_item:'order'|get_attr:'person_phone' }}
+                            <div class="row order-line">
+                                <div class="col s12 l3 person-data">
+                                    <b>Имя: </b>{{ order|get_item:'order'|get_attr:'person_name' }}
+                                </div>
+                                <div class="col s12 l4 person-data">
+                                    <b>Тел: </b>{{ order|get_item:'order'|get_attr:'person_phone' }}
+                                </div>
+                                <div class="col s12 l5 person-data">
+                                    <b>Email: </b>{{ order|get_item:'order'|get_attr:'person_email' }}
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col s8">
-                                    <a id="device-show" role="button">Показать список устройств</a>
+                            <div class="row order-line">
+                                <div class="col s6">
+                                    <a id="device-show" role="button">Показать</a>
                                 </div>
                                 {% if order|get_item:'order'|get_attr:'isProcessed' %}
-                                    <div class="col s4 red-text text-darken-1 processed right-align">В обработке</div>
+                                    <div class="col s6 red-text text-darken-1 processed right-align">В обработке</div>
                                 {% else %}
-                                     <div class="col s4 green-text text-darken-2 processed right-align">Обработан</div>
+                                     <div class="col s6 green-text text-darken-2 processed right-align">Обработан</div>
                                 {% endif %}
                             </div>
-                            <div class="col s12 device-list hide">
+                            <div class="col s12 device-list hide no-padding">
                                 {% for device in order|get_item:'devices' %}
                                     <div class="row no-margin">
-                                        <div class="col s1 counter">{{ forloop.counter }}</div>
+                                        <div class="col s1 counter no-padding center-align">{{ forloop.counter }}.</div>
                                         <div class="col s11 device-item">
-                                            <div class="col s8 header">
-                                                <a href="/products/{{ device|get_item:'fullSlug' }}/id/{{ device|get_item:'device'|get_attr:'id' }}/">{{ device|get_item:'device' }}</a>
+                                            <div class="row order-line">
+                                                <div class="col s8 header">
+                                                    <a href="/products/{{ device|get_item:'fullSlug' }}/id/{{ device|get_item:'device'|get_attr:'id' }}/">{{ device|get_item:'device' }}</a>
+                                                </div>
+                                                <div class="col s4 price right-align">{{ device|get_item:'fullPrice' }}</div>
                                             </div>
-                                            <div class="col s4 price right-align">{{ device|get_item:'fullPrice' }}</div>
                                             {% if device|get_item:'color' is not None %}
                                             <div class="col s12 color"><b>Цвет: </b>{{ device|get_item:'color' }}</div>
                                             {% endif %}
                                             {% if device|get_item:'options'|count > 0 %}
                                                 <div class="col s12 options"><b>Опции: </b>{% for option in device|get_item:'options' %}{{ option.name }},{% endfor %}</div>
+                                            {% endif %}
+                                            {% if device|get_item:'device'|get_attr:'link' is not None %}
+                                                <div class="col s12 link"><a href="{{ device|get_item:'device'|get_attr:'link' }}">Ссылка</a></div>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -73,3 +84,7 @@
         </div>
     </div>
 {% endblock content %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'js/order.js' %}?version=2"></script>
+{% endblock %}

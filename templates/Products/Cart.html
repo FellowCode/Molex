@@ -59,8 +59,8 @@
                         </div>
                         <a id="delete" class="btn red darken-1 waves-effect waves-light"><i class="material-icons">delete</i></a>
                         <div class="count">
-                            <a href="#" class="remove"><i class="material-icons">remove</i></a>
-                            <a href="#" class="add"><i class="material-icons">add</i></a>
+                            <a class="remove"><i class="material-icons">remove</i></a>
+                            <a class="add"><i class="material-icons">add</i></a>
                             <input class="browser-default" value="{{ device|get_item:'count' }}">
                         </div>
                     </div>
@@ -84,6 +84,5 @@
 {% endblock content %}
 
 {% block script %}
-    <script type="text/javascript">
-    </script>
+    <script type="text/javascript" src="{% static 'js/cart.js' %}?version=2"></script>
 {% endblock %}

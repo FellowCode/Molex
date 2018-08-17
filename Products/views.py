@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .helper import Filter, getCategory, getDeviceById, getDeviceListByCategory, ToStrArray
 from Smart.helper import smartphonePropForm
 from Smart.models import Smartphone
@@ -6,33 +6,38 @@ from Parts.helper import graphiccardPropForm, CPUPropForm, RAMPropForm, motherbo
 from Parts.models import GraphicCardProduct, CPUProduct, RAM, Motherboard, SSD
 from Computers.models import Computer, Laptop
 from Computers.helper import computerPropForm, laptopPropForm
-from CompPeripherals.models import Mouse, Keyboard, Headphone
-from CompPeripherals.helper import mousePropForm, keyboardPropForm, headphonePropForm
+from CompPeripherals.models import Mouse, Keyboard, Headphone, Speaker
+from CompPeripherals.helper import mousePropForm, keyboardPropForm, headphonePropForm, speakerPropForm
 from Accessories.models import Mousepad
 from Accessories.helper import mousepadPropForm
 from .models import Order
 from django.http import Http404
 from decimal import *
+from SMTP.main import sendConfirmOrderMail
+import hashlib
+from Payment import settings as PaySettings
+from Payment.helper import getYandexPaymentUrl
 
 
 category_prop_list = {
-    'smartphone': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
-    'tablet': {'prop_form': smartphonePropForm, 'model': Smartphone, 'app': 'Smart'},
+    'smartphone': {'prop_form': smartphonePropForm, 'model': Smartphone, 'changeUrl': 'Smart/smartphone'},
+    'tablet': {'prop_form': smartphonePropForm, 'model': Smartphone, 'changeUrl': 'Smart/smartphone'},
 
-    'graphic-card': {'prop_form': graphiccardPropForm, 'model': GraphicCardProduct, 'app': 'Parts'},
-    'cpu': {'prop_form': CPUPropForm, 'model': CPUProduct, 'app': 'Parts'},
-    'ram': {'prop_form': RAMPropForm, 'model': RAM, 'app': 'Parts'},
-    'motherboard': {'prop_form': motherboardPropForm, 'model': Motherboard, 'app': 'Parts'},
-    'ssd': {'prop_form': ssdPropForm, 'model': SSD, 'app': 'Parts'},
+    'graphic-card': {'prop_form': graphiccardPropForm, 'model': GraphicCardProduct, 'changeUrl': 'Parts/graphiccardproduct'},
+    'cpu': {'prop_form': CPUPropForm, 'model': CPUProduct, 'changeUrl': 'Parts/cpuproduct'},
+    'ram': {'prop_form': RAMPropForm, 'model': RAM, 'changeUrl': 'Parts/ram'},
+    'motherboard': {'prop_form': motherboardPropForm, 'model': Motherboard, 'changeUrl': 'Parts/motherboard'},
+    'ssd': {'prop_form': ssdPropForm, 'model': SSD, 'changeUrl': 'Parts/ssd'},
 
-    'fixed-pc': {'prop_form': computerPropForm, 'model': Computer, 'app': 'Computers'},
-    'laptop': {'prop_form': laptopPropForm, 'model': Laptop, 'app': 'Computers'},
+    'fixed-pc': {'prop_form': computerPropForm, 'model': Computer, 'changeUrl': 'Computers/computer'},
+    'laptop': {'prop_form': laptopPropForm, 'model': Laptop, 'changeUrl': 'Computers/laptop'},
 
-    'mouse': {'prop_form': mousePropForm, 'model': Mouse, 'app': 'CompPeripherals'},
-    'keyboard': {'prop_form': keyboardPropForm, 'model': Keyboard, 'app': 'CompPeripherals'},
-    'headphone': {'prop_form': headphonePropForm, 'model': Headphone, 'app': 'CompPeripherals'},
+    'mouse': {'prop_form': mousePropForm, 'model': Mouse, 'changeUrl': 'CompPeripherals/mouse'},
+    'keyboard': {'prop_form': keyboardPropForm, 'model': Keyboard, 'changeUrl': 'CompPeripherals/keyboard'},
+    'headphone': {'prop_form': headphonePropForm, 'model': Headphone, 'changeUrl': 'CompPeripherals/headphone'},
+    'speaker': {'prop_form': speakerPropForm, 'model': Speaker, 'changeUrl': 'CompPeripherals/speaker'},
 
-    'mousepad': {'prop_form': mousepadPropForm, 'model': Mousepad, 'app': 'Accessories'},
+    'mousepad': {'prop_form': mousepadPropForm, 'model': Mousepad, 'changeUrl': 'Accessories/mousepad'},
 }
 
 def CategoryView(request, hierarchy= None):
@@ -71,13 +76,15 @@ def OrderView(request):
     device_list = getCartDevices(request.GET)
     return render(request, 'Products/Order.html', {'device_list': device_list})
 
-def OrderConfirm(request):
+def OrderPayment(request):
     if request.method == 'POST':
         order = Order.objects.create(goods=request.POST['goods'], person_name=request.POST['person_name'],
                                      person_phone=request.POST['person_phone'],
-                                     payment_amount=float(request.POST['payment_amount']))
+                                     person_email=request.POST['person_email'],
+                                     payment_amount=int(request.POST['payment_amount']),)
         order.save()
-        return render(request, 'Products/OrderConfirm.html')
+        #sendConfirmOrderMail(order.person_email, order.id)
+        return redirect(getYandexPaymentUrl(order))
 
 
 def OrderListView(request):
@@ -131,5 +138,7 @@ def GETStringToJSON(getString):
         key, param = value.split('=')
         json[key] = param
     return json
+
+
 
 

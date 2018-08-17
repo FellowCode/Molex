@@ -1,6 +1,6 @@
 from .models import Computer
-from Parts.models import GraphicCard, CPU, GPU, InterfaceName
-from .models import Laptop, LaptopCPU, LaptopBrand
+from Parts.models import GraphicCard, CPU, GPU
+from .models import Laptop, LaptopCPU, LaptopBrand, LaptopGPU, LaptopIntegralGPU, InterfaceName
 from Products.helper import getNamesFromChoices
 
 
@@ -35,11 +35,11 @@ computerPropForm = {
 
     'ram_amount': {'type': 'intRange', 'name': 'Объём оперативной памяти', 'display': 'always', 'units': ''},
 
-    'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB', 'hideZero':True},
+    'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB', 'hideZero': True},
 
-    'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB', 'hideZero':True},
+    'ssd_amount': {'type': 'intRange', 'name': 'Объём SSD', 'display': 'always', 'units': ' GB', 'hideZero': True},
 
-    'interfaces__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
+    'interfaces__name__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
                         'units': '', 'set': InterfaceName.objects.all(), 'param': 'interfaces'},
 
 }
@@ -71,12 +71,20 @@ laptopPropForm = {
     'cpu__thread_count': {'type': 'strArray', 'name': 'Количество потоков', 'display': 'always',
                           'units': '', 'set': getNamesFromChoices(LaptopCPU.THREAD_COUNT_CHOICES)},
 
+    'cpu__frequency': {'type': 'floatRange', 'name': 'Частота процессора', 'display': 'always', 'units': ' Ghz'},
+
+    'ram_amount': {'type': 'intRange', 'name': 'Объём оперативной памяти', 'display': 'always', 'units': ' GB'},
+
+    'integralGraphic': {'type': 'idArray', 'name': 'Встроенная видеокарта', 'display': 'always',
+                        'units': '', 'set': LaptopIntegralGPU.objects.all()},
+
     'discreteGraphic': {'type': 'Boolean', 'name': 'Дискретная видеокарта', 'display': 'always',
                         'units': '', 'set': ['нет', 'есть']},
 
-    'gpu__name': {'name': 'Модель видеокарты', 'display': 'paramOnly', 'units': ''},
+    'gpu__name': {'type': 'idArray', 'name': 'Модель дискретной видеокарты', 'display': 'always',
+                  'units': '', 'set': LaptopGPU.objects.all()},
 
-    'gpu__ram_amount': {'name': 'Модель дискретной видеокарты', 'display': 'paramOnly', 'units': '', 'hideZero': True},
+    'gpu__ram_amount': {'name': 'Объем памяти видеокарты', 'display': 'paramOnly', 'units': '', 'hideZero': True},
 
     'hdd_amount': {'type': 'intRange', 'name': 'Объём HDD', 'display': 'always', 'units': ' GB', 'hideZero': True},
 
@@ -84,6 +92,9 @@ laptopPropForm = {
 
     'emmc_amount': {'type': 'intRange', 'name': 'Объём EMMC памяти', 'display': 'always', 'units': ' GB', 'hideZero': True},
 
-    'weight': {'type': 'floatRange', 'name': 'Вес', 'display': 'always', 'units': ' кг.'},
+    'weight': {'type': 'floatRange', 'name': 'Вес', 'display': 'always', 'units': ' кг'},
+
+    'interfaces__name__name': {'type': 'strArray', 'name': 'Интерфейсы', 'display': 'always',
+                         'units': '', 'set': InterfaceName.objects.all(), 'param': 'interfaces'},
 
 }
