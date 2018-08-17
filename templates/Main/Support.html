@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load products_extra %}
+
+{% block title %}Техподдержка{% endblock %}
+
+{% block stylesheet %}
+    <link href="{% static 'css/support.css' %}?version=1" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+        <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+            {% include 'sidenavCategory.html' %}
+        </ul>
+        <div class="sidenav-padding support">
+            <div class="row padding-side padding-top">
+                <div class="col s12 m8 offset-m2 z-depth-2 support-container">
+                    <div class="col s12">
+                        <h4 class="header">Техподдержка</h4>
+                        <div class="divider"></div>
+                    </div>
+                    <form action="/support/accept/" method="post">{% csrf_token %}
+                        <div class="input-field col s12 m6 offset-m1">
+                            <i class="material-icons prefix">email</i>
+                            <input name="person_email" id="icon_email" type="email" class="validate">
+                            <label for="icon_email">Ваш Email</label>
+                        </div>
+                        <div class="input-field col s12 m10 offset-m1">
+                            <textarea id="textarea1" name="text" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Текст заявки</label>
+                        </div>
+                        <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4">
+                            <button class="btn red darken-1 waves-effect waves-light btn-full-width">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+{% endblock %}

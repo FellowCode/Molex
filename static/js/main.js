@@ -9,7 +9,10 @@ $(document).ready(function () {
     }, function () {
         $(this).stop().animate({backgroundColor: '#ffffff', color: '#616161'}, 100);
     });
-
+    categoryWavesEffectUpdate();
+});
+$(window).resize(function () {
+    categoryWavesEffectUpdate();
 });
 var carouselInit = function () {
     var carousel = $('.carousel.carousel-slider');
@@ -25,4 +28,10 @@ var carouselInit = function () {
     });
 };
 
+function categoryWavesEffectUpdate() {
+    if($(window).width() <= 992)
+        $('.sidenav .category-list .category-item .sub-category a').removeClass('waves-effect');
+    else
+        $('.sidenav .category-list .category-item .sub-category a').addClass('waves-effect');
+}
 

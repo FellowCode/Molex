@@ -75,6 +75,8 @@ laptopPropForm = {
 
     'ram_amount': {'type': 'intRange', 'name': 'Объём оперативной памяти', 'display': 'always', 'units': ' GB'},
 
+    'battery': {'type': 'intRange', 'name': 'Ёмкость аккумулятора', 'display': 'always', 'units': ' mAh'},
+
     'integralGraphic': {'type': 'idArray', 'name': 'Встроенная видеокарта', 'display': 'always',
                         'units': '', 'set': LaptopIntegralGPU.objects.all()},
 

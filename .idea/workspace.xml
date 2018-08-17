@@ -5,150 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c87fff6-8f86-4630-8bfb-788e76162116" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Payment/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Payment/helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Payment/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Payment/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Payment/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/stub.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Payment/Fail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Payment/Success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/payment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Computers/migrations/0002_laptop_battery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/support.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Main/Support.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Main/SupportAccept.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accessories/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accessories/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accessories/migrations/0002_auto_20180814_2317.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompPeripherals/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompPeripherals/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompPeripherals/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompPeripherals/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompPeripherals/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompPeripherals/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompPeripherals/migrations/0002_auto_20180812_2255.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompPeripherals/migrations/0003_auto_20180814_0010.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompPeripherals/migrations/0004_auto_20180814_1114.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CompPeripherals/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompPeripherals/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computers/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Computers/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computers/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computers/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computers/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computers/migrations/0002_auto_20180812_2255.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computers/migrations/0003_auto_20180814_0010.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computers/migrations/0004_auto_20180814_1052.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Computers/migrations/0005_auto_20180814_2317.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Computers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computers/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Molex/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Molex/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Molex/settings_host.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Molex/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Molex/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parts/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parts/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parts/migrations/0002_auto_20180814_0010.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0002_auto_20180812_2117.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0003_auto_20180812_2255.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0004_product_link.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0005_auto_20180813_1015.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0006_auto_20180813_1015.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0007_remove_product_link.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0008_product_link.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/migrations/0009_order_datetime.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/templatetags/products_extra.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/templatetags/products_extra.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SMTP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/SMTP/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Smart/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart/migrations/0002_auto_20180812_2117.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart/migrations/0003_auto_20180812_2140.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart/migrations/0004_auto_20180813_1014.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart/migrations/0005_remove_smartphone_front_camera.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart/migrations/0006_smartphone_front_camera.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smart/migrations/0007_auto_20180814_0010.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/carousel/carousel_img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/cpu/carousel/carousel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/cpu/carousel/carousel_IIO7zXf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/cpu/preview/preview.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/smartphone/carousel/carousel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/smartphone/carousel/carousel_jYKa0ND.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/smartphone/preview/preview.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/ssd/carousel/carousel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/ssd/carousel/carousel_VZJCuqg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/ssd/carousel/carousel_wyhFII8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/ssd/preview/preview.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/ssd/preview/preview_3hMeUlU.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/images/product/ssd/preview/preview_glYW2jT.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/orderlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/orderlist.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/productpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/productpage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/productPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/productPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Main/About.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Main/About.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Main/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Main/Index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Products/Cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/Cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Products/Category.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/Category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Products/Order.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/Order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Products/OrderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/OrderList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Products/Product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/Product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sidenavCategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidenavCategory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/curl/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pycurl-7.43.0-py3.5.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pycurl-7.43.0-py3.5.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pycurl-7.43.0-py3.5.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/pycurl-7.43.0-py3.5.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/admin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/admin/current.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/compat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/conf/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/conf/defaults.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/default.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/engines/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/engines/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/engines/convert_engine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/engines/pgmagick_engine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/engines/pil_engine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/engines/vipsthumbnail_engine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/engines/wand_engine.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/fields.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/helpers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/images.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/kvstores/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/kvstores/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/kvstores/cached_db_kvstore.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/kvstores/dbm_kvstore.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/kvstores/dynamodb_kvstore.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/kvstores/redis_kvstore.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/management/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/management/commands/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/management/commands/thumbnail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/parsers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/shortcuts.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/templatetags/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/templatetags/sorl_thumbnail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl/thumbnail/templatetags/thumbnail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl_thumbnail-12.4.1.dist-info/DESCRIPTION.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl_thumbnail-12.4.1.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl_thumbnail-12.4.1.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl_thumbnail-12.4.1.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl_thumbnail-12.4.1.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl_thumbnail-12.4.1.dist-info/metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/sorl_thumbnail-12.4.1.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/urllib5-5.0.0-py3.7.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/urllib5-5.0.0-py3.7.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/urllib5-5.0.0-py3.7.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/urllib5-5.0.0-py3.7.egg-info/installed-files.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/urllib5-5.0.0-py3.7.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/urllib5.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -175,38 +45,38 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="5197" />
+          <entry key="css" value="5384" />
           <entry key="dummy" value="50" />
-          <entry key="html" value="9894" />
-          <entry key="js" value="6778" />
-          <entry key="py" value="27527" />
-          <entry key="py@Molex" value="1339" />
+          <entry key="html" value="10510" />
+          <entry key="js" value="6905" />
+          <entry key="py" value="28132" />
+          <entry key="py@Molex" value="1344" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="5197" />
-          <entry key="CommandLine" value="1191" />
-          <entry key="HTML" value="9894" />
-          <entry key="JavaScript" value="6778" />
+          <entry key="CSS" value="5384" />
+          <entry key="CommandLine" value="1196" />
+          <entry key="HTML" value="10510" />
+          <entry key="JavaScript" value="6905" />
           <entry key="PLAIN_TEXT" value="198" />
-          <entry key="Python" value="27527" />
+          <entry key="Python" value="28132" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="42" />
-          <entry key="html" value="113" />
-          <entry key="js" value="46" />
-          <entry key="py" value="215" />
+          <entry key="css" value="46" />
+          <entry key="html" value="120" />
+          <entry key="js" value="47" />
+          <entry key="py" value="223" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="42" />
-          <entry key="HTML" value="113" />
-          <entry key="JavaScript" value="46" />
-          <entry key="Python" value="215" />
+          <entry key="CSS" value="46" />
+          <entry key="HTML" value="120" />
+          <entry key="JavaScript" value="47" />
+          <entry key="Python" value="223" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -215,125 +85,119 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CompPeripherals/models.py">
+        <entry file="file://$PROJECT_DIR$/static/css/support.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="152" selection-start-line="152" selection-end-line="152" />
+            <state relative-caret-position="170">
+              <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Main/Support.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="31" selection-start-line="31" selection-end-line="33" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <marker date="1534489171448" expanded="true" signature="689:746" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Computers/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1534429261571" expanded="true" signature="67:69" ph="..." />
-                <marker date="1534429261571" expanded="true" signature="4390:4448" ph="..." />
-                <marker date="1534429261571" expanded="true" signature="4618:4623" ph="..." />
-                <marker date="1534429261571" expanded="true" signature="6325:6549" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Products/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <marker date="1534429648918" expanded="true" signature="6569:6572" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/sidenavCategory.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CompPeripherals/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <marker date="1534429472068" expanded="true" signature="996:1001" ph="..." />
-                <marker date="1534429472068" expanded="true" signature="1254:1285" ph="..." />
-                <marker date="1534429472068" expanded="true" signature="1347:1348" ph="..." />
-                <marker date="1534429472068" expanded="true" signature="1347:1424" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Computers/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-309">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
-                <marker date="1534321034925" expanded="true" signature="316:327" ph="..." />
-                <marker date="1534321034925" expanded="true" signature="904:964" ph="..." />
-                <marker date="1534321034925" expanded="true" signature="1168:1228" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Accessories/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Accessories/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Computers/helper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="39" column="97" lean-forward="true" selection-start-line="39" selection-start-column="97" selection-end-line="39" selection-end-column="113" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <marker date="1534489372745" expanded="true" signature="2925:3032" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CompPeripherals/helper.py">
+        <entry file="file://$PROJECT_DIR$/Computers/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="93" column="87" lean-forward="true" selection-start-line="93" selection-start-column="87" selection-end-line="93" selection-end-column="87" />
+            <state relative-caret-position="405">
+              <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
               <folding>
-                <element signature="e#0#156#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Molex/settings.py">
+        <entry file="file://$PROJECT_DIR$/Smart/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-360">
-              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+            <state relative-caret-position="153">
+              <caret line="39" column="110" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="110" />
+              <folding>
+                <element signature="e#0#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMTP/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+              <folding>
+                <marker date="1534488468050" expanded="true" signature="171:176" ph="..." />
+                <marker date="1534488468050" expanded="true" signature="2127:2128" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Payment/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <marker date="1534413518115" expanded="true" signature="1050:1055" ph="..." />
+                <marker date="1534413518115" expanded="true" signature="1187:1192" ph="..." />
+                <marker date="1534413518115" expanded="true" signature="1346:1351" ph="..." />
+                <marker date="1534413518115" expanded="true" signature="1530:2811" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Main/SupportAccept.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -344,9 +208,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -356,11 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Products/helper.py" />
-        <option value="$PROJECT_DIR$/Parts/helper.py" />
-        <option value="$PROJECT_DIR$/templates/Products/OrderConfirm.html" />
-        <option value="$PROJECT_DIR$/templates/filter.html" />
-        <option value="$PROJECT_DIR$/static/js/filters.js" />
         <option value="$PROJECT_DIR$/SMTP/backends.py" />
         <option value="$PROJECT_DIR$/static/css/about.css" />
         <option value="$PROJECT_DIR$/static/css/sidenavcategory.css" />
@@ -372,24 +231,19 @@
         <option value="$PROJECT_DIR$/Products/templatetags/products_extra.py" />
         <option value="$PROJECT_DIR$/static/css/productpage.css" />
         <option value="$PROJECT_DIR$/Computers/admin.py" />
-        <option value="$PROJECT_DIR$/Computers/models.py" />
         <option value="$PROJECT_DIR$/Main/models.py" />
         <option value="$PROJECT_DIR$/static/js/order.js" />
         <option value="$PROJECT_DIR$/static/css/orderlist.css" />
         <option value="$PROJECT_DIR$/templates/Products/OrderList.html" />
-        <option value="$PROJECT_DIR$/templates/Main/About.html" />
-        <option value="$PROJECT_DIR$/static/js/main.js" />
         <option value="$PROJECT_DIR$/templates/Products/Cart.html" />
         <option value="$PROJECT_DIR$/templates/Products/Category.html" />
         <option value="$PROJECT_DIR$/templates/Products/Product.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/static/js/index.js" />
         <option value="$PROJECT_DIR$/templates/Main/Index.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/Molex/settings.py" />
         <option value="$PROJECT_DIR$/templates/Payment/Success.html" />
         <option value="$PROJECT_DIR$/templates/Payment/Fail.html" />
-        <option value="$PROJECT_DIR$/SMTP/main.py" />
         <option value="$PROJECT_DIR$/Molex/urls.py" />
         <option value="$PROJECT_DIR$/templates/payment.html" />
         <option value="$PROJECT_DIR$/templates/Products/Order.html" />
@@ -405,8 +259,18 @@
         <option value="$PROJECT_DIR$/CompPeripherals/admin.py" />
         <option value="$PROJECT_DIR$/Products/views.py" />
         <option value="$PROJECT_DIR$/templates/sidenavCategory.html" />
-        <option value="$PROJECT_DIR$/Computers/helper.py" />
         <option value="$PROJECT_DIR$/CompPeripherals/helper.py" />
+        <option value="$PROJECT_DIR$/static/js/main.js" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/Main/About.html" />
+        <option value="$PROJECT_DIR$/Main/urls.py" />
+        <option value="$PROJECT_DIR$/templates/Main/Support.html" />
+        <option value="$PROJECT_DIR$/SMTP/main.py" />
+        <option value="$PROJECT_DIR$/templates/Main/SupportAccept.html" />
+        <option value="$PROJECT_DIR$/static/css/support.css" />
+        <option value="$PROJECT_DIR$/Main/views.py" />
+        <option value="$PROJECT_DIR$/Computers/models.py" />
+        <option value="$PROJECT_DIR$/Computers/helper.py" />
       </list>
     </option>
   </component>
@@ -491,7 +355,42 @@
             <path>
               <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
               <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Payment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Products" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -572,9 +471,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -590,7 +490,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32943678" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32943678" />
-      <window_info anchor="bottom" id="manage.py@Molex" order="13" visible="true" weight="0.30260304" />
+      <window_info active="true" anchor="bottom" id="manage.py@Molex" order="13" visible="true" weight="0.30260304" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="14" weight="0.32943678" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -631,62 +531,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Products/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3434">
-          <caret line="202" column="51" selection-start-line="202" selection-start-column="51" selection-end-line="202" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/productPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="109" column="33" lean-forward="true" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/category.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="81" column="32" lean-forward="true" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parts/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parts/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="109" column="83" selection-start-line="109" selection-start-column="83" selection-end-line="109" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Products/templatetags/products_extra.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/productpage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -715,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Main/About.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Products/Cart.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -736,38 +573,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/OrderConfirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="302" column="5" lean-forward="true" selection-start-line="302" selection-start-column="5" selection-end-line="302" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
           <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Main/Index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -785,23 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Products/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="68" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Molex/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -813,16 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SMTP/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding>
-            <marker date="1534394574625" expanded="true" signature="171:176" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -862,27 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/Order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Payment/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1534413518115" expanded="true" signature="1050:1055" ph="..." />
-            <marker date="1534413518115" expanded="true" signature="1187:1192" ph="..." />
-            <marker date="1534413518115" expanded="true" signature="1346:1351" ph="..." />
-            <marker date="1534413518115" expanded="true" signature="1530:2811" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Payment/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -896,17 +657,6 @@
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Computers/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="142" column="19" selection-start-line="142" selection-start-column="19" selection-end-line="142" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1534321403326" expanded="true" signature="2925:3032" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1007,23 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sidenavCategory.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Computers/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="39" column="97" lean-forward="true" selection-start-line="39" selection-start-column="97" selection-end-line="39" selection-end-column="113" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CompPeripherals/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -1044,6 +777,182 @@
           <caret line="93" column="87" lean-forward="true" selection-start-line="93" selection-start-column="87" selection-end-line="93" selection-end-column="87" />
           <folding>
             <element signature="e#0#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sidenavCategory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Main/Index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/Order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="36" selection-start-line="36" selection-end-line="38" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Main/About.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="37" column="85" lean-forward="true" selection-start-line="37" selection-start-column="85" selection-end-line="37" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/about.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-411" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/cart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="104" selection-start-line="104" selection-end-line="104" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="302" column="5" lean-forward="true" selection-start-line="302" selection-start-column="5" selection-end-line="302" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="68" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/OrderConfirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+          <folding>
+            <marker date="1534488468050" expanded="true" signature="171:176" ph="..." />
+            <marker date="1534488468050" expanded="true" signature="2127:2128" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Payment/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1534413518115" expanded="true" signature="1050:1055" ph="..." />
+            <marker date="1534413518115" expanded="true" signature="1187:1192" ph="..." />
+            <marker date="1534413518115" expanded="true" signature="1346:1351" ph="..." />
+            <marker date="1534413518115" expanded="true" signature="1530:2811" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Main/Support.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" selection-start-line="31" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Main/SupportAccept.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/support.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1534489171448" expanded="true" signature="689:746" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Computers/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1534489372745" expanded="true" signature="2925:3032" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smart/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="39" column="110" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="110" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Computers/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

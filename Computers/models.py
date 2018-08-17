@@ -102,6 +102,8 @@ class Laptop(Product):
 
     ram_amount = models.IntegerField()
 
+    battery = models.IntegerField(default=0)
+
     integralGraphic = models.ForeignKey(LaptopIntegralGPU, on_delete=models.PROTECT, default=None, null=True, blank=True)
     discreteGraphic = models.CharField(max_length=10, choices=GRAPHICCAD_CHOICES, default='нет')
     gpu = models.ForeignKey(LaptopGPU, on_delete=models.PROTECT, null=True, blank=True)

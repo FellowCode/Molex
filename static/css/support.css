@@ -1,0 +1,26 @@
+.support .support-container {
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+.support .support-container h5.accept{
+    font-size: 24px;
+    margin: 30px 0;
+}
+.support .support-container i.accept {
+    font-size: 20px;
+    line-height: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 600px) {
+    .support .support-container {
+        margin-top: 10px;
+    }
+    .support .support-container .header {
+        font-size: 22px;
+    }
+    .support .support-container h5.accept{
+        font-size: 20px;
+        margin: 25px 0;
+    }
+}

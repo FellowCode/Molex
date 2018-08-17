@@ -32,3 +32,20 @@ def sendConfirmOrderMail(userEmail, order_id):
     msg = EmailMultiAlternatives(subject, text_content, from_email, admin_email)
     msg.attach_alternative(html_content, "text/html")
     msg.send(fail_silently=True)
+
+def sendSupportMsg(userEmail, text):
+    subject, from_email = 'Заявка в техподдержку', 'info@molex79.ru'
+
+    text_content = 'Поступила заявка.\n'
+    text_content += 'Email: ' + userEmail + '\n'
+    text_content += 'Текст заявки:\n'
+    text_content += text
+
+    html_content = '<p>Поступила заявка.</p>'
+    html_content += '<p><b>Email:</b> ' + userEmail + '</p>'
+    html_content += '<p><b>Текст заявки:</b></p>'
+    html_content += '<p>' + text + '</p>'
+
+    msg = EmailMultiAlternatives(subject, text_content, from_email, admin_email)
+    msg.attach_alternative(html_content, "text/html")
+    msg.send(fail_silently=True)
