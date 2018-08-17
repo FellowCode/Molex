@@ -46,6 +46,6 @@ def sendSupportMsg(userEmail, text):
     html_content += '<p><b>Текст заявки:</b></p>'
     html_content += '<p>' + text + '</p>'
 
-    msg = EmailMultiAlternatives(subject, text_content, from_email, admin_email)
+    msg = EmailMultiAlternatives(subject, text_content, from_email, ['support@molex79.ru'])
     msg.attach_alternative(html_content, "text/html")
     msg.send(fail_silently=True)

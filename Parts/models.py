@@ -223,8 +223,9 @@ class SSD(Product):
     write_speed = models.IntegerField()
 
     def getShortenParams(self):
-        shorten_params = '[чтение {0} Mb/s, запись {1} Mb/s]'.format(self.read_speed,
-                                                                     self.write_speed)
+        shorten_params = '[чтение {0} Mb/s, запись {1} Mb/s, {2}]'.format(self.read_speed,
+                                                                          self.write_speed,
+                                                                          self.memory_type)
         return shorten_params
 
     def __str__(self):

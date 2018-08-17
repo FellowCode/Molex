@@ -16,7 +16,7 @@ $(document).ready(function () {
         loadPage(window.location.href);
     });
 });
-
+var error;
 var FilterInitialize = function () {
     var properties = $('#filterProperties').text().split(';');
     var fullSlug = $('#fullCategory').text();
@@ -26,8 +26,10 @@ var FilterInitialize = function () {
         filterData[vals[0]] = vals[1];
     });
     $('a#Filter').click(function () {
+        error = false;
         var form = assemblyFormData(filterData);
-        filterProducts(form);
+        if (!error)
+            filterProducts(form);
     });
     $('#resetFilter').click(function () {
         var url = window.location.href.split('?')[0];
@@ -52,9 +54,16 @@ var getCheckboxValues = function (name) {
     return String(values).replace(new RegExp(',','g'), '~');
 };
 
+
 var getRangeValues = function (name) {
     var elem = 'input[name='+name;
-    return $(elem+'_min]').val() + '-' + $(elem+'_max]').val();
+    var min = $(elem+'_min]').val();
+    var max = $(elem+'_max]').val();
+    if (parseFloat(min) > parseFloat(max) && !error){
+        alert('Неправильный формат в поле \"' + $(elem+'_min]').closest('.collapsible').find('a.collapsible-header').text() + '\"');
+        error = true;
+    }
+    return min + '-' + max;
 };
 
 var assemblyFormData = function(formData){
@@ -69,6 +78,8 @@ var assemblyFormData = function(formData){
                 if (getCheckboxValues(key) !== '')
                     form[key] = getCheckboxValues(key);
             }
+            if (error)
+                return false;
         });
     return form;
 };
