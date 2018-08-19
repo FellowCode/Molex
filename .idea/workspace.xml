@@ -5,12 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c87fff6-8f86-4630-8bfb-788e76162116" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/CompPeripherals/migrations/0002_remove_keyboard_weight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompPeripherals/migrations/0003_keyboard_weight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CompPeripherals/migrations/0004_auto_20180818_1849.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Main/migrations/0002_budget.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Products/migrations/0002_order_payment_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Products/migrations/0003_auto_20180817_1957.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SMS/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SMS/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SMS/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompPeripherals/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompPeripherals/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CompPeripherals/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CompPeripherals/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computers/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Computers/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Computers/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SMTP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/SMTP/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Molex/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Molex/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parts/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parts/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Payment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smart/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Smart/helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/filters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Products/Category.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/Category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Products/Order.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/Order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Products/OrderConfirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/OrderConfirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Products/OrderList.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/OrderList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Products/Product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Products/Product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,50 +59,50 @@
     <session id="1692499666">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.6" value="6" />
           <entry key="project.open.time.7" value="6" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="5384" />
-          <entry key="dummy" value="50" />
-          <entry key="html" value="10521" />
-          <entry key="js" value="7211" />
-          <entry key="py" value="28194" />
-          <entry key="py@Molex" value="1344" />
+          <entry key="css" value="5438" />
+          <entry key="dummy" value="67" />
+          <entry key="html" value="10954" />
+          <entry key="js" value="8953" />
+          <entry key="py" value="31954" />
+          <entry key="py@Molex" value="1378" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="5384" />
-          <entry key="CommandLine" value="1196" />
-          <entry key="HTML" value="10521" />
-          <entry key="JavaScript" value="7211" />
-          <entry key="PLAIN_TEXT" value="198" />
-          <entry key="Python" value="28194" />
+          <entry key="CSS" value="5438" />
+          <entry key="CommandLine" value="1230" />
+          <entry key="HTML" value="10954" />
+          <entry key="JavaScript" value="8953" />
+          <entry key="PLAIN_TEXT" value="215" />
+          <entry key="Python" value="31954" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="46" />
-          <entry key="html" value="122" />
-          <entry key="js" value="48" />
-          <entry key="py" value="225" />
+          <entry key="css" value="47" />
+          <entry key="html" value="131" />
+          <entry key="js" value="53" />
+          <entry key="py" value="283" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="46" />
-          <entry key="HTML" value="122" />
-          <entry key="JavaScript" value="48" />
-          <entry key="Python" value="225" />
+          <entry key="CSS" value="47" />
+          <entry key="HTML" value="131" />
+          <entry key="JavaScript" value="53" />
+          <entry key="Python" value="283" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -77,112 +111,104 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/views.py">
+        <entry file="file://$PROJECT_DIR$/Products/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="408">
+              <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="68" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+                <marker date="1534671061308" expanded="true" signature="3920:3924" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Payment/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1534489171448" expanded="true" signature="689:746" ph="..." />
+                <marker date="1534671116115" expanded="true" signature="1124:1129" ph="..." />
+                <marker date="1534671116115" expanded="true" signature="1261:1266" ph="..." />
+                <marker date="1534671116115" expanded="true" signature="1420:1425" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Products/Category.html">
+        <entry file="file://$PROJECT_DIR$/SMS/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Parts/models.py">
+        <entry file="file://$PROJECT_DIR$/CompPeripherals/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="226" column="91" lean-forward="true" selection-start-line="226" selection-start-column="91" selection-end-line="226" selection-end-column="91" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Accessories/helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Molex/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="177" selection-start-line="177" selection-end-line="180" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/Products/Order.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Payment/settings.py">
+        <entry file="file://$PROJECT_DIR$/SMS/helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Computers/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
+            <state relative-caret-position="183">
+              <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <marker date="1534489372745" expanded="true" signature="2925:3032" ph="..." />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Computers/helper.py">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1105">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Smart/helper.py">
+        <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="39" column="110" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="110" />
-              <folding>
-                <element signature="e#0#62#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SMTP/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="48" column="91" lean-forward="true" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
-              <folding>
-                <marker date="1534489975319" expanded="true" signature="171:176" ph="..." />
-                <marker date="1534489975319" expanded="true" signature="2127:2128" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/filters.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="66" column="2" lean-forward="true" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/filter.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="53" column="64" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="64" />
+            <state relative-caret-position="272">
+              <caret line="202" column="24" lean-forward="true" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -192,10 +218,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -205,57 +231,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/css/about.css" />
-        <option value="$PROJECT_DIR$/static/css/sidenavcategory.css" />
-        <option value="$PROJECT_DIR$/Products/admin.py" />
-        <option value="$PROJECT_DIR$/static/js/productPage.js" />
-        <option value="$PROJECT_DIR$/static/css/category.css" />
-        <option value="$PROJECT_DIR$/Parts/admin.py" />
-        <option value="$PROJECT_DIR$/Products/templatetags/products_extra.py" />
-        <option value="$PROJECT_DIR$/static/css/productpage.css" />
-        <option value="$PROJECT_DIR$/Computers/admin.py" />
-        <option value="$PROJECT_DIR$/Main/models.py" />
-        <option value="$PROJECT_DIR$/static/js/order.js" />
-        <option value="$PROJECT_DIR$/static/css/orderlist.css" />
-        <option value="$PROJECT_DIR$/templates/Products/OrderList.html" />
-        <option value="$PROJECT_DIR$/templates/Products/Cart.html" />
-        <option value="$PROJECT_DIR$/templates/Products/Product.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/static/js/index.js" />
-        <option value="$PROJECT_DIR$/templates/Main/Index.html" />
-        <option value="$PROJECT_DIR$/Molex/settings.py" />
-        <option value="$PROJECT_DIR$/templates/Payment/Success.html" />
         <option value="$PROJECT_DIR$/templates/Payment/Fail.html" />
         <option value="$PROJECT_DIR$/Molex/urls.py" />
         <option value="$PROJECT_DIR$/templates/payment.html" />
-        <option value="$PROJECT_DIR$/templates/Products/Order.html" />
-        <option value="$PROJECT_DIR$/Payment/helper.py" />
-        <option value="$PROJECT_DIR$/Products/models.py" />
-        <option value="$PROJECT_DIR$/Payment/views.py" />
-        <option value="$PROJECT_DIR$/Payment/urls.py" />
         <option value="$PROJECT_DIR$/CompPeripherals/migrations/0007_auto_20180817_0003.py" />
         <option value="$PROJECT_DIR$/CompPeripherals/migrations/0007_auto_20180817_0005.py" />
         <option value="$PROJECT_DIR$/CompPeripherals/migrations/0007_auto_20180817_0009.py" />
-        <option value="$PROJECT_DIR$/CompPeripherals/models.py" />
         <option value="$PROJECT_DIR$/CompPeripherals/admin.py" />
-        <option value="$PROJECT_DIR$/Products/views.py" />
         <option value="$PROJECT_DIR$/templates/sidenavCategory.html" />
-        <option value="$PROJECT_DIR$/CompPeripherals/helper.py" />
-        <option value="$PROJECT_DIR$/static/js/main.js" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/Main/About.html" />
         <option value="$PROJECT_DIR$/Main/urls.py" />
         <option value="$PROJECT_DIR$/templates/Main/Support.html" />
         <option value="$PROJECT_DIR$/templates/Main/SupportAccept.html" />
         <option value="$PROJECT_DIR$/static/css/support.css" />
-        <option value="$PROJECT_DIR$/Main/views.py" />
         <option value="$PROJECT_DIR$/Computers/models.py" />
-        <option value="$PROJECT_DIR$/Computers/helper.py" />
         <option value="$PROJECT_DIR$/SMTP/main.py" />
         <option value="$PROJECT_DIR$/static/js/filters.js" />
         <option value="$PROJECT_DIR$/templates/Products/Category.html" />
         <option value="$PROJECT_DIR$/Parts/models.py" />
+        <option value="$PROJECT_DIR$/Payment/helper.py" />
+        <option value="$PROJECT_DIR$/Products/models.py" />
+        <option value="$PROJECT_DIR$/CompPeripherals/models.py" />
         <option value="$PROJECT_DIR$/Payment/settings.py" />
+        <option value="$PROJECT_DIR$/Main/admin.py" />
+        <option value="$PROJECT_DIR$/Main/views.py" />
+        <option value="$PROJECT_DIR$/Main/models.py" />
+        <option value="$PROJECT_DIR$/static/js/jquery.caret.js" />
+        <option value="$PROJECT_DIR$/static/js/main.js" />
+        <option value="$PROJECT_DIR$/templates/Products/Product.html" />
+        <option value="$PROJECT_DIR$/templates/Products/OrderList.html" />
+        <option value="$PROJECT_DIR$/templates/Products/OrderConfirm.html" />
+        <option value="$PROJECT_DIR$/SMS/main.py" />
+        <option value="$PROJECT_DIR$/static/js/order.js" />
+        <option value="$PROJECT_DIR$/Products/urls.py" />
+        <option value="$PROJECT_DIR$/Products/admin.py" />
+        <option value="$PROJECT_DIR$/Payment/urls.py" />
+        <option value="$PROJECT_DIR$/Parts/admin.py" />
+        <option value="$PROJECT_DIR$/Computers/admin.py" />
+        <option value="$PROJECT_DIR$/Products/helper.py" />
+        <option value="$PROJECT_DIR$/Main/helper.py" />
+        <option value="$PROJECT_DIR$/Smart/helper.py" />
+        <option value="$PROJECT_DIR$/Parts/helper.py" />
+        <option value="$PROJECT_DIR$/Computers/helper.py" />
+        <option value="$PROJECT_DIR$/CompPeripherals/helper.py" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/Products/Order.html" />
+        <option value="$PROJECT_DIR$/Products/views.py" />
+        <option value="$PROJECT_DIR$/Payment/views.py" />
+        <option value="$PROJECT_DIR$/SMS/settings.py" />
+        <option value="$PROJECT_DIR$/Molex/settings.py" />
+        <option value="$PROJECT_DIR$/SMS/helper.py" />
       </list>
     </option>
   </component>
@@ -265,11 +291,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-105" />
-    <option name="y" value="57" />
-    <option name="width" value="1936" />
-    <option name="height" value="1037" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="122" />
+    <option name="y" value="113" />
+    <option name="width" value="1617" />
+    <option name="height" value="834" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -330,7 +356,18 @@
             <path>
               <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
               <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="Products" type="462c0819:PsiDirectoryNode" />
+              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
               <item name="Smart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Molex" type="462c0819:PsiDirectoryNode" />
+              <item name="SMS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
@@ -358,18 +395,6 @@
               <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
               <item name="Molex" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Molex" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Molex" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="Payment" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Molex" type="b2602c69:ProjectViewProjectNode" />
@@ -456,15 +481,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-105" y="57" width="1936" height="1037" extended-state="0" />
+    <frame x="-1778" y="128" width="1617" height="834" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16891459" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.324295" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.42714286" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37513283" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -516,330 +541,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/css/orderlist.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/Cart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Payment/Fail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Payment/Success.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Molex/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/OrderList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Payment/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="107" lean-forward="true" selection-start-line="10" selection-start-column="95" selection-end-line="10" selection-end-column="107" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <marker date="1534411105516" expanded="true" signature="677:678" ph="..." />
-            <marker date="1534411105516" expanded="true" signature="677:682" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/Product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Products/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Payment/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Molex/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompPeripherals/migrations/0007_auto_20180816_2206.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompPeripherals/migrations/0007_auto_20180817_0003.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompPeripherals/migrations/0007_auto_20180817_0005.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompPeripherals/migrations/0007_auto_20180817_0009.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/utils/autoreload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="224" selection-start-line="224" selection-end-line="224" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Accessories/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Computers/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-            <marker date="1534321034925" expanded="true" signature="316:327" ph="..." />
-            <marker date="1534321034925" expanded="true" signature="904:964" ph="..." />
-            <marker date="1534321034925" expanded="true" signature="1168:1228" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompPeripherals/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1534429472068" expanded="true" signature="996:1001" ph="..." />
-            <marker date="1534429472068" expanded="true" signature="1254:1285" ph="..." />
-            <marker date="1534429472068" expanded="true" signature="1347:1348" ph="..." />
-            <marker date="1534429472068" expanded="true" signature="1347:1424" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Accessories/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Products/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <marker date="1534429648918" expanded="true" signature="6569:6572" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompPeripherals/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="152" selection-start-line="152" selection-end-line="152" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1534429261571" expanded="true" signature="67:69" ph="..." />
-            <marker date="1534429261571" expanded="true" signature="4390:4448" ph="..." />
-            <marker date="1534429261571" expanded="true" signature="4618:4623" ph="..." />
-            <marker date="1534429261571" expanded="true" signature="6325:6549" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CompPeripherals/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="93" column="87" lean-forward="true" selection-start-line="93" selection-start-column="87" selection-end-line="93" selection-end-column="87" />
-          <folding>
-            <element signature="e#0#156#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sidenavCategory.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Main/Index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/Order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="36" selection-start-line="36" selection-end-line="38" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Main/About.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="37" column="85" lean-forward="true" selection-start-line="37" selection-start-column="85" selection-end-line="37" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/about.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-411" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/cart.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="104" selection-start-line="104" selection-end-line="104" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="302" column="5" lean-forward="true" selection-start-line="302" selection-start-column="5" selection-end-line="302" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Products/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="68" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/OrderConfirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Payment/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1534413518115" expanded="true" signature="1050:1055" ph="..." />
-            <marker date="1534413518115" expanded="true" signature="1187:1192" ph="..." />
-            <marker date="1534413518115" expanded="true" signature="1346:1351" ph="..." />
-            <marker date="1534413518115" expanded="true" signature="1530:2811" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Main/Support.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" selection-start-line="31" selection-end-line="33" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Main/SupportAccept.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -854,20 +555,253 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/views.py">
+    <entry file="file://$PROJECT_DIR$/Parts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="226" column="91" selection-start-line="226" selection-start-column="91" selection-end-line="226" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/filter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="64" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smart/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CompPeripherals/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1534502145648" expanded="true" signature="67:69" ph="..." />
+            <marker date="1534502145648" expanded="true" signature="4450:4508" ph="..." />
+            <marker date="1534502145648" expanded="true" signature="4678:4683" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMTP/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="91" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
+          <folding>
+            <marker date="1534489975319" expanded="true" signature="171:176" ph="..." />
+            <marker date="1534489975319" expanded="true" signature="2127:2128" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/jquery.caret.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/materialize.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/Product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/OrderList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" lean-forward="true" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/OrderConfirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/Category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/Cart.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/order.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="122" column="52" selection-start-line="122" selection-start-column="52" selection-end-line="122" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Payment/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Payment/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Payment/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <marker date="1534494664552" expanded="true" signature="702:703" ph="..." />
+            <marker date="1534494664552" expanded="true" signature="702:707" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Payment/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parts/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parts/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Molex/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Molex/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1534489171448" expanded="true" signature="689:746" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1534583588550" expanded="true" signature="665:666" ph="..." />
+            <marker date="1534583588550" expanded="true" signature="665:671" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Computers/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="1768">
           <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -876,72 +810,140 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Computers/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+            <marker date="1534669526750" expanded="true" signature="196:207" ph="..." />
+            <marker date="1534669526750" expanded="true" signature="784:844" ph="..." />
+            <marker date="1534669526750" expanded="true" signature="1048:1108" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Smart/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="39" column="110" lean-forward="true" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="110" />
+        <state relative-caret-position="17">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#0#46#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parts/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Computers/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1105">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        <state relative-caret-position="51">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CompPeripherals/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="202" column="24" lean-forward="true" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Products/Order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Products/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="68" selection-end-column="29" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1534671061308" expanded="true" signature="3920:3924" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SMTP/main.py">
+    <entry file="file://$PROJECT_DIR$/Payment/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="48" column="91" lean-forward="true" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
+        <state relative-caret-position="357">
+          <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
           <folding>
-            <marker date="1534489975319" expanded="true" signature="171:176" ph="..." />
-            <marker date="1534489975319" expanded="true" signature="2127:2128" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1534671116115" expanded="true" signature="1124:1129" ph="..." />
+            <marker date="1534671116115" expanded="true" signature="1261:1266" ph="..." />
+            <marker date="1534671116115" expanded="true" signature="1420:1425" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/filter.html">
+    <entry file="file://$PROJECT_DIR$/SMS/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Accessories/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="53" column="64" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="64" />
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/filters.js">
+    <entry file="file://$PROJECT_DIR$/Molex/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="66" column="2" lean-forward="true" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="2" />
+        <state relative-caret-position="200">
+          <caret line="177" selection-start-line="177" selection-end-line="180" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products/Category.html">
+    <entry file="file://$PROJECT_DIR$/SMS/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parts/models.py">
+    <entry file="file://$PROJECT_DIR$/SMS/helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="226" column="91" lean-forward="true" selection-start-line="226" selection-start-column="91" selection-end-line="226" selection-end-column="91" />
+        <state relative-caret-position="183">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Payment/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
         </state>
       </provider>
     </entry>

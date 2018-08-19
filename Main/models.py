@@ -19,3 +19,38 @@ class CarouselImage(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Budget(models.Model):
+
+    amount_of_budget = models.IntegerField()
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+
+        # count will have all of the objects from the Aboutus model
+        count = Budget.objects.all().count()
+        # this will check if the variable exist so we can update the existing ones
+        save_permission = Budget.has_add_permission(self)
+
+        # if there's more than two objects it will not save them in the database
+        if count < 2:
+            super(Budget, self).save()
+        elif save_permission:
+            super(Budget, self).save()
+
+        try:
+            Budget._meta.verbose_name_plural = str(Budget.objects.all()[0])
+        except:
+            pass
+
+    def has_add_permission(self):
+        return Budget.objects.filter(id=self.id).exists()
+
+    def __str__(self):
+        return 'Budget: ' + str(self.amount_of_budget) + 'р.'
+
+    class Meta:
+        verbose_name = 'Budget'
+
+

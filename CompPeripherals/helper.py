@@ -1,5 +1,5 @@
 from .models import Mouse, MouseBrand, Keyboard, KeyboardBrand, Headphone, HeadphoneBrand, SpeakerBrand, Speaker, SpeakerFrequencyDiapason, SpeakerInterfaceName
-from Products.helper import getNamesFromChoices
+from Main.helper import getNamesFromChoices
 
 
 
@@ -44,7 +44,7 @@ keyboardPropForm = {
 
     'key_count': {'type': 'intRange', 'name': 'Количество кнопок', 'display': 'always', 'units': ''},
 
-    'weight': {'type': 'intRange', 'name': 'Вес', 'display': 'always', 'units': ' г'},
+    'weight': {'type': 'intRange', 'name': 'Вес', 'display': 'always', 'units': ' кг'},
 }
 
 

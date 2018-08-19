@@ -1,6 +1,5 @@
-from Products.helper import getNamesFromChoices
-from .models import GraphicCardProduct, CPU, RAM, GraphicCardBrand, CPUSocket, GPU, \
-    Motherboard, MotherboardBrand, InterfaceName, SSD, SSDBrand, MotherboardChipset, GraphicCard
+from Main.helper import getNamesFromChoices
+from .models import *
 
 
 

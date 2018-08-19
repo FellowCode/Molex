@@ -1,6 +1,40 @@
 from django.shortcuts import get_object_or_404
 from .models import Category, Product
 import functools
+from Smart.helper import smartphonePropForm
+from Smart.models import Smartphone
+from Parts.helper import *
+from Parts.models import *
+from Computers.models import Computer, Laptop
+from Computers.helper import computerPropForm, laptopPropForm
+from CompPeripherals.helper import *
+from Accessories.models import Mousepad
+from Accessories.helper import mousepadPropForm
+from decimal import Decimal
+import requests
+import json
+from Molex.settings import RE_CAPTCHA_SECRET
+
+category_prop_list = {
+    'smartphone': {'prop_form': smartphonePropForm, 'model': Smartphone, 'changeUrl': 'Smart/smartphone'},
+    'tablet': {'prop_form': smartphonePropForm, 'model': Smartphone, 'changeUrl': 'Smart/smartphone'},
+
+    'graphic-card': {'prop_form': graphiccardPropForm, 'model': GraphicCardProduct, 'changeUrl': 'Parts/graphiccardproduct'},
+    'cpu': {'prop_form': CPUPropForm, 'model': CPUProduct, 'changeUrl': 'Parts/cpuproduct'},
+    'ram': {'prop_form': RAMPropForm, 'model': RAM, 'changeUrl': 'Parts/ram'},
+    'motherboard': {'prop_form': motherboardPropForm, 'model': Motherboard, 'changeUrl': 'Parts/motherboard'},
+    'ssd': {'prop_form': ssdPropForm, 'model': SSD, 'changeUrl': 'Parts/ssd'},
+
+    'fixed-pc': {'prop_form': computerPropForm, 'model': Computer, 'changeUrl': 'Computers/computer'},
+    'laptop': {'prop_form': laptopPropForm, 'model': Laptop, 'changeUrl': 'Computers/laptop'},
+
+    'mouse': {'prop_form': mousePropForm, 'model': Mouse, 'changeUrl': 'CompPeripherals/mouse'},
+    'keyboard': {'prop_form': keyboardPropForm, 'model': Keyboard, 'changeUrl': 'CompPeripherals/keyboard'},
+    'headphone': {'prop_form': headphonePropForm, 'model': Headphone, 'changeUrl': 'CompPeripherals/headphone'},
+    'speaker': {'prop_form': speakerPropForm, 'model': Speaker, 'changeUrl': 'CompPeripherals/speaker'},
+
+    'mousepad': {'prop_form': mousepadPropForm, 'model': Mousepad, 'changeUrl': 'Accessories/mousepad'},
+}
 
 def ToIntegerRange(val):
     val = val.split('-')
@@ -136,14 +170,62 @@ def getDeviceListByHierarchy(model, hierarchy):
     return model.objects.filter(category=getCategory(hierarchy))
 
 
-def getNamesFromChoices(choices):
-    names = []
-    for choice, val in choices:
-        names.append(choice)
-    return names
+
 
 
 def rgetattr(obj, attr, *args):
     def _getattr(obj, attr):
         return getattr(obj, attr, *args)
     return functools.reduce(_getattr, [obj] + attr.split('__'))
+
+def getCartDevices(json):
+    device_list = []
+    for prop_name, prop in json.items():
+        values = ToStrArray(prop)
+        for value in values:
+            device = {}
+            params = value.split('.')
+            device_id = params[0]
+            device['count'] = params[2]
+            model = category_prop_list[prop_name]['model']
+            try:
+                device['device'] = model.objects.get(id=device_id)
+                if params[1] != 'null':
+                    device['color'] = device['device'].colors.get(id=params[1])
+                else:
+                    device['color'] = None
+                options = device['device'].options.filter(id__in=params[3:])
+                device['options'] = options
+                device['fullSlug'] = device['device'].category.getFullSlug()
+                if device['color'] is not None:
+                    device['options_price'] = device['color'].price
+                else:
+                    device['options_price'] = 0
+                for option in options:
+                    device['options_price'] += option.price
+                device['fullPrice'] = Decimal(device['device'].price + device['options_price']).normalize()
+                device_list.append(device)
+            except:
+                pass
+    return device_list
+
+def GETStringToJSON(getString):
+    json = {}
+    values = getString.split('&')
+    for value in values:
+        key, param = value.split('=')
+        json[key] = param
+    return json
+
+
+def checkReCaptcha(response):
+    url = 'https://www.google.com/recaptcha/api/siteverify'
+    data = {
+        'secret': RE_CAPTCHA_SECRET,
+        'response': response
+    }
+    r = requests.post(url, data)
+    content = r.content
+    rdata = json.loads(content)
+    success = rdata['success']
+    return success

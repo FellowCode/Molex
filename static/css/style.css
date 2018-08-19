@@ -196,6 +196,12 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 500;
     margin-top: 3px;
 }
+.order .recaptcha {
+    margin-bottom: 15px;
+}
+.order .col.mrg-bottom {
+    margin-bottom: 10px;
+}
 /**********************************/
 /******** confirm order ***********/
 .order-confirm .order-accept {

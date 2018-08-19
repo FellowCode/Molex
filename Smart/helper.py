@@ -1,18 +1,6 @@
 from .models import Smartphone, BrandSmartphone, CPUSmartphone
-from Products.helper import getNamesFromChoices
+from Main.helper import getNamesFromChoices
 
-def getSmartphoneShortenParams(device):
-    shorten_params = '[Android {0}, {1} Мп, {2}, {3}, {4} мАч, {5}, {6}/{7}, {8}, {9}]'.format( device.android,
-                                                                                                device.camera,
-                                                                                                device.resolution,
-                                                                                                device.matrix,
-                                                                                                device.battery,
-                                                                                                device.CPU,
-                                                                                                device.RAM,
-                                                                                                device.ROM,
-                                                                                                device.SIM_count,
-                                                                                                device.net)
-    return shorten_params
 
 smartphonePropForm = {
         'price': {'type': 'intRange', 'name': 'Цена', 'display': 'filterOnly', 'units': ' Р.'},

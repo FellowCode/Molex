@@ -11,11 +11,11 @@ class Robokassa():
 ###### Yandex
 #https://maxpoletaev.ru/blog/payments-for-website/
 class Yandex():
-    secret = 'UuiRGOOuY80t0btyiZqTp8Qm'
+    secret = ''
     receiver = '410016170838241'
     quickpayform = "shop"
-    successURL = "http://molex79/payment/yandex/success/"
+    successURL = "http://molex79.ru/payment/yandex/success/"
     formcomment = 'Molex'
     shortdest = 'Molex'
-    targets = 'Оплата заказа'
-    paymentType = "PC"
+    targets = 'Оплата заказа в Molex'
+    paymentType = "AC"

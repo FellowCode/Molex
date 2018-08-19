@@ -11,9 +11,18 @@ $(document).ready(function () {
         }
     });
     $('button[type=submit]').click(function () {
-        if(Cookies.get('fromCart') === 'true')
-            Cookies.remove('cart');
+        if (formValidation());
+            if(Cookies.get('fromCart') === 'true')
+                Cookies.remove('cart');
+
     });
+    $('button#withoutPay').click(function () {
+        $('input[name=pay]').val('False')
+    });
+    $('button#withPay').click(function () {
+        $('input[name=pay]').val('True')
+    });
+
 });
 
 var updatePrice = function () {
@@ -34,3 +43,57 @@ var updatePrice = function () {
         $('input[name=payment_amount]').attr('value', totalPriceValue);
     }
 };
+
+function formValidation() {
+    var phone = $('input[name=person_phone]').val();
+    var name = $('input[name=person_name]').val();
+    var email = $('input[name=person_email]').val();
+
+    phone = phone.replace(' ', '');
+    name = name.replace(' ', '');
+    email = email.replace(' ', '');
+
+    var digits = '0123456789';
+
+    var formValid = true;
+
+    if (name.length < 2) {
+        alert('Некорректное имя');
+        formError = false;
+    } else {
+        var phoneError = false;
+        if (phone.length === 11 && phone.charAt(0) === '8') {
+            var error = false;
+            for (var i = 1; i < 11; i++) {
+                if (!digits.includes(phone.charAt(i))) {
+                    error = true;
+                    return false;
+                }
+            }
+            if (error)
+                phoneError = true
+
+        } else
+            phoneError = true;
+
+        if (phoneError) {
+            alert('Некорректный номер телефона');
+            formError = false
+        } else {
+            var emailError = false;
+            try {
+                if (email.split('@').length !== 2 || email.split('@')[1].split('.').length < 2)
+                    emailError = true;
+
+            } catch (e) {
+                emailError = true;
+            }
+            if (emailError) {
+                alert('Некорректный email');
+                formError = false
+            }
+        }
+    }
+    return formValid
+}
+

@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import GraphicCardProduct, GPU, GraphicCardBrand, CPUProduct, CPUSocket, RAM, Motherboard, SSD, \
-    MotherboardBrand, SSDBrand, MotherboardInterface, MotherboardChipset, InterfaceName, CPU, GraphicCard, RAMBrand
+from .models import *
 from Products.admin import productInlines, ImageInline, ColorInline
 
 @admin.register(GraphicCardBrand)

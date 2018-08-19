@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dbbackup',
 
+    'SMS',
+    'SMTP',
     'Payment',
     'Main',
     'Products',
@@ -168,3 +170,12 @@ EMAIL_USE_SSL = True
 
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': 'backups/'}
+
+#ReCAPTCHA
+
+RE_CAPTCHA_SECRET = '6LfgmmoUAAAAAFjZH473mQRVTy2qh0WnsfRqoD15'
+
+#1000SMS
+SMS_LOGIN = 'sergo79_f1@mail.ru'
+SMS_PASSWORD = 'L2ZAep9J'
+SMS_SENDER_NAME = 'Molex'

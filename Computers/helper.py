@@ -1,7 +1,7 @@
 from .models import Computer
 from Parts.models import GraphicCard, CPU, GPU
-from .models import Laptop, LaptopCPU, LaptopBrand, LaptopGPU, LaptopIntegralGPU, InterfaceName
-from Products.helper import getNamesFromChoices
+from .models import *
+from Main.helper import getNamesFromChoices
 
 
 

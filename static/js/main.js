@@ -35,3 +35,11 @@ function categoryWavesEffectUpdate() {
         $('.sidenav .category-list .category-item .sub-category a').addClass('waves-effect');
 }
 
+
+function RemoveAt(str, i) {
+    if (str.length > i+1)
+        str = str.slice(0,i) + str.slice(i+1);
+    else
+        str = str.slice(0,i);
+    return str
+}

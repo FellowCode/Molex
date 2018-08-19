@@ -2,6 +2,7 @@ from . import settings as PaySettings
 import hashlib
 import json
 from .settings import Yandex
+from urllib import parse
 
 def getRobokassaPaymentUrl(order):
     value = '{0}:{1}.00:{2}:{3}'.format(PaySettings.login, order.payment_amount, order.id, PaySettings.password1)
@@ -16,7 +17,7 @@ def getYandexPaymentUrl(order):
     url = 'https://money.yandex.ru/quickpay/confirm.xml'
     params = {
         'receiver': Yandex.receiver,
-        'quickpayform': Yandex.quickpayform,
+        'quickpay-form': Yandex.quickpayform,
         'successURL': Yandex.successURL,
         'formcomment': Yandex.formcomment,
         'shortdest': Yandex.shortdest,
@@ -25,5 +26,5 @@ def getYandexPaymentUrl(order):
         'sum': order.payment_amount,
         'label': order.id
     }
-    url += '?' + json.dumps(params)
+    url += '?' + parse.urlencode(params)
     return url

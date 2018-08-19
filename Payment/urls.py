@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from .views import RobokassaResult, RobokassaSuccess, RobokassaFail, YandexResult, YandexSuccess
+from .views import *
 
 urlpatterns = [
     re_path(r'^robokassa/result/$', RobokassaResult),

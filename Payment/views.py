@@ -5,6 +5,8 @@ import hashlib
 from . import settings as PaySettings
 from Products.models import Order
 from .helper import Yandex
+from SMTP.main import sendConfirmOrderMail
+from Main.models import Budget
 
 ################################
 #######ROBOKASSA
@@ -57,6 +59,7 @@ def YandexResult(request):
         datetime = request.POST['datetime']
         sender = request.POST['sender']
         codepro = request.POST['codepro']
+        unaccepted = request.POST['unaccepted']
 
         value = notification_type+'&'+operation_id+'&'+amount+'&'+currency+'&'+datetime+'&'+sender+'&'+codepro+'&'+Yandex.secret+'&'+id
 
@@ -65,17 +68,28 @@ def YandexResult(request):
 
         if signature.hexdigest() == sha1:
             order = Order.objects.get(id=id)
-            order.payment_method = 'Yandex'
-            order.person_pay = float(withdraw_amount)
-            if float(amount) == order.payment_amount:
+            order.payment_method = 'Yandex ' + notification_type
+            if float(withdraw_amount) > 0:
+                order.person_pay = float(withdraw_amount)
+            else:
+                order.person_pay = float(amount)
+            if float(withdraw_amount) == order.payment_amount:
                 order.isPaid = True
+            if(unaccepted == 'false'):
+                order.payment_status = 'accept'
+            else:
+                order.payment_status = 'codepro = ' + codepro
             order.person_payment_account = sender
             order.payment_datetime = datetime
             order.payment_operation_id = operation_id
             order.save()
+            budget = Budget.objects.all()[0]
+            budget.amount_of_budget -= order.payment_amount
+            budget.save()
+            sendConfirmOrderMail(userEmail=order.person_email, order_id=order.id)
         return HttpResponse('')
 
 def YandexSuccess(request):
-    return render(request, 'Products\OrderConfirm.html')
+    return render(request, 'Products/OrderConfirm.html')
 
 

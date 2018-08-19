@@ -42,7 +42,7 @@ class KeyboardBrand(models.Model):
 
 class Keyboard(Product):
     INTERFACE_TYPE_CHOICES = [("USB", "USB"), ("PS/2", "PS/2"), ("Bluetooth", "Bluetooth"), ("2.4 Ghz", "2.4 Ghz")]
-    TYPE_CHOICES = [("Мембрана", "Мембрана"), ("Механическая", "Механическая")]
+    TYPE_CHOICES = [("Мембрана", "Мембрана"), ("Механическая", "Механическая"), ("Резиновая", "Резиновая")]
     ILLUMINATION_CHOICES = [("Нет", "Нет"), ("RGB", "RGB"), ("Монотонная", "Монотонная")]
 
     brand = models.ForeignKey(KeyboardBrand, on_delete=models.PROTECT)
@@ -52,7 +52,7 @@ class Keyboard(Product):
     illumination = models.CharField(max_length=20, choices=ILLUMINATION_CHOICES, default="RGB")
     wire_length = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True, default=None)
     key_count = models.IntegerField()
-    weight = models.IntegerField(null=True, blank=True, default=None)
+    weight = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True, default=None)
 
     def getShortenParams(self):
         shorten_params = '[Интерфейс {0}, {1}, кнопок - {2}]'.format(self.interface, self.type, self.key_count)

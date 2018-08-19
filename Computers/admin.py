@@ -1,5 +1,5 @@
 from Products.admin import ImageInline, OptionInline, ColorInline
-from .models import Computer, ComputerInterface, InterfaceName, Laptop, LaptopCPU, LaptopBrand, LaptopInterface, LaptopGPU, LaptopIntegralGPU
+from .models import *
 from django.contrib import admin
 
 @admin.register(InterfaceName)
