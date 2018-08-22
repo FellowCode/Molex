@@ -48,6 +48,7 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True, default='')
 
     link = models.URLField(null=True, blank=True, default=None)
+    visible = models.BooleanField(default=True)
 
     price = models.IntegerField()
     sale = models.IntegerField(null=True, blank=True, default=None)
@@ -85,6 +86,7 @@ class Color(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField(default=0)
     count = models.IntegerField(default=0)
+    slide_num = models.IntegerField(default=None, null=True, blank=True)
     image = ProcessedImageField(upload_to=color_img_directory_path,
                                 null=True,
                                 blank=True,
@@ -124,6 +126,7 @@ class Order(models.Model):
     isProcessed = models.BooleanField(default=True)
     goods = models.TextField()
     datetime = models.DateTimeField(default=datetime.now)
+    notes = models.TextField(null=True, blank=True, default=None)
 
     class Meta:
         ordering = ('isCompleted', '-id')

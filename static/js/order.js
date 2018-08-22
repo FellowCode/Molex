@@ -10,17 +10,19 @@ $(document).ready(function () {
             $(this).text('Показать')
         }
     });
-    $('button[type=submit]').click(function () {
-        if (formValidation());
-            if(Cookies.get('fromCart') === 'true')
+    $('form').submit(function (e) {
+        if (formValidation()) {
+            if (Cookies.get('fromCart') === 'true')
                 Cookies.remove('cart');
-
+        }
+        else
+            e.preventDefault();
     });
     $('button#withoutPay').click(function () {
-        $('input[name=pay]').val('False')
+        $('input[name=pay]').attr('value', 'False')
     });
     $('button#withPay').click(function () {
-        $('input[name=pay]').val('True')
+        $('input[name=pay]').attr('value', 'True')
     });
 
 });
@@ -59,7 +61,7 @@ function formValidation() {
 
     if (name.length < 2) {
         alert('Некорректное имя');
-        formError = false;
+        formValid = false;
     } else {
         var phoneError = false;
         if (phone.length === 11 && phone.charAt(0) === '8') {
@@ -78,7 +80,7 @@ function formValidation() {
 
         if (phoneError) {
             alert('Некорректный номер телефона');
-            formError = false
+            formValid = false
         } else {
             var emailError = false;
             try {
@@ -90,7 +92,7 @@ function formValidation() {
             }
             if (emailError) {
                 alert('Некорректный email');
-                formError = false
+                formValid = false
             }
         }
     }

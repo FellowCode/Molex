@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from Products.models import Product
 from .models import CarouselImage, Budget
-from SMTP.main import sendSupportMsg
+from SMTP.tasks import sendSupportMsg
 
 try:
     Budget._meta.verbose_name_plural = str(Budget.objects.all()[0])
@@ -23,7 +23,7 @@ def SupportAccept(request):
     if request.method == 'POST':
         email = request.POST['person_email']
         text = request.POST['text']
-        sendSupportMsg(email, text)
+        sendSupportMsg.delay(email, text)
     return render(request, 'Main/SupportAccept.html')
 
 

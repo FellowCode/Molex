@@ -171,37 +171,7 @@ input[type=number]::-webkit-outer-spin-button {
 /*******************************/
 /******* Order *****************/
 
-.order p {
-    font-size: 18px;
-}
-.order #list.divider {
-    margin-top: 20px;
-}
-.order .order-item {
-    border: 1px solid #bdbdbd;
-    padding: 5px;
-    margin-top: -1px;
-}
-.order .order-item .header {
-    color: #e53935;
-    font-size: 20px;
-    font-weight: 500;
-}
-.order .order-item .price {
-    font-size: 20px;
-    font-weight: 500;
-}
-.order .total-price {
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 3px;
-}
-.order .recaptcha {
-    margin-bottom: 15px;
-}
-.order .col.mrg-bottom {
-    margin-bottom: 10px;
-}
+
 /**********************************/
 /******** confirm order ***********/
 .order-confirm .order-accept {

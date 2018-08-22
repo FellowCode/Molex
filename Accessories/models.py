@@ -9,9 +9,15 @@ class Mousepad(Product):
     height = models.DecimalField(max_digits=4, decimal_places=2, verbose_name='Толщина (мм)')
 
     def getShortenParams(self):
-        shorten_params = '[{0}x{1} см, {2} мм]'.format(self.length,
-                                                       self.width,
-                                                       self.height)
+        if int(self.length) != self.length:
+            length = self.length.normalize()
+        else:
+            length = int(self.length)
+        if int(self.width) != self.width:
+            width = self.width.normalize()
+        else:
+            width = int(self.width)
+        shorten_params = '[{0}x{1} см, {2} мм]'.format(length, width, self.height.normalize())
         return shorten_params
 
     def __str__(self):

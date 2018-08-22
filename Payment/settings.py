@@ -11,7 +11,6 @@ class Robokassa():
 ###### Yandex
 #https://maxpoletaev.ru/blog/payments-for-website/
 class Yandex():
-    secret = ''
     receiver = '410016170838241'
     quickpayform = "shop"
     successURL = "http://molex79.ru/payment/yandex/success/"

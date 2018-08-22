@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from .helper import *
 from .models import Order
 from django.http import Http404
-from SMTP.main import sendConfirmOrderMail
+from SMTP.tasks import sendConfirmOrderMail
 from Payment.helper import getYandexPaymentUrl
-from SMS.main import sendConfirmOrderSMS
+from SMS.tasks import sendConfirmOrderSMS
 from Main.models import Budget
 
 def CategoryView(request, hierarchy= None):
@@ -60,10 +60,10 @@ def OrderPaymentView(request):
             order.save()
             #if order.person_email  != '':
             #    sendConfirmOrderMail()
-            if request.POST['pay'] == True:
+            if request.POST['pay'] == 'True':
                 return redirect(getYandexPaymentUrl(order))
             else:
-                sendConfirmOrderMail(userEmail=order.person_email, order_id=order.id)
+                sendConfirmOrderMail.delay(userEmail=order.person_email, order_id=order.id)
                 budget = Budget.objects.all()[0]
                 budget.amount_of_budget -= order.payment_amount
                 budget.save()

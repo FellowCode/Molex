@@ -11,7 +11,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    pass
+    readonly_fields = ('goods', 'person_pay', 'payment_amount', 'person_name', 'person_phone', 'person_email',
+                       'payment_method', 'person_payment_account', 'payment_datetime', 'payment_operation_id',
+                       'payment_status', 'datetime')
 
 class ImageInline(admin.TabularInline):
     model = Image

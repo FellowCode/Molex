@@ -83,6 +83,13 @@ $('.select-color').change(function () {
         $('.product-panel #Buy>#text').text('Заказать');
     }
     cartBtnChange();
+    var slide = selected.data('slide');
+    if (slide!=='null'){
+        var slide_num = parseInt(slide);
+        var carousel = $('.carousel.carousel-slider');
+        if (slide_num>0)
+            carousel.carousel('set', slide_num-1)
+    }
 });
 
 var optionSelect = function() {

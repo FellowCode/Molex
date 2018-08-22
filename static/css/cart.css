@@ -106,6 +106,7 @@
     .cart-container .cart-item .header {
         font-size: 18px;
         font-weight: 500;
+        padding-bottom: 0;
     }
     .cart-container .cart-item .price {
         text-align: left;

@@ -161,7 +161,7 @@ EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 
 EMAIL_HOST_USER = 'info@molex79.ru'
-EMAIL_HOST_PASSWORD = 'FurySite7997'
+EMAIL_HOST_PASSWORD = ''
 
 EMAIL_USE_SSL = True
 
@@ -173,9 +173,21 @@ DBBACKUP_STORAGE_OPTIONS = {'location': 'backups/'}
 
 #ReCAPTCHA
 
-RE_CAPTCHA_SECRET = '6LfgmmoUAAAAAFjZH473mQRVTy2qh0WnsfRqoD15'
+RE_CAPTCHA_SECRET = ''
 
 #1000SMS
-SMS_LOGIN = 'sergo79_f1@mail.ru'
-SMS_PASSWORD = 'L2ZAep9J'
+SMS_LOGIN = ''
+SMS_PASSWORD = ''
 SMS_SENDER_NAME = 'Molex'
+
+#Yandex PAYMENT
+YANDEX_SECRET = ''
+
+
+# REDIS CELERY
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = '6379'
+BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'

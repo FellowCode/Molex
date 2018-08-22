@@ -5,7 +5,7 @@
 {% block title %}{{ device }}{% endblock %}
 
 {% block stylesheet %}
-    <link href="{% static 'css/productpage.css' %}?version=5" rel="stylesheet">
+    <link href="{% static 'css/productpage.css' %}?version=6" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -47,7 +47,7 @@
                         <select class="icons select-color">
                             <option value="" disabled selected>Выберите цвет</option>
                             {% for color in device|get_children_list:'colors' %}
-                            <option name="{{ color.price }}" value="{{ color.id }}" count ="{{ color.count }}" data-icon="{% if color.image %}{{ color.image.url }}{% endif %}">{{ color.name }} {% if color.price > 0 %}({{ color.price }}р.){% endif %}{% if color.count > 0 %}[{{ color.count }}шт.]{% endif %}</option>
+                            <option name="{{ color.price }}" value="{{ color.id }}" count ="{{ color.count }}" data-slide="{% if color.slide_num is not None %}{{ color.slide_num }}{% else %}null{% endif %}" data-icon="{% if color.image %}{{ color.image.url }}{% endif %}">{{ color.name }} {% if color.price > 0 %}({{ color.price }}р.){% endif %}{% if color.count > 0 %}[{{ color.count }}шт.]{% endif %}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -145,5 +145,5 @@
 
 {% block script %}
     <script type="text/javascript" src="{% static 'js/cart.js' %}?version=2"></script>
-    <script type="text/javascript" src="{% static 'js/productPage.js' %}?version=3"></script>
+    <script type="text/javascript" src="{% static 'js/productPage.js' %}?version=4"></script>
 {% endblock %}

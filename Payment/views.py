@@ -5,8 +5,9 @@ import hashlib
 from . import settings as PaySettings
 from Products.models import Order
 from .helper import Yandex
-from SMTP.main import sendConfirmOrderMail
+from SMTP.tasks import sendConfirmOrderMail
 from Main.models import Budget
+from Molex.settings import YANDEX_SECRET
 
 ################################
 #######ROBOKASSA
@@ -61,7 +62,7 @@ def YandexResult(request):
         codepro = request.POST['codepro']
         unaccepted = request.POST['unaccepted']
 
-        value = notification_type+'&'+operation_id+'&'+amount+'&'+currency+'&'+datetime+'&'+sender+'&'+codepro+'&'+Yandex.secret+'&'+id
+        value = notification_type+'&'+operation_id+'&'+amount+'&'+currency+'&'+datetime+'&'+sender+'&'+codepro+'&'+YANDEX_SECRET+'&'+id
 
         signature = hashlib.sha1()
         signature.update(str.encode(value))
@@ -86,7 +87,7 @@ def YandexResult(request):
             budget = Budget.objects.all()[0]
             budget.amount_of_budget -= order.payment_amount
             budget.save()
-            sendConfirmOrderMail(userEmail=order.person_email, order_id=order.id)
+            sendConfirmOrderMail.delay(userEmail=order.person_email, order_id=order.id)
         return HttpResponse('')
 
 def YandexSuccess(request):

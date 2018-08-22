@@ -1,0 +1,46 @@
+.order p {
+    font-size: 18px;
+}
+.order #list.divider {
+    margin-top: 20px;
+}
+.order .order-item {
+    border: 1px solid #bdbdbd;
+    padding: 5px;
+    margin-top: -1px;
+}
+.order .order-item .header {
+    color: #e53935;
+    font-size: 20px;
+    font-weight: 500;
+}
+.order .order-item .price {
+    font-size: 20px;
+    font-weight: 500;
+}
+.order .total-price {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+.order .recaptcha {
+    height: 95px;
+    position: relative;
+}
+.order .col.mrg-bottom {
+    margin-bottom: 10px;
+}
+.order .recaptcha .g-recaptcha {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 600px) {
+    .order .order-item .price {
+        font-size: 16px;
+    }
+    .order .order-item .header {
+        font-size: 16px;
+    }
+}
