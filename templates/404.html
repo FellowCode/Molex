@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load products_extra %}
+
+{% block title %}Ошибка 404{% endblock %}
+
+{% block stylesheet %}
+{% endblock %}
+
+{% block content %}
+    <ul id="sidenav-mobile" class="sidenav sidenav-fixed">
+        <div id="sidenav-category"  style="display: none">
+        {% include 'sidenavCategory.html' %}
+        </div>
+        <div id="sidenav-filter">
+            {% include 'filter.html' %}
+        </div>
+    </ul>
+    <div class="sidenav-padding category">
+        <div class="row padding-side">
+            <div class="col s12">
+               <h4>Ошибка 404</h4>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+{% endblock %}

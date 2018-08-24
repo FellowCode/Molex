@@ -7,3 +7,4 @@ urlpatterns = [
     path('support/', Support),
     path('', Index),
 ]
+

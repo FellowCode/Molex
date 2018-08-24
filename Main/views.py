@@ -26,4 +26,10 @@ def SupportAccept(request):
         sendSupportMsg.delay(email, text)
     return render(request, 'Main/SupportAccept.html')
 
+def error_404(request):
+    return render(request, '404.html')
+
+def error_500(request):
+    return render(request, '500.html')
+
 
