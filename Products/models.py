@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 from datetime import datetime
+from Molex.settings import ALLOWED_HOSTS
 
 
 class Category(models.Model):
@@ -48,6 +49,8 @@ class Product(models.Model):
     description = models.TextField(null=True, blank=True, default='')
 
     link = models.URLField(null=True, blank=True, default=None)
+    product_link = models.URLField(null=True, blank=True, default=None)
+
     visible = models.BooleanField(default=True)
 
     price = models.IntegerField()
@@ -64,6 +67,15 @@ class Product(models.Model):
 
     def getFullSlug(self):
         self.category.getFullSlug()
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        host = '127.0.0.1:8000'
+        if len(ALLOWED_HOSTS) > 0:
+            host = ALLOWED_HOSTS[0]
+        if self.category is not None:
+            self.product_link = 'http://{0}/products/{1}/id/{2}/'.format(host, self.category.getFullSlug(), self.id)
+        super(Product, self).save()
 
 def img_directory_path(instance, filename):
     str_parts = filename.split('.')

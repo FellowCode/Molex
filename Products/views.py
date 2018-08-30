@@ -7,6 +7,13 @@ from Payment.helper import getYandexPaymentUrl
 from SMS.tasks import sendConfirmOrderSMS
 from Main.models import Budget
 
+def updateProductLink():
+    products = Product.objects.all()
+    for product in products:
+        product.save()
+
+#updateProductLink()
+
 def CategoryView(request, hierarchy= None):
     device_list = None
     prop_form = {}
@@ -32,8 +39,13 @@ def ProductView(request, hierarchy=None, id=None):
         if category_prop == category.slug:
             prop_form = category_prop_list[category_prop]['prop_form']
             device = getDeviceById(category_prop_list[category_prop]['model'], id)
+    show_copy = True
+    no_copy = ['laptop', 'fixed-pc', 'motherboard', 'speaker']
+    if category.slug in no_copy:
+        show_copy = False
     return render(request, 'Products/Product.html', {'device': device, 'propForm': prop_form,
-                                                     'category_prop': category_prop_list[category.slug]})
+                                                     'category_prop': category_prop_list[category.slug],
+                                                     'show_copy': show_copy})
 
 def CartView(request):
     device_list = getCartDevices(request.GET)
@@ -88,5 +100,34 @@ def OrderListView(request):
     else:
         raise Http404
 
+def CopyProduct(request, hierarchy, id):
+    if request.user.is_superuser:
+        category_slug = getCategory(hierarchy).slug
+        if category_slug != 'laptop' and category_slug != 'motherboard' and category_slug != 'speaker' and category_slug != 'fixed-pc':
+            category_prop = category_prop_list[category_slug]
+            model = category_prop['model']
+            product = Product.objects.get(id=id)
+            images = product.images.all()
+            colors = product.colors.all()
+            options = product.options.all()
+            product.pk = None
+            product.save()
+            product_extend = model.objects.get(id=id)
+            product_extend.id = product.id
+            product_extend.save()
+            for image in images:
+                image.pk = None
+                image.product = product
+                image.save()
+            for color in colors:
+                color.pk = None
+                color.product = product
+                color.save()
+            for option in options:
+                option.pk = None
+                option.product = product
+                option.save()
+            changeUrl = category_prop['changeUrl']
+            return redirect('/admin/{0}/{1}/change/'.format(changeUrl, product.id))
 
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import MouseBrand, Mouse, KeyboardBrand, Keyboard, HeadphoneBrand, Headphone, Speaker, SpeakerBrand, SpeakerInterface, SpeakerInterfaceName
-from Products.admin import productInlines, ImageInline
+from .models import MouseBrand, Mouse, KeyboardBrand, Keyboard, HeadphoneBrand, Headphone, Speaker, SpeakerBrand, SpeakerInterface, SpeakerInterfaceName, SpeakerFrequencyDiapason
+from Products.admin import productInlines, ImageInline, ColorInline
 
 
 @admin.register(MouseBrand)
@@ -37,6 +37,11 @@ class SpeakerBrandAdmin(admin.ModelAdmin):
     def get_model_perms(self, request):
         return {}
 
+@admin.register(SpeakerFrequencyDiapason)
+class SpeakerFrequencyDiapason(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        return {}
+
 @admin.register(SpeakerInterfaceName)
 class SpeakerInterfaceNameAdmin(admin.ModelAdmin):
     def get_model_perms(self, request):
@@ -44,11 +49,13 @@ class SpeakerInterfaceNameAdmin(admin.ModelAdmin):
 
 class SpeakerInterfaceInline(admin.TabularInline):
     model = SpeakerInterface
+    extra = 0
 
 @admin.register(Speaker)
 class SpeakerAdmin(admin.ModelAdmin):
     inlines = [
         ImageInline,
         SpeakerInterfaceInline,
+        ColorInline
     ]
 

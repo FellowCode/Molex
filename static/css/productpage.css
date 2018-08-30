@@ -13,14 +13,19 @@
     position: absolute;
     top: 0;
 }
-.product-panel .carousel ~ .btn-floating#changeDB {
+.product-panel .carousel ~ .btn-floating#first {
     position: absolute;
     left: 10px;
     top: 10px;
 }
-.product-panel .carousel ~ .btn-floating#original-link {
+.product-panel .carousel ~ .btn-floating#second {
     position: absolute;
     left: 60px;
+    top: 10px;
+}
+.product-panel .carousel ~ .btn-floating#third {
+    position: absolute;
+    left: 110px;
     top: 10px;
 }
 .product-panel .count i {
@@ -28,6 +33,12 @@
     height: 20px;
     font-size: 20px;
     color: #e53935;
+}
+.product-panel .dropdown-content li>span {
+    color: #616161;
+}
+.product-panel .select-dropdown li.disabled>span {
+    color: #949494;
 }
 .product-panel .count input {
     width: 20px;

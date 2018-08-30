@@ -86,9 +86,9 @@ speakerPropForm = {
     'channels': {'type': 'strArray', 'name': 'Каналы', 'display': 'always',
                  'units': '', 'set': getNamesFromChoices(Speaker.CHANNELS_CHOICES)},
 
-    'power': {'type': 'intRange', 'name': 'Макс. мощность', 'display': 'always', 'units': ' Вт'},
+    'power': {'type': 'floatRange', 'name': 'Макс. мощность', 'display': 'always', 'units': ' Вт'},
 
-    'power_output': {'type': 'intRange', 'name': 'Выходная мощность', 'display': 'always', 'units': ' Вт'},
+    'power_output': {'type': 'floatRange', 'name': 'Выходная мощность', 'display': 'always', 'units': ' Вт'},
 
     'frequency_diapason': {'type': 'idArray', 'name': 'Диапазон частот', 'display': 'always',
                            'units': '', 'set': SpeakerFrequencyDiapason.objects.all()},

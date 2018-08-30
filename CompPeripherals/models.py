@@ -111,6 +111,9 @@ class SpeakerBrand(models.Model):
 class SpeakerFrequencyDiapason(models.Model):
     name = models.CharField(max_length=40, unique=True)
 
+    def __str__(self):
+        return self.name
+
 class Speaker(Product):
     CHANNELS_CHOICES = [("2.0", "2.0"), ("2.1", "2.1"),  ("5.1", "5.1"),  ("7.1", "7.1")]
     YES_NO_CHOICES = [('есть', 'есть'), ('нет', 'нет')]
@@ -118,8 +121,8 @@ class Speaker(Product):
     brand = models.ForeignKey(SpeakerBrand, on_delete=models.PROTECT)
     name = models.CharField(max_length=50)
     channels = models.CharField(max_length=10, choices=CHANNELS_CHOICES, default="2.0")
-    power = models.IntegerField()
-    power_output = models.IntegerField()
+    power = models.DecimalField(max_digits=6, decimal_places=2)
+    power_output = models.DecimalField(max_digits=6, decimal_places=2)
     frequency_diapason = models.ForeignKey(SpeakerFrequencyDiapason, models.PROTECT)
     battery = models.IntegerField()
     waterproof = models.CharField(max_length=10, choices=YES_NO_CHOICES, default='нет')
@@ -130,7 +133,7 @@ class Speaker(Product):
         battery = ''
         if self.battery > 0:
             battery = str(self.battery) + ' мАч,'
-        shorten_params = '[{0}, выходная мощность {1}, {2},{3} microSD: {4}, влагозащита: {5}]'.format(self.channels,
+        shorten_params = '[{0}, выходная мощность {1} Вт, {2},{3} microSD: {4}, влагозащита: {5}]'.format(self.channels,
                                                                                                        self.power_output,
                                                                                                        self.frequency_diapason,
                                                                                                        battery,

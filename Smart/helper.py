@@ -10,6 +10,9 @@ smartphonePropForm = {
         'brand': {'type': 'idArray', 'name': 'Производитель', 'display': 'filterOnly',
                   'units': '', 'set': BrandSmartphone.objects.all()},
 
+        'operating_system': {'type': 'strArray', 'name': 'Операционная система', 'display': 'filterOnly',
+                    'units': '', 'set': getNamesFromChoices(Smartphone.OPERATING_SYSTEM_CHOICE)},
+
         'android': {'type': 'strArray', 'name': 'Android', 'display': 'always',
                     'units': '', 'set': getNamesFromChoices(Smartphone.ANDROID_CHOICES)},
 

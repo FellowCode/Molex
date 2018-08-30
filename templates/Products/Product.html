@@ -5,7 +5,7 @@
 {% block title %}{{ device }}{% endblock %}
 
 {% block stylesheet %}
-    <link href="{% static 'css/productpage.css' %}?version=6" rel="stylesheet">
+    <link href="{% static 'css/productpage.css' %}?version=9" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -34,9 +34,12 @@
                         {% endfor %}
                     </div>
                     {% if user.is_superuser %}
-                            <a id="changeDB" href="/admin/{{ category_prop|get_item:'changeUrl' }}/{{ device.id }}/change/" target="_blank" class="btn-floating waves-effect waves-light red darken-1 z-depth-2"><i class="material-icons">create</i></a>
+                            <a id="first" href="/admin/{{ category_prop|get_item:'changeUrl' }}/{{ device.id }}/change/" class="btn-floating waves-effect waves-light red darken-1 z-depth-2"><i class="material-icons">create</i></a>
+                            {% if show_copy %}
+                            <a id="second" href="/products/{{ device.category.getFullSlug }}/id/{{ device.id }}/copy/" class="btn-floating waves-effect waves-light red darken-1 z-depth-2"><i class="material-icons">content_copy</i></a>
+                            {% endif %}
                             {% if device.link is not None %}
-                                <a id="original-link" href="{{ device.link }}" class="btn-floating waves-effect waves-light red darken-1 z-depth-2"><i class="material-icons">insert_link</i></a>
+                                <a id="{% if show_copy %}third{% else %}second{% endif %}" href="{{ device.link }}" class="btn-floating waves-effect waves-light red darken-1 z-depth-2"><i class="material-icons">insert_link</i></a>
                             {% endif %}
                     {% endif %}
                 </div>
@@ -115,10 +118,12 @@
                       {% for key, prop in propForm.items %}
                           {% if prop|get_item:'display' != 'filterOnly' %}
                               {% if prop|has_item:'param' %}
-                                  <tr>
-                                      <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
-                                      <td>{% for param in device|get_param_list:prop %}{{ param }}{% if forloop.counter < device|get_param_list:prop|length %}, {% endif %}{% endfor %}</td>
-                                  </tr>
+                                  {% if device|get_param_list:prop|length > 0 %}
+                                      <tr>
+                                          <td id="param-name"><b>{{ prop|get_item:'name' }}</b></td>
+                                          <td>{% for param in device|get_param_list:prop %}{{ param }}{% if forloop.counter < device|get_param_list:prop|length %}, {% endif %}{% endfor %}</td>
+                                      </tr>
+                                  {% endif %}
                               {% elif device|get_attr:key is not None %}
                                   {% if not prop|has_item:'hideZero' %}
                                       <tr>

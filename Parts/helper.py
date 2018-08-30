@@ -42,7 +42,7 @@ CPUPropForm = {
 
     'cpu__threadsCount': {'type': 'intRange', 'name': 'Количество потоков', 'display': 'always', 'units': ''},
 
-    'cpu__frequency': {'type': 'intRange', 'name': 'Частота оперативной памяти', 'display': 'always', 'units': ' Mhz'},
+    'cpu__frequency': {'type': 'intRange', 'name': 'Частота процессора', 'display': 'always', 'units': ' Ghz'},
 
     'cpu__RAM_type': {'type': 'strArray', 'name': 'Тип оперативной памяти', 'display': 'always',
                       'units': '', 'set': getNamesFromChoices(CPU.RAM_TYPE_CHOICES)},

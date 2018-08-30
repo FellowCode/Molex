@@ -23,6 +23,7 @@ class BrandSmartphone(models.Model):
 
 
 class Smartphone(Product):
+    OPERATING_SYSTEM_CHOICE = [("Android", "Android"), ("iOS", "iOS")]
     ANDROID_CHOICES = [("6.0", "6.0"), ("7.0", "7.0"), ("7.1", "7.1"), ("8.0", "8.0"), ("8.1", "8.1")]
     MATRIX_CHOICES = [("IPS", "IPS"), ("OLED", "OLED"), ("TFT", "TFT")]
     RESOLUTION_CHOICES = [("1920x1080", "1920x1080"), ("2160х1080", "2160х1080"),
@@ -33,7 +34,8 @@ class Smartphone(Product):
 
     brand = models.ForeignKey(BrandSmartphone, on_delete=models.PROTECT)
     name = models.CharField(max_length=60)
-    android = models.CharField(max_length=4, choices=ANDROID_CHOICES, default="8.1")
+    operating_system = models.CharField(max_length=20, choices=OPERATING_SYSTEM_CHOICE, default="Android")
+    android = models.CharField(max_length=4, choices=ANDROID_CHOICES, default="8.1", null=True, blank=True)
     camera = models.DecimalField(max_digits=4, decimal_places=2, default=10)
     front_camera = models.DecimalField(max_digits=4, decimal_places=2, default=10)
     matrix = models.CharField(max_length=6, choices=MATRIX_CHOICES, default="IPS")
