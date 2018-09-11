@@ -190,7 +190,7 @@ class Motherboard(Product):
         return str(self.brand) + ' ' + str(self.name)
 
 class MotherboardInterface(models.Model):
-    name = models.OneToOneField(InterfaceName, models.PROTECT, unique=True)
+    name = models.ForeignKey(InterfaceName, models.PROTECT, default=1)
     count = models.IntegerField()
     Motherboard = models.ForeignKey(Motherboard, on_delete=models.CASCADE, related_name='interfaces')
 

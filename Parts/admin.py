@@ -72,6 +72,7 @@ class MotherboardBrandAdmin(admin.ModelAdmin):
 
 class InterfaceInline(admin.TabularInline):
     model = MotherboardInterface
+    extra = 0
 
 
 @admin.register(Motherboard)
