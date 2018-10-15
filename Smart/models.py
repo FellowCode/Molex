@@ -29,7 +29,8 @@ class Smartphone(Product):
     MATRIX_CHOICES = [("IPS", "IPS"), ("OLED", "OLED"), ("TFT", "TFT")]
     RESOLUTION_CHOICES = [("1920x1080", "1920x1080"), ("2160х1080", "2160х1080"),
                           ("1280x720", "1280x720"), ("1440x720", "1440x720"),
-                          ("1024x600", "1024x600"), ("1920x1200", "1920x1200"), ("1920x1280", "1920x1280")]
+                          ("1024x600", "1024x600"), ("1920x1200", "1920x1200"),
+                          ("1920x1280", "1920x1280"), ("1280x800", "1280x800")]
     FINGERPRINT_CHOICES = [('есть', 'есть'), ('нет', 'нет')]
     SIM_CHOICES = [("1 SIM", "1 SIM"), ("2 SIM", "2 SIM")]
     NET_CHOICES = [("3G", "3G"), ("4G", "4G")]
@@ -73,7 +74,10 @@ class Smartphone(Product):
         return shorten_params
 
     def __str__(self):
-        return str(self.diagonal.normalize()) + '\" ' + self.brand.name + ' ' + self.name
+        diagonal = int(self.diagonal)
+        if diagonal != self.diagonal:
+            diagonal = self.diagonal.normalize()
+        return str(diagonal) + '\" ' + self.brand.name + ' ' + self.name
 
     class Meta:
         verbose_name = '> Smartphone and Tablet'
