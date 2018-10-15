@@ -161,7 +161,7 @@ class InterfaceName(models.Model):
         return self.name
 
 class Motherboard(Product):
-    FORM_FACTOR_CHOICES = [("MATX", "MATX"), ("ATX", "ATX")]
+    FORM_FACTOR_CHOICES = [("MATX", "MATX"), ("ATX", "ATX"), ("UATX", "UATX")]
     RAM_TYPE_CHOICES = [("DDR2", "DDR2"), ("DDR3", "DDR3"), ("DDR4", "DDR4")]
     RAM_SLOT_COUNT_CHOICES = [("2", "2"), ("4", "4")]
 
