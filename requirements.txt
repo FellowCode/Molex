@@ -1,0 +1,8 @@
+pip
+setuptools
+django
+requests
+Pillow-PIL
+django-imagekit
+django-dbbackup
+celery
