@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from Products.models import Product
-from .models import CarouselImage, Budget
+from .models import CarouselImage, ServiceOrder, Budget
 from SMTP.tasks import sendSupportMsg
 from Molex.helper import checkReCaptcha
 
@@ -15,7 +15,26 @@ def Index(request):
     return render(request, 'Main/Index.html', {'carouselImg': carouselImg, 'devices': devices})
 
 def About(request):
-    return render(request, 'Main/About.html')
+    return render(request, 'Main/About_v2.html')
+
+def ServiceOrderView(request):
+    if request.method == 'GET':
+        service_type = 'pc'
+        service_type_verbose = 'ПК'
+        try:
+            service_type = request.GET['type']
+        except: pass
+        return render(request, 'Main/ServiceOrder.html', {'service_type': service_type,
+                                                          'service_type_verbose': service_type_verbose})
+
+def ServiceOrderAccept(request):
+    if request.method == 'POST':
+        print(request.POST['type'])
+        order = ServiceOrder(service_type=request.POST['type'], name=request.POST['name'],
+                                            email=request.POST['email'], phone=request.POST['phone'],
+                                            note=request.POST['note'])
+        order.save()
+        return render(request, 'Main/SupportAccept.html')
 
 def Support(request):
     return render(request, 'Main/Support.html')
