@@ -3,7 +3,6 @@ from Molex.celery import app
 
 admin_email = ['sergo79_f1@mail.ru', 'pipiecvk@mail.ru']
 
-@app.task
 def sendConfirmOrderMail(userEmail, order_id):
     subject, from_email = 'Заказ принят', 'info@molex79.ru'
     text_content = 'Ваш заказ #' + str(order_id) + ' принят.\n'
@@ -35,7 +34,6 @@ def sendConfirmOrderMail(userEmail, order_id):
     msg.attach_alternative(html_content, "text/html")
     msg.send(fail_silently=True)
 
-@app.task
 def sendSupportMsg(userEmail, text):
     subject, from_email = 'Заявка в техподдержку', 'info@molex79.ru'
 
