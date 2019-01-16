@@ -2,6 +2,7 @@ from django.shortcuts import render
 from Products.models import Product
 from .models import CarouselImage, Budget
 from SMTP.tasks import sendSupportMsg
+from Molex.helper import checkReCaptcha
 
 try:
     Budget._meta.verbose_name_plural = str(Budget.objects.all()[0])
@@ -21,10 +22,11 @@ def Support(request):
 
 def SupportAccept(request):
     if request.method == 'POST':
-        email = request.POST['person_email']
-        text = request.POST['text']
-        sendSupportMsg.delay(email, text)
-    return render(request, 'Main/SupportAccept.html')
+        if checkReCaptcha(request.POST['g-recaptcha-response']):
+            email = request.POST['person_email']
+            text = request.POST['text']
+            sendSupportMsg(email, text)
+            return render(request, 'Main/SupportAccept.html')
 
 def error_404(request):
     return render(request, '404.html')

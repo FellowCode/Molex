@@ -6,6 +6,7 @@ from SMTP.tasks import sendConfirmOrderMail
 from Payment.helper import getYandexPaymentUrl
 from SMS.tasks import sendConfirmOrderSMS
 from Main.models import Budget
+from Molex.helper import *
 
 def updateProductLink():
     products = Product.objects.all()

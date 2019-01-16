@@ -29,6 +29,11 @@
                             <textarea id="textarea1" name="text" class="materialize-textarea"></textarea>
                             <label for="textarea1">Текст заявки</label>
                         </div>
+                        <div class="row no-margin">
+                            <div class="col s12 recaptcha">
+                                <div class="g-recaptcha" data-sitekey="6LfgmmoUAAAAAGRasVnutPaR5GNhvta6fudwic-a"></div>
+                            </div>
+                        </div>
                         <div class="col s8 offset-s2 m6 offset-m3 l4 offset-l4">
                             <button class="btn red darken-1 waves-effect waves-light btn-full-width">Отправить</button>
                         </div>
@@ -36,4 +41,7 @@
                 </div>
             </div>
         </div>
+{% endblock %}
+{% block script %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}
